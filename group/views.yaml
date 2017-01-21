@@ -1,19 +1,31 @@
-Home:
+default_view:
   name: Home
   view: yes
-  icon: mdi:home
   entities:
+    - group.environment
+    - group.home_modes
     - group.phones
+    - group.media
+
+Network:
+  name: Network
+  view: yes
+  icon: mdi:access-point-network
+  entities:
+    - group.internet
     - group.computers
+    - group.gadgets
+    - group.phones
 
 Development:
   name: Development 
   view: yes
   icon: mdi:wrench
   entities:
-    - group.all_automations
     - group.all_devices
-    - group.gadgets
+    - group.all_switches
+    - group.all_automations
+    - group.all_scripts
 
 Neighbours:
   name: Kyselovi
@@ -21,3 +33,5 @@ Neighbours:
   icon: mdi:home-outline
   entities:
     - group.kyselovi
+
+

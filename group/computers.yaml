@@ -1,7 +1,8 @@
 Computers:
   entities:
-    - device_tracker.lenka_macbook_wifi
     - device_tracker.lenka_air
+    - device_tracker.lenka_macbook_lan
+    - device_tracker.lenka_macbook_wifi
     - device_tracker.pez_macbook_lan
     - device_tracker.pez_macbook_wifi
     - device_tracker.pez_hex_lan

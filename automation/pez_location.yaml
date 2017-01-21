@@ -43,6 +43,7 @@
         message: 'Petr just left the School'
 
 - alias: 'PeZ arrived to the Kindergarten'
+  initial_state: False
   trigger:
     platform: zone
     entity_id: device_tracker.pez_workphone
@@ -54,6 +55,7 @@
         message: 'Petr just arrived to the kindergarten'
 
 - alias: 'PeZ left the Kindergarten'
+  initial_state: False
   trigger:
     platform: zone
     entity_id: device_tracker.pez_workphone

@@ -1,4 +1,13 @@
 
-group.kyselovi:
-  hidden: True
+group.all_automations:
+  hidden: False
+
+group.all_devices:
+  hidden: False
+
+group.all_scripts:
+  hidden: False
+
+group.all_switches:
+  hidden: False
 
