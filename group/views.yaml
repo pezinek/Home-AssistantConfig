@@ -1,0 +1,23 @@
+Home:
+  name: Home
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.phones
+    - group.computers
+
+Development:
+  name: Development 
+  view: yes
+  icon: mdi:wrench
+  entities:
+    - group.all_automations
+    - group.all_devices
+    - group.gadgets
+
+Neighbours:
+  name: Kyselovi
+  view: yes
+  icon: mdi:home-outline
+  entities:
+    - group.kyselovi

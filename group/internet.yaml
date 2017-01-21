@@ -1,0 +1,12 @@
+Internet:
+  entities:
+    - device_tracker.internet
+    - device_tracker.microtick
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - sensor.transmission_down_speed
+    - sensor.transmission_status
+    - sensor.transmission_up_speed
+    - switch.transmission_turtle_mode
+

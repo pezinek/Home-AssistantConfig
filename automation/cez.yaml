@@ -1,0 +1,109 @@
+- alias: 'Cheap electricity on weekdays'
+  trigger:
+    - platform: time
+      after: '8:15:00'
+    - platform: time
+      after: '10:55:00'
+    - platform: time
+      after: '13:15:00'
+    - platform: time
+      after: '18:30:00'
+  condition:
+    condition: time
+    weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri 
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.electricity_is_cheap
+
+- alias: 'Expensive electricity on weekdays'
+  trigger:
+    - platform: time
+      after: '7:15:00'
+    - platform: time
+      after: '9:55:00'
+    - platform: time
+      after: '12:30:00'
+    - platform: time
+      after: '17:31:00'
+  condition:
+    condition: time
+    weekday:
+        - mon
+        - tue
+        - wed 
+        - thu
+        - fri
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.electricity_is_cheap
+
+- alias: 'Cheap electricity on weekends'
+  trigger:
+    - platform: time
+      after: '9:30:00'
+    - platform: time
+      after: '12:30:00'
+    - platform: time
+      after: '14:30:00'
+    - platform: time
+      after: '21:10:00'
+  condition:
+    condition: time
+    weekday:
+        - sat
+        - sun
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.electricity_is_cheap
+
+- alias: 'Expensive electricity on weekends'
+  trigger:
+    - platform: time
+      after: '8:35:00'
+    - platform: time
+      after: '11:35:00'
+    - platform: time
+      after: '13:35:00'
+    - platform: time
+      after: '20:10:00'
+  condition:
+    condition: time
+    weekday:
+        - sat
+        - sun
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.electricity_is_cheap
+
+
+- alias: 'Cheap electricity notification'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      to: 'on'
+  action:
+    - service: script.wall
+      data:
+        message: 'The electricity is now cheaper.'
+
+
+- alias: 'Expensive electricity notification'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      to: 'off'
+  action:
+    - service: script.wall
+      data:
+        message: 'The electricity is now more expensive.'
+
+

@@ -1,0 +1,23 @@
+- alias: 'House is offline'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.internet
+    zone: zone.home
+    event: leave
+  action:
+    - service: script.wall
+      data:
+        message: 'Internet connectivity has been lost, feel free to report the issue to Interconnect hotline 2 2 2  2 6 2 3 3 3 .'
+
+- alias: 'House is online'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.internet
+    zone: zone.home
+    event: leave
+  action:
+    - service: script.wall
+      data:
+        message: 'Internet connectivity has been restored'
+
+

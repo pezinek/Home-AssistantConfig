@@ -1,0 +1,5 @@
+- name: "Location of Petr"
+  platform: generic
+  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.pez_workphone.attributes.latitude }},{{ states.device_tracker.pez_workphone.attributes.longitude }}&zoom=13&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.pez_workphone.attributes.latitude }},{{ states.device_tracker.pez_workphone.attributes.longitude }}
+  limit_refetch_to_url_change: true
+

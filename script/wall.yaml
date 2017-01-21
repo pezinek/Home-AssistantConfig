@@ -1,0 +1,11 @@
+wall:
+  sequence:
+    - service: media_player.play_media
+      data:
+        media_content_id: "http://iot:8123/local/computer_magic.mp3" 
+        media_content_type: audio/mp3
+    - delay: 00:00:04
+    - service: tts.google_say
+      data_template:
+        message: "{{ message }}"
+

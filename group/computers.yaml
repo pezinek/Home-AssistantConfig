@@ -1,0 +1,22 @@
+Computers:
+  entities:
+    - device_tracker.lenka_macbook_wifi
+    - device_tracker.lenka_air
+    - device_tracker.pez_macbook_lan
+    - device_tracker.pez_macbook_wifi
+    - device_tracker.pez_hex_lan
+    - device_tracker.pez_hex_wifi
+
+Gadgets:
+  entities:
+    - device_tracker.printer_epson
+    - device_tracker.phone_linksys
+    - device_tracker.phone_gigaset
+    - device_tracker.nas_mybook
+    - device_tracker.chromecast
+    - device_tracker.iot
+    - device_tracker.pi
+    - device_tracker.pi3_lan
+    - device_tracker.pi3_wifi
+
+

@@ -1,0 +1,66 @@
+- alias: 'PeZ arrived to the Office'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.pez_workphone
+    zone: zone.work
+    event: enter
+  action:
+    - service: script.wall
+      data:
+        message: 'Petr just arrived to the office'
+
+- alias: 'PeZ left the Office'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.pez_workphone
+    zone: zone.work
+    event: leave
+  action:
+    - service: script.wall
+      data:
+        message: 'Petr just left the office'
+
+- alias: 'PeZ arrived to the School'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.pez_workphone
+    zone: zone.school
+    event: enter
+  action:
+    - service: script.wall
+      data:
+        message: 'Petr just arrived to the School'
+
+- alias: 'PeZ left the School'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.pez_workphone
+    zone: zone.school
+    event: leave
+  action:
+    - service: script.wall
+      data:
+        message: 'Petr just left the School'
+
+- alias: 'PeZ arrived to the Kindergarten'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.pez_workphone
+    zone: zone.kindergarten
+    event: enter
+  action:
+    - service: script.wall
+      data:
+        message: 'Petr just arrived to the kindergarten'
+
+- alias: 'PeZ left the Kindergarten'
+  trigger:
+    platform: zone
+    entity_id: device_tracker.pez_workphone
+    zone: zone.kindergarten
+    event: leave
+  action:
+    - service: script.wall
+      data:
+        message: 'Petr just left the kindergarten'
+

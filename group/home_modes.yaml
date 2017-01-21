@@ -1,0 +1,4 @@
+Home modes:
+  entities:
+    - input_boolean.electricity_is_cheap
+

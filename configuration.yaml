@@ -1,0 +1,110 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Prague
+  customize: !include_dir_merge_named customize
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+#sensor:
+#  platform: yr
+
+# Text to speech
+tts:
+  platform: google
+
+media_player:
+  - platform: kodi
+    host: pi3
+    port: 80
+  - platform: cast
+
+mqtt:
+  broker: !secret cloudmqtt_host
+  port:   !secret cloudmqtt_port
+  username: !secret cloudmqtt_user
+  password: !secret cloudmqtt_password
+  protocol: 3.1
+
+
+device_tracker:
+  - platform: ping
+    hosts:
+      lenka: lenkahtc
+      internet: www.google.com
+  - platform: snmp
+    host: 192.168.1.1
+    comunity: public
+    baseoid: 1.3.6.1.2.1.4.22.1.2
+  - platform: owntracks
+
+# Zones
+
+zone:
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    icon: mdi:home
+    radius: 50
+  - name: Work
+    latitude: !secret work_latitude
+    longitude: !secret work_longitude
+    icon: mdi:briefcase
+    radius: 250
+  - name: School
+    latitude: !secret school_latitude
+    longitude: !secret school_longitude
+    icon: mdi:school
+    radius: 80
+  - name: Kindergarten
+    latitude: !secret kindergarten_latitude
+    longitude: !secret kindergarten_longitude
+    icon: mdi:baby
+    radius: 50
+
+zeroconf:
+
+camera: !include_dir_merge_named camera
+sensor: !include_dir_merge_list sensor
+switch: !include_dir_merge_list switch
+script: !include_dir_merge_named script
+group: !include_dir_merge_named group
+automation: !include_dir_merge_list automation
+input_boolean: !include_dir_merge_named input_boolean
