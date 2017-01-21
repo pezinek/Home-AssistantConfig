@@ -1,4 +1,10 @@
 Environment:
   entities:
     - sun.sun
+    - sensor.pws_temp_c
+    - sensor.pws_feelslike_c
+    - sensor.pws_relative_humidity
+    - sensor.pws_wind_kph
+    - sensor.pws_wind_gust_kph
+    - sensor.pws_pressure_mb
 

@@ -1,0 +1,22 @@
+
+sensor.pws_temp_c:
+  friendly_name: 'Temperature'
+
+sensor.pws_feelslike_c:
+  friendly_name: 'Feels like'
+
+sensor.pws_weather:
+  friendly_name: 'Weather conditions'
+
+sensor.pws_relative_humidity:
+  friendly_name: 'Relative humidity'
+  icon: mdi:water-percent
+
+sensor.pws_wind_gust_kph:
+  friendly_name: 'Wind'
+  icon: mdi:weather-windy
+
+sensor.pws_pressure_mb:
+  friendly_name: 'Pressure'
+  icon: mdi:cloud
+

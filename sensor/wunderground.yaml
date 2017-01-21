@@ -1,0 +1,10 @@
+- platform: wunderground
+  api_key: !secret wu_api_key
+  pws_id: !secret wu_pws_id
+  monitored_conditions:
+    - temp_c
+    - feelslike_c
+    - relative_humidity
+    - wind_gust_kph
+    - pressure_mb
+
