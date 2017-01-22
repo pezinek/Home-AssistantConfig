@@ -1,5 +1,7 @@
 Environment:
   entities:
+    - sensor.date
+    - sensor.time
     - sun.sun
     - sensor.pws_temp_c
     - sensor.pws_feelslike_c
