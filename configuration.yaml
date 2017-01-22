@@ -68,6 +68,8 @@ device_tracker:
   - platform: ping
     hosts:
       lenka: lenkahtc
+      lenka_air: lenka-air
+      pi3_lan: pi3l
       internet: www.google.com
   - platform: snmp
     host: 192.168.1.1

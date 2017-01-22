@@ -1,0 +1,10 @@
+
+sensor.transmission_down_speed:
+  icon: mdi:download
+
+sensor.transmission_up_speed:
+  icon: mdi:upload
+
+sensor.transmission_status:
+  icon: mdi:traffic-light
+

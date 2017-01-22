@@ -1,0 +1,34 @@
+
+device_tracker.internet:
+  icon: mdi:access-point-network
+
+device_tracker.microtick:
+  icon: mdi:access-point-network
+
+device_tracker.printer_epson:
+  icon: mdi:printer
+
+device_tracker.phone_linksys:
+  icon: mdi:phone-voip
+
+device_tracker.phone_gigaset:
+  icon: mdi:phone-voip
+
+device_tracker.nas_mybook:
+  icon: mdi:harddisk
+
+device_tracker.chromecast:
+  icon: mdi:google-chrome
+
+device_tracker.iot:
+  icon: mdi:raspberrypi
+
+device_tracker.pi:
+  icon: mdi:raspberrypi
+
+device_tracker.pi3_lan:
+  icon: mdi:raspberrypi
+
+device_tracker.pi3_wifi:
+  icon: mdi:raspberrypi
+
