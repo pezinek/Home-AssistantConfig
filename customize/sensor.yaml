@@ -1,0 +1,7 @@
+
+sensor.living_room_temperature:
+  icon: mdi:thermometer
+
+sensor.living_room_pressure:
+  icon: mdi:cloud
+

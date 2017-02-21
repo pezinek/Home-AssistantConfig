@@ -32,3 +32,6 @@ device_tracker.pi3_lan:
 device_tracker.pi3_wifi:
   icon: mdi:raspberrypi
 
+device_tracker.jeetemp:
+  icon: mdi:thermometer
+

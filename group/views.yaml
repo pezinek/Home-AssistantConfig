@@ -2,7 +2,8 @@ default_view:
   name: Home
   view: yes
   entities:
-    - group.environment
+    - group.outside
+    - group.inside
     - group.home_modes
     - group.phones
     - group.media
@@ -26,6 +27,7 @@ Development:
     - group.all_switches
     - group.all_automations
     - group.all_scripts
+    - group.all_lights
 
 Neighbours:
   name: Kyselovi

@@ -42,6 +42,13 @@ logbook:
 # Track the sun
 sun:
 
+recorder:
+  purge_days: 7
+  include:
+    domains:
+      - sensor
+      - switch
+
 # Weather Prediction
 #sensor:
 #  platform: yr
@@ -59,8 +66,8 @@ media_player:
 mqtt:
   broker: !secret cloudmqtt_host
   port:   !secret cloudmqtt_port
-  username: !secret cloudmqtt_user
-  password: !secret cloudmqtt_password
+#  username: !secret cloudmqtt_user
+#  password: !secret cloudmqtt_password
   protocol: 3.1
 
 
@@ -71,6 +78,7 @@ device_tracker:
       lenka_air: lenka-air
       pi3_lan: pi3l
       internet: www.google.com
+      jeetemp: jeetemp
   - platform: snmp
     host: 192.168.1.1
     comunity: public
@@ -106,6 +114,7 @@ zeroconf:
 camera: !include_dir_merge_named camera
 sensor: !include_dir_merge_list sensor
 switch: !include_dir_merge_list switch
+light:  !include_dir_merge_list light
 script: !include_dir_merge_named script
 group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation

@@ -1,0 +1,12 @@
+- platform: rest
+  resource: http://jeetemp/
+  name: Living Room temperature
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: 'C'
+
+- platform: rest
+  resource: http://jeetemp/
+  name: Living Room pressure
+  value_template: '{{ value_json.pressure }}'
+  unit_of_measurement: 'Pa'
+
