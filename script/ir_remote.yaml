@@ -1,0 +1,106 @@
+#apple_play:
+#  sequence:
+#    - service: mqtt.publish
+#      data:
+#        topic: "homie/5ccf7fd38d01/infrared/code/set"
+#        payload: '{"frequency": 38, "raw": [9100,4600,600,650,600,1750,600,1750,600,1750,600,650,600,1750,600,1750,600,1750,600,1750,600,1750,600,1750,600,650,600,650,600,650,600,650,600,1800,600,650,600,650,600,1750,600,650,600,650,600,650,600,650,600,650,600,1750,600,1750,600,650,600,650,600,1750,600,1750,600,650,600,650,600]}'
+
+lr_amp_vol_up:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"frequency":38, "raw":[8950,4600,500,700,550,600,600,600,500,700,550,600,600,1750,550,600,600,600,500,1800,600,1750,550,1750,500,1800,600,1750,550,600,600,1750,550,1750,500,1800,600,1750,550,600,600,600,500,1800,600,600,500,700,550,600,600,600,500,700,550,1750,500,1800,600,600,500,1800,600,1750,550,1750,500]}'
+
+lr_amp_vol_down:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"frequency":38, "raw":[9000,4600,550,650,550,650,500,700,550,650,550,650,500,1800,550,650,500,700,550,1750,500,1800,550,1750,550,1750,500,1800,550,650,500,1800,550,1750,550,1750,500,1800,550,1750,550,650,550,1750,550,650,550,650,500,700,550,650,550,650,500,700,550,1750,500,700,550,1750,500,1800,550,1750,550]}'
+
+lr_amp_toggle:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"frequency":38, "raw":[8950,4600,500,700,550,600,600,600,500,700,550,600,600,1750,550,600,600,600,500,1800,600,1750,550,1750,500,1800,600,1750,550,600,550,1750,550,1750,500,700,550,600,600,1750,550,1750,500,1800,600,600,500,1800,600,600,500,1800,600,1750,550,600,600,600,500,700,550,1750,500,700,550,1750,500]}'
+
+lr_amp_on:
+  sequence:
+    - service: script.lr_amp_toggle
+    - delay:
+        milliseconds: 1200
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+    - service: script.lr_amp_vol_up
+
+lr_amp_input_aux:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"frequency":38, "raw":[9000,4600,550,650,550,650,550,650,550,650,550,650,550,1750,550,650,550,650,550,1750,550,1750,550,1750,550,1750,550,1750,550,650,550,1750,550,1750,550,650,550,650,550,650,550,650,550,650,550,650,550,1750,550,650,550,1750,550,1750,550,1750,550,1750,550,1750,550,1750,550,650,550,1750,550]}'
+
+lr_amp_input_ac3:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"frequency":38, "raw":[8950,4600,500,700,550,600,600,600,500,700,550,600,600,1750,550,600,600,600,500,1800,600,1750,550,1750,500,1800,600,1750,550,600,600,1750,550,1750,500,1800,600,600,500,700,550,600,600,600,500,700,550,1750,500,700,550,600,600,1750,550,1750,500,1800,600,950,150,750,550,1750,500,700,550,1750,500]}'
+
+tv_on:
+  sequence:
+    - service: mqtt.publish
+      data:
+        #press 0
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"name":"RC5: 0x0","frequency":38,"raw":[900,950,1800,950,900,950,900,950,900,950,900,950,900,950,900,950,900,950,900,950,900,950,900,950,900]}'
+    - delay:
+          seconds: 6
+    - service: mqtt.publish
+      data:
+        #switch to AV
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"name":"RC5: 0x38","frequency":38,"raw":[900,900,1800,900,900,900,900,900,900,900,900,900,900,1800,900,900,900,900,1800,900,900,900,900]}'
+
+tv_off:
+  sequence:
+    - service: mqtt.publish
+      data:
+        #press power
+        topic: "homie/5ccf7fd38d01/infrared/code/set"
+        payload: '{"frequency":38, "raw":[900,950,1800,900,900,900,900,900,900,900,900,900,900,900,900,900,900,1800,850,950,1800,900,900]}'
+
+#dreambox_toggle:
+#  sequence:
+#    - service: mqtt.publish
+#      data:
+#        topic: "homie/5ccf7fd38d01/infrared/code/set"
+#        payload: '{"frequency":38, "raw":[200,1100,200,2350,200,1000,200,2900,200,1400,200,1400,200,1000,200,2200,200,13850,200,1100,200,2750,200,850,200,1000,200,850,200,2900,200,850,200,850,200]}'
+#
+#tv_mode_on:
+#  sequence:
+#    - service: script.tv_on
+#    - service: script.dreambox_toggle
+#    - service: script.lr_amp_on
+#    - service: script.lr_amp_input_aux
+
