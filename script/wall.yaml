@@ -1,11 +1,92 @@
 wall:
   sequence:
+    - condition: template
+      value_template: >
+        {% if is_state('media_player.kodi', 'playing') %}
+          false
+        {% else %}
+          true
+        {% endif %}
+    - service: script.lr_amp_toggle
+    - delay:
+        milliseconds: 1200
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_input_aux
+    - delay:
+        milliseconds: 150
+
     - service: media_player.play_media
+      entity_id: media_player.kodi
       data:
-        media_content_id: "http://iot:8123/local/computer_magic.mp3" 
+        media_content_id: "http://iot:8123/local/computer_magic.mp3"
         media_content_type: audio/mp3
     - delay: 00:00:04
     - service: tts.google_say
+      entity_id: media_player.kodi
       data_template:
         message: "{{ message }}"
+    - delay: 00:01:00
+    - service: script.lr_amp_toggle
 
