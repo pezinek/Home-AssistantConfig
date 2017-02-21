@@ -1,5 +1,0 @@
-electricity_is_cheap:
-  name: "Cheap electricity"
-  icon: mdi:power-plug
-  initial: off
-

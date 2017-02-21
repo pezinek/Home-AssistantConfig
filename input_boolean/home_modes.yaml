@@ -1,0 +1,10 @@
+electricity_is_cheap:
+  name: "Cheap electricity"
+  icon: mdi:power-plug
+  initial: off
+
+speech_notifications:
+  name: "Speech Notifications"
+  icon: mdi:speaker-wireless
+  initial: on
+
