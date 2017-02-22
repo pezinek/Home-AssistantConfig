@@ -2,11 +2,11 @@
   resource: http://jeetemp/
   name: Living Room temperature
   value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: 'C'
+  unit_of_measurement: '°C'
 
 - platform: rest
   resource: http://jeetemp/
   name: Living Room pressure
-  value_template: '{{ value_json.pressure }}'
-  unit_of_measurement: 'Pa'
+  value_template: '{{ value_json.pressure | multiply(0.01) | round(0) }}'
+  unit_of_measurement: 'mb'
 
