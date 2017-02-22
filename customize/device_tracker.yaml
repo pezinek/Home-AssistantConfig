@@ -35,3 +35,6 @@ device_tracker.pi3_wifi:
 device_tracker.jeetemp:
   icon: mdi:thermometer
 
+device_tracker.ir_blaster:
+  icon: mdi:remote
+
