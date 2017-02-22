@@ -1,0 +1,15 @@
+- alias: 'Wakeup song'
+  trigger:
+    - platform: time
+      after: '6:42'
+  condition:
+    condition: time
+    weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri 
+  action:
+    - service: script.wakeup
+
