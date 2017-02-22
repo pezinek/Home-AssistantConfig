@@ -1,7 +1,7 @@
 Internet:
   entities:
     - device_tracker.internet
-    - device_tracker.microtick
+    - device_tracker.internet6
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping

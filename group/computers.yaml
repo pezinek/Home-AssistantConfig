@@ -7,6 +7,8 @@ Computers:
     - device_tracker.pez_macbook_wifi
     - device_tracker.pez_hex_lan
     - device_tracker.pez_hex_wifi
+    - device_tracker.peznb
+    - device_tracker.peznbw
 
 Gadgets:
   entities:

@@ -77,8 +77,10 @@ device_tracker:
       lenka: lenkahtc
       lenka_air: lenka-air
       pi3_lan: pi3l
-      internet: www.google.com
+      internet: ipv4.google.com
+      internet6: ipv6.google.com
       jeetemp: jeetemp
+      ir_blaster: ir-blaster
   - platform: snmp
     host: 192.168.1.1
     comunity: public

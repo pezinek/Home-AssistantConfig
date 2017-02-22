@@ -1,4 +1,7 @@
 
+device_tracker.internet6:
+  icon: mdi:access-point-network
+
 device_tracker.internet:
   icon: mdi:access-point-network
 
@@ -37,4 +40,43 @@ device_tracker.jeetemp:
 
 device_tracker.ir_blaster:
   icon: mdi:remote
+
+
+device_tracker.lenka:
+  icon: mdi:cellphone-android
+
+device_tracker.pez_workphone:
+  icon: mdi:cellphone-iphone
+
+device_tracker.pez_private:
+  icon: mdi:cellphone-iphone
+
+
+device_tracker.lenka_air:
+  icon: mdi:laptop-mac
+
+device_tracker.lenka_macbook_lan:
+  icon: mdi:laptop-mac
+
+device_tracker.lenka_macbook_wifi:
+  icon: mdi:laptop-mac
+
+device_tracker.pez_macbook_lan:
+  icon: mdi:laptop-mac
+
+device_tracker.pez_macbook_wifi:
+  icon: mdi:laptop-mac
+
+device_tracker.pez_hex_lan:
+  icon: mdi:laptop
+
+device_tracker.pez_hex_wifi:
+  icon: mdi:laptop
+
+device_tracker.peznb:
+  icon: mdi:laptop
+
+device_tracker.peznbw:
+  icon: mdi:laptop
+
 

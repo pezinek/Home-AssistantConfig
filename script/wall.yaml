@@ -78,10 +78,72 @@ wall:
     - service: script.lr_amp_vol_up
     - delay:
         milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
     - service: script.lr_amp_input_aux
     - delay:
         milliseconds: 150
-
     - service: media_player.play_media
       entity_id: media_player.kodi
       data:
