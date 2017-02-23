@@ -96,51 +96,7 @@ wall:
     - service: script.lr_amp_vol_up
     - delay:
         milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
-    - service: script.lr_amp_vol_up
-    - delay:
-        milliseconds: 150
+
     - service: script.lr_amp_51
     - delay:
         milliseconds: 150
@@ -152,7 +108,37 @@ wall:
       data:
         media_content_id: "http://iot:8123/local/computer_magic.mp3"
         media_content_type: audio/mp3
-    - delay: 00:00:04
+
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
+    - service: script.lr_amp_vol_up
+    - delay:
+        milliseconds: 150
     - service: tts.google_say
       entity_id: media_player.kodi
       data_template:
