@@ -23,5 +23,6 @@ Gadgets:
     - device_tracker.pi3_wifi
     - device_tracker.jeetemp
     - device_tracker.ir_blaster
+    - device_tracker.leds1
 
 
