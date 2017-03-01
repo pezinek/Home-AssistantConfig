@@ -121,3 +121,4 @@ script: !include_dir_merge_named script
 group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation
 input_boolean: !include_dir_merge_named input_boolean
+scene: !include_dir_merge_list scene

@@ -1,0 +1,11 @@
+- name: Cheap Electricity
+  entities: 
+      light.kitchen_counter:
+        state: 'on'
+        rgb_color: [255,122,10]
+
+- name: Expensive Electricity
+  entities:
+      light.kitchen_counter:
+        state: 'on'
+        rgb_color: [255,255,129]

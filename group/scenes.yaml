@@ -1,0 +1,5 @@
+Scenes:
+  entities:
+    - scene.cheap_electricity
+    - scene.expensive_electricity
+

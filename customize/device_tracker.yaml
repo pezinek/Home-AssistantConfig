@@ -79,4 +79,6 @@ device_tracker.peznb:
 device_tracker.peznbw:
   icon: mdi:laptop
 
+device_tracker.leds1:
+  icon: mdi:lightbulb
 

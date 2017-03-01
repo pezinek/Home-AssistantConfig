@@ -91,6 +91,8 @@
       entity_id: input_boolean.electricity_is_cheap
       to: 'on'
   action:
+    - service: scene.turn_on
+      entity_id: scene.cheap_electricity
     - service: script.wall
       data:
         message: 'The electricity is now cheaper.'
@@ -102,6 +104,8 @@
       entity_id: input_boolean.electricity_is_cheap
       to: 'off'
   action:
+    - service: scene.turn_on
+      entity_id: scene.expensive_electricity
     - service: script.wall
       data:
         message: 'The electricity is now more expensive.'

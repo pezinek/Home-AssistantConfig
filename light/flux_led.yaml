@@ -1,0 +1,6 @@
+- platform: flux_led
+  devices:
+    leds1:
+      name: "Kitchen Counter"
+      mode: 'rgb'
+
