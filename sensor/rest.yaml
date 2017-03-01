@@ -7,6 +7,6 @@
 - platform: rest
   resource: http://jeetemp/
   name: Living Room pressure
-  value_template: '{{ value_json.pressure | multiply(0.01) | round(0) }}'
+  value_template: '{{ value_json.pressure | multiply(0.01) | round(2) }}'
   unit_of_measurement: 'mb'
 
