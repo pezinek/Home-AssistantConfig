@@ -91,8 +91,6 @@
       entity_id: input_boolean.electricity_is_cheap
       to: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.cheap_electricity
     - service: script.wall
       data:
         message: 'The electricity is now cheaper.'
@@ -104,10 +102,53 @@
       entity_id: input_boolean.electricity_is_cheap
       to: 'off'
   action:
-    - service: scene.turn_on
-      entity_id: scene.expensive_electricity
     - service: script.wall
       data:
         message: 'The electricity is now more expensive.'
+
+- alias: 'Cheap electricity scene'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      to: 'on'
+    - platform: state
+      entity_id: light.kitchen_counter
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.electricity_is_cheap
+        state: 'on'
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.cheap_electricity
+
+- alias: 'Expensive electricity scene'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      to: 'off'
+    - platform: state
+      entity_id: light.kitchen_counter
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.electricity_is_cheap
+        state: 'off'
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.expensive_electricity
+
 
 

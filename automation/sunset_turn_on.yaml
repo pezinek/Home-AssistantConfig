@@ -1,0 +1,10 @@
+- alias: 'Sunset Stuff on'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:15:00"
+  action:
+    service: light.turn_on
+    data:
+      entity_id:
+        - group.kitchen

@@ -3,4 +3,7 @@
     leds1:
       name: "Kitchen Counter"
       mode: 'rgb'
+    leds2:
+      name: "Flux LED controller 2"
+      mode: 'rgb'
 

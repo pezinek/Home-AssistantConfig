@@ -4,6 +4,7 @@ default_view:
   entities:
     - group.outside
     - group.inside
+    - group.kitchen
     - group.home_modes
     - group.phones
     - group.media
