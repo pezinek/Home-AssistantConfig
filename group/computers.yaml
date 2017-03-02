@@ -24,5 +24,6 @@ Gadgets:
     - device_tracker.jeetemp
     - device_tracker.ir_blaster
     - device_tracker.leds1
+    - device_tracker.leds2
 
 

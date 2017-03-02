@@ -82,6 +82,7 @@ device_tracker:
       jeetemp: jeetemp
       ir_blaster: ir-blaster
       leds1: leds1
+      leds2: leds2
   - platform: snmp
     host: 192.168.1.1
     comunity: public

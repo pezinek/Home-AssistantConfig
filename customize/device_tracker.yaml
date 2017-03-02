@@ -82,3 +82,6 @@ device_tracker.peznbw:
 device_tracker.leds1:
   icon: mdi:lightbulb
 
+device_tracker.leds2:
+  icon: mdi:lightbulb
+
