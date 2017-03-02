@@ -5,6 +5,5 @@
     - temp_c
     - feelslike_c
     - relative_humidity
-    - wind_gust_kph
     - pressure_mb
 
