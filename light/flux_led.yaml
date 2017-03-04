@@ -1,9 +1,9 @@
 - platform: flux_led
   devices:
-    leds1:
+    leds2:
       name: "Kitchen Counter"
       mode: 'rgb'
-    leds2:
-      name: "Flux LED controller 2"
+    leds1:
+      name: "Flux LED controller 1"
       mode: 'rgb'
 
