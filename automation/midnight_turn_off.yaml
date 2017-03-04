@@ -1,0 +1,9 @@
+- alias: 'Lights off after midnight'
+  trigger:
+    - platform: time
+      after: '23:59:58'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.kitchen
+

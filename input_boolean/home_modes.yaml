@@ -8,3 +8,8 @@ speech_notifications:
   icon: mdi:speaker-wireless
   initial: on
 
+bed_time:
+  name: "Bed Time"
+  icon: mdi:sleep
+  initial: off
+
