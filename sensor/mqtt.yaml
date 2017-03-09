@@ -3,3 +3,8 @@
   name: WeeMos D1 mini - WiFi signal 
   unit_of_measurement: '%'
 
+- platform: mqtt
+  state_topic: homie/5ccf7fd38d01/infrared/code
+  name: ir_code
+  value_template: '{{ value_json.name }}'
+
