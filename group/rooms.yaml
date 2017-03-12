@@ -1,6 +1,7 @@
 kitchen:
   name: Kitchen
   entities:
+    - sensor.kitchen_luxmeter
     - light.kitchen_counter
 
 

@@ -5,3 +5,11 @@ sensor.living_room_temperature:
 sensor.living_room_pressure:
   icon: mdi:cloud
 
+sensor.kitchen_luxmeter:
+  friendly_name: 'Light intensity (kitchen counter)'
+  icon: mdi:theme-light-dark
+
+sensor.kitchen_pir:
+  friendly_name: 'Motion detector (kitchen counter)'
+  icon: mdi:eye-outline
+
