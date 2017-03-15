@@ -9,6 +9,11 @@
   value_template: '{{ value_json.name }}'
 
 - platform: mqtt
+  state_topic: homie/a020a61590a1/$stats/signal
+  name: kitchen_pir_wifi_signal
+  unit_of_measurement: '%'
+
+- platform: mqtt
   state_topic: homie/a020a61590a1/pir/motion
   name: kitchen_pir
   

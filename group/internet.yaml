@@ -10,4 +10,5 @@ Internet:
     - sensor.transmission_status
     - switch.transmission_turtle_mode
     - sensor.weemos_d1_mini__wifi_signal
+    - sensor.kitchen_pir_wifi_signal
 
