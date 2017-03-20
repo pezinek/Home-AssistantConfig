@@ -1,4 +1,5 @@
 - alias: 'Wakeup song'
+  initial_state: False
   trigger:
     - platform: time
       after: '6:42'
