@@ -1,5 +1,11 @@
 - platform: flux_led
   devices:
+    leds4:
+      name: "Livingroom Moodlight"
+      mode: 'rgb'
+    leds3:
+      name: "Kitchen Moodlight"
+      mode: 'rgb'
     leds2:
       name: "Kitchen Counter"
       mode: 'rgb'

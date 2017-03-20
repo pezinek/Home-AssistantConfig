@@ -1,8 +1,13 @@
 kitchen:
   name: Kitchen
   entities:
-    - sensor.kitchen_luxmeter
     - light.kitchen_counter
+    - light.kitchen_moodlight
+    - sensor.kitchen_luxmeter
+    - input_slider.kitchen_brightness
 
-
+livingroom:
+  name: Living Room
+  entities:
+    - light.livingroom_moodlight
 

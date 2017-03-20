@@ -7,7 +7,7 @@
   condition:
       condition: numeric_state 
       entity_id: sensor.kitchen_luxmeter 
-      below: '50'
+      below: '15'
   action:
     - service: light.turn_on
       entity_id: group.kitchen
@@ -22,3 +22,31 @@
     - service: light.turn_off
       entity_id: group.kitchen
 
+
+- alias: 'Livingroom lights on when motion'
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_pir
+    from: 'NO'
+    state: 'YES'
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_time
+    state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: group.livingroom
+
+- alias: 'Livingroom lights when no motion'
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_pir
+    state: 'NO'
+    for: '00:01:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_time
+    state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: group.livingroom
