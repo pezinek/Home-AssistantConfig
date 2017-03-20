@@ -3,9 +3,13 @@
       light.kitchen_counter:
         state: 'on'
         rgb_color: [255,122,10]
+      light.kitchen_pir_led:
+        state: 'on'
 
 - name: Expensive Electricity
   entities:
       light.kitchen_counter:
         state: 'on'
         rgb_color: [255,255,129]
+      light.kitchen_pir_led:
+        state: 'off'
