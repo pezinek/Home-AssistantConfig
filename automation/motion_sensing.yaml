@@ -37,12 +37,16 @@
     - service: light.turn_on
       entity_id: group.livingroom
 
-- alias: 'Livingroom lights when no motion'
+- alias: 'Livingroom lights off when no motion'
   trigger:
-    platform: state
-    entity_id: sensor.kitchen_pir
-    state: 'NO'
-    for: '00:01:00'
+    - platform: state
+      entity_id: sensor.kitchen_pir
+      state: 'NO'
+      for: '00:01:00'
+    - platform: state
+      entity_id: input_boolean.bed_time
+      from: 'off'
+      state: 'on'
   condition:
     condition: state
     entity_id: input_boolean.bed_time
