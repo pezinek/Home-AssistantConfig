@@ -1,0 +1,11 @@
+lighting_mode:
+  name: Light Mode
+  options: 
+    - Warm
+    - Cold
+    - Party
+    - Relax
+    - Night
+  initial: Warm
+  icon: mdi:traffic-light
+

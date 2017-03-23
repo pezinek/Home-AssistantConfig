@@ -3,4 +3,5 @@ Home modes:
     - input_boolean.electricity_is_cheap
     - input_boolean.speech_notifications
     - input_boolean.bed_time
+    - input_select.lighting_mode
 
