@@ -21,3 +21,7 @@ sensor.kitchen_pir:
   friendly_name: 'Motion detector (kitchen counter)'
   icon: mdi:eye-outline
 
+sensor.ir_code:
+  friendly_name: 'IR Blaster (code)'
+  icon: mdi:remote
+
