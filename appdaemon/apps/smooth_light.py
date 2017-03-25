@@ -27,7 +27,6 @@ import appdaemon.appapi as appapi
 # TODO: allow to change colors faster than once per second
 # 
  
-
 class RGBColor(object):
     def __init__(self, r=0, g=0, b=0):
         self.r = self.g = self.b = float(0)
