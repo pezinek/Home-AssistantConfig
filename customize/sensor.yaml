@@ -18,7 +18,7 @@ sensor.kitchen_luxmeter:
   icon: mdi:theme-light-dark
 
 sensor.kitchen_pir:
-  friendly_name: 'Motion detector (kitchen counter)'
+  friendly_name: 'Motion (kitchen counter)'
   icon: mdi:eye-outline
 
 sensor.ir_code:
