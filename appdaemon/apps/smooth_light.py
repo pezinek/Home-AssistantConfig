@@ -1,4 +1,5 @@
 import appdaemon.appapi as appapi
+from time import sleep
 
 #
 # SmoothLight
@@ -81,7 +82,7 @@ class SmoothLight(appapi.AppDaemon):
   def initialize(self):
      self.cur_color = RGBColor(0,0,0)
      self.desired_color = None
-     self.ammount = 6
+     self.ammount = 3
      self.period = 1
 
      self.listen_state(self.light_off, self.args['light'], new="off")
@@ -120,8 +121,11 @@ class SmoothLight(appapi.AppDaemon):
         self.desired_color=RGBColor().update(data['rgb_color'])
         self.log("New desired color: %s" % self.desired_color)
         try:
-            self.ammount = abs(self.desired_color - self.cur_color)/data['time']
-            self.log("New ammount: %s" % self.ammount)  
+            #self.ammount = abs(self.desired_color - self.cur_color)/data['time']
+            #self.log("New ammount: %s" % self.ammount)  
+            steps_required = abs(self.desired_color - self.cur_color)/self.ammount
+            self.period = data['time'] / steps_required 
+            self.log("New period: %s sec" % self.period)  
         except KeyError:
             pass
 
@@ -131,7 +135,8 @@ class SmoothLight(appapi.AppDaemon):
 
   def update(self, kwargs):
 
-     if self.transition_in_progress():
+     self.log("Starting transition to %s" % self.desired_color)
+     while self.transition_in_progress():
          #self.log("Cur color: %s" % self.cur_color)
          new_color = self.cur_color.transition(self.ammount, self.desired_color, self)
          if abs(new_color) == 0:
@@ -142,7 +147,9 @@ class SmoothLight(appapi.AppDaemon):
             self.turn_on(self.args['light'], rgb_color=new_color.as_list())
 
          self.cur_color = new_color
-         self.run_in(self.update, self.period)
-     else:
-         self.stop_transition()
+         #self.run_in(self.update, self.period)
+         sleep(self.period)
+
+     self.log("Transition to %s finished." % self.desired_color)
+     self.stop_transition()
 
