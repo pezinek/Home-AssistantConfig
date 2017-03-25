@@ -28,7 +28,9 @@
         entity_id: light.kitchen_counter
         state: 'on'
   action:
-    - service: scene.turn_on
-      entity_id: scene.night_lights
+     - service: light.turn_on
+       data:
+         entity_id: light.kitchen_counter
+         rgb_color: [10,0,0]
 
 

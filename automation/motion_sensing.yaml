@@ -1,4 +1,4 @@
-- alias: 'Kitchen lights on when motion'
+- alias: 'Kitchen counter on when motion'
   trigger:
     platform: state
     entity_id: sensor.kitchen_pir
@@ -10,9 +10,9 @@
       below: '15'
   action:
     - service: light.turn_on
-      entity_id: group.kitchen
+      entity_id: light.kitchen_counter
 
-- alias: 'Kitchen light off when no motion'
+- alias: 'Kitchen counter off when no motion'
   trigger:
     platform: state
     entity_id: sensor.kitchen_pir
@@ -20,7 +20,31 @@
     for: '00:01:00'
   action:
     - service: light.turn_off
-      entity_id: group.kitchen
+      entity_id: light.kitchen_counter
+
+
+- alias: 'Kitchen moodlight on when motion'
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_pir
+    from: 'NO'
+    state: 'YES'
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_time
+    state: 'on'
+  action:
+    - service: script.transition_to_dark_red
+
+- alias: 'Kitchen moodlight off when no motion'
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_pir
+    state: 'NO'
+    for: '00:01:05'
+  action:
+    - service: script.transition_to_black
+
 
 
 - alias: 'Livingroom lights on when motion'
@@ -35,14 +59,16 @@
     state: 'on'
   action:
     - service: light.turn_on
-      entity_id: group.livingroom
+      data:
+        entity_id: group.livingroom
+        rgb_color: [5,0,0]
 
 - alias: 'Livingroom lights off when no motion'
   trigger:
     - platform: state
       entity_id: sensor.kitchen_pir
       state: 'NO'
-      for: '00:01:00'
+      for: '00:01:10'
     - platform: state
       entity_id: input_boolean.bed_time
       from: 'off'

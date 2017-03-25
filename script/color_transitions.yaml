@@ -1,0 +1,16 @@
+transition_to_black:
+  sequence:
+  - event: desired_color
+    event_data:
+      rgb_color: [0, 0, 0]
+      time: 10
+      entity_id: light.kitchen_moodlight
+
+transition_to_dark_red:
+  sequence:
+  - event: desired_color
+    event_data:
+      rgb_color: [10, 0, 0]
+      time: 10
+      entity_id: light.kitchen_moodlight
+

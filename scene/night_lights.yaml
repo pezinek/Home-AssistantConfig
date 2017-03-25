@@ -3,10 +3,4 @@
       light.kitchen_counter:
         state: 'on'
         rgb_color: [10,0,0]
-      light.kitchen_moodlight:
-        state: 'on'
-        rgb_color: [20,0,0]
-      light.livingroom_moodlight:
-        state: 'on'
-        rgb_color: [5,0,0]
 
