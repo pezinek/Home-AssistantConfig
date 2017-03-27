@@ -116,6 +116,7 @@ zone:
 zeroconf:
 
 camera: !include_dir_merge_named camera
+binary_sensor: !include_dir_merge_list binary_sensor
 sensor: !include_dir_merge_list sensor
 switch: !include_dir_merge_list switch
 light:  !include_dir_merge_list light

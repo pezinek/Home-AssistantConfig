@@ -1,9 +1,9 @@
 - alias: 'Kitchen counter on when motion'
   trigger:
     platform: state
-    entity_id: sensor.kitchen_pir
-    from: 'NO'
-    state: 'YES' 
+    entity_id: binary_sensor.kitchen_pir
+    from: 'off'
+    state: 'on' 
   condition:
       condition: numeric_state 
       entity_id: sensor.kitchen_luxmeter 
@@ -15,8 +15,8 @@
 - alias: 'Kitchen counter off when no motion'
   trigger:
     platform: state
-    entity_id: sensor.kitchen_pir
-    state: 'NO'
+    entity_id: binary_sensor.kitchen_pir
+    state: 'off'
     for: '00:01:00'
   action:
     - service: light.turn_off
@@ -26,9 +26,9 @@
 - alias: 'Kitchen moodlight on when motion'
   trigger:
     platform: state
-    entity_id: sensor.kitchen_pir
-    from: 'NO'
-    state: 'YES'
+    entity_id: binary_sensor.kitchen_pir
+    from: 'off'
+    state: 'on'
   condition:
     condition: state
     entity_id: input_boolean.bed_time
@@ -39,9 +39,13 @@
 - alias: 'Kitchen moodlight off when no motion'
   trigger:
     platform: state
-    entity_id: sensor.kitchen_pir
-    state: 'NO'
+    entity_id: binary_sensor.kitchen_pir
+    state: 'off'
     for: '00:01:05'
+  condition:
+    condition: state
+    entity_id: input_boolean.bed_time
+    state: 'on'
   action:
     - service: script.transition_to_black
 
@@ -50,9 +54,9 @@
 - alias: 'Livingroom lights on when motion'
   trigger:
     platform: state
-    entity_id: sensor.kitchen_pir
-    from: 'NO'
-    state: 'YES'
+    entity_id: binary_sensor.kitchen_pir
+    from: 'off'
+    state: 'on'
   condition:
     condition: state
     entity_id: input_boolean.bed_time
@@ -66,8 +70,8 @@
 - alias: 'Livingroom lights off when no motion'
   trigger:
     - platform: state
-      entity_id: sensor.kitchen_pir
-      state: 'NO'
+      entity_id: binary_sensor.kitchen_pir
+      state: 'off'
       for: '00:01:10'
     - platform: state
       entity_id: input_boolean.bed_time

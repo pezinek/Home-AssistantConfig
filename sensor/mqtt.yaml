@@ -14,10 +14,6 @@
   unit_of_measurement: '%'
 
 - platform: mqtt
-  state_topic: homie/a020a61590a1/pir/motion
-  name: kitchen_pir
-  
-- platform: mqtt
   state_topic: homie/a020a61590a1/photocell/lux
   name: kitchen_luxmeter
   unit_of_measurement: 'lx'
