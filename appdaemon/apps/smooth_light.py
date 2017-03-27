@@ -12,7 +12,7 @@ from time import sleep
 # Example event:
 #
 # Event Type: desired_color
-# Data: {"rgb_color": [255,128,0]}
+# Data: {"rgb_color": [255,128,0], "time":5}
 #
 # Homeassistant script example:
 #
@@ -117,6 +117,7 @@ class SmoothLight(appapi.AppDaemon):
         pass
 
   def controll_event(self, event_name, data, kwargs):
+     was_in_progress = self.transition_in_progress()
      try:
         self.desired_color=RGBColor().update(data['rgb_color'])
         self.log("New desired color: %s" % self.desired_color)
@@ -124,32 +125,37 @@ class SmoothLight(appapi.AppDaemon):
             #self.ammount = abs(self.desired_color - self.cur_color)/data['time']
             #self.log("New ammount: %s" % self.ammount)  
             steps_required = abs(self.desired_color - self.cur_color)/self.ammount
-            self.period = data['time'] / steps_required 
-            self.log("New period: %s sec" % self.period)  
+            if steps_required > 0:
+                self.period = data['time'] / steps_required 
+                self.log("New period: %s sec" % self.period)  
+            else:
+                self.stop_transition()
         except KeyError:
             pass
 
-        self.update({})
+        if not was_in_progress:
+            self.update({})
      except KeyError:
         pass
 
   def update(self, kwargs):
 
-     self.log("Starting transition to %s" % self.desired_color)
-     while self.transition_in_progress():
-         #self.log("Cur color: %s" % self.cur_color)
-         new_color = self.cur_color.transition(self.ammount, self.desired_color, self)
-         if abs(new_color) == 0:
-            self.log("Light off")
-            self.turn_off(self.args['light'])
-         else:
-            self.log("Color set: %s" % new_color)
-            self.turn_on(self.args['light'], rgb_color=new_color.as_list())
+     if self.transition_in_progress():
+         self.log("Starting transition to %s" % self.desired_color)
+         while self.transition_in_progress():
+             #self.log("Cur color: %s" % self.cur_color)
+             new_color = self.cur_color.transition(self.ammount, self.desired_color, self)
+             if abs(new_color) == 0:
+                self.log("Light off")
+                self.turn_off(self.args['light'])
+             else:
+                self.log("Color set: %s" % new_color)
+                self.turn_on(self.args['light'], rgb_color=new_color.as_list())
+    
+             self.cur_color = new_color
+             #self.run_in(self.update, self.period)
+             sleep(self.period)
 
-         self.cur_color = new_color
-         #self.run_in(self.update, self.period)
-         sleep(self.period)
-
-     self.log("Transition to %s finished." % self.desired_color)
-     self.stop_transition()
+         self.log("Transition to %s finished." % self.desired_color)
+         self.stop_transition()
 
