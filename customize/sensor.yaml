@@ -17,11 +17,27 @@ sensor.kitchen_luxmeter:
   friendly_name: 'Light intensity (kitchen counter)'
   icon: mdi:theme-light-dark
 
-sensor.kitchen_pir:
+binary_sensor.kitchen_pir:
   friendly_name: 'Motion (kitchen counter)'
   icon: mdi:eye-outline
 
 sensor.ir_code:
   friendly_name: 'IR Blaster (code)'
   icon: mdi:remote
+
+binary_sensor.ir_blaster_heartbeat:
+  friendly_name: 'IR Blaster'
+  icon: mdi:heart-pulse
+
+binary_sensor.kitchen_pir_heartbeat:
+  friendly_name: 'Kitchen PIR'
+  icon: mdi:heart-pulse
+
+binary_sensor.sonoff1_heartbeat:
+  friendly_name: 'Sonoff 1'
+  icon: mdi:heart-pulse
+
+binary_sensor.sonoff2_heartbeat:
+  friendly_name: 'Sonoff 2'
+  icon: mdi:heart-pulse
 

@@ -85,3 +85,16 @@ device_tracker.leds1:
 device_tracker.leds2:
   icon: mdi:lightbulb
 
+device_tracker.leds3:
+  icon: mdi:lightbulb
+
+device_tracker.leds4:
+  icon: mdi:lightbulb
+
+device_tracker.sonoff1:
+  icon: mdi:power-socket
+
+device_tracker.sonoff2:
+  icon: mdi:power-socket
+
+

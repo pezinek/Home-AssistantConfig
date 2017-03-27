@@ -25,5 +25,14 @@ Gadgets:
     - device_tracker.ir_blaster
     - device_tracker.leds1
     - device_tracker.leds2
+    - device_tracker.leds3
+    - device_tracker.leds4
+    - device_tracker.sonoff1
+    - device_tracker.sonoff2
 
-
+Heartbeats:
+  entities:
+    - binary_sensor.ir_blaster_heartbeat
+    - binary_sensor.kitchen_pir_heartbeat
+    - binary_sensor.sonoff1_heartbeat
+    - binary_sensor.sonoff2_heartbeat

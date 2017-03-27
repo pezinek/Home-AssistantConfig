@@ -1,0 +1,9 @@
+
+switch.sonoff1:
+  friendly_name: 'Sonoff 1'
+  icon: mdi:power-socket
+
+switch.sonoff2:
+  friendly_name: 'Sonoff 2'
+  icon: mdi:power-socket
+

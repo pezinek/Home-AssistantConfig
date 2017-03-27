@@ -4,11 +4,13 @@ kitchen:
     - light.kitchen_counter
     - light.kitchen_moodlight
     - sensor.kitchen_luxmeter
-    - sensor.kitchen_pir
+    - binary_sensor.kitchen_pir
 
 livingroom:
   name: Living Room
   entities:
     - light.livingroom_moodlight
+    - switch.sonoff1
+    - switch.sonoff2
     - sensor.ir_code
 

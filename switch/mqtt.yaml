@@ -1,0 +1,12 @@
+- platform: mqtt
+  name: sonoff1
+  state_topic: "stat/sonoff1/POWER"
+  command_topic: "cmnd/sonoff1/power"
+  retain: true
+
+- platform: mqtt
+  name: sonoff2
+  state_topic: "stat/sonoff2/POWER"
+  command_topic: "cmnd/sonoff2/power"
+  retain: true
+
