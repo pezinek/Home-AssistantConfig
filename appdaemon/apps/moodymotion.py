@@ -28,7 +28,7 @@ class MoodyMotionTrigger(appapi.AppDaemon):
 
   def initialize(self):
 
-     self.log("Init started")
+     #self.log("Init started")
 
      self.on_handle = None
      self.off_handle = None
@@ -45,10 +45,7 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      self.mode_changed(self.args['mode_selector'], None, mode, mode, {})
      self.listen_state(self.mode_changed, self.args['mode_selector'])
 
-
-
-
-     self.log("Init complete: (modes: {})".format(self.modes))
+     #self.log("Init complete: (modes: {})".format(self.modes))
 
   def _load_modes(self):
      self.modes = {}
@@ -83,10 +80,8 @@ class MoodyMotionTrigger(appapi.AppDaemon):
         self.off_handle = None
 
      if self.is_mode_supported():
-        cfg = self.modes[self.mode]
         self.on_handle = self.listen_state(self.motion_on, 
-          self.args['motion_detector'], 
-          new="on", color=cfg.color, luminosity=cfg.luminosity)
+          self.args['motion_detector'], new="on", old="off")
      self.update()
 
   def luminosity_changed(self, entity, attribute, old, new, kwargs):
