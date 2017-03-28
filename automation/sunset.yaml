@@ -6,7 +6,7 @@
   action:
     - service: script.wall
       data:
-        message: 'in 1 minute there is going to be sunrise. Enjoy the aurora.'
+        message: 'Za jednu minutu nastane východ slunce. A možná, že budou i červánky.'
 
 - alias: 'Sunset notification'
   trigger:
@@ -16,5 +16,5 @@
   action:
     - service: script.wall
       data:
-        message: 'in 5 minutes there is going to be sunset. Enjoy the aurora.'
+        message: 'Za 5 minut zapadne slunce. Nejvyšší čas udělat nějaké fotky s pěkným světlem'
 

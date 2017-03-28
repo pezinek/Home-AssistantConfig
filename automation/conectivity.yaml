@@ -7,7 +7,7 @@
   action:
     - service: script.wall
       data:
-        message: 'Internet connectivity has been lost, feel free to report the issue to Interconnect hotline 2 2 2  2 6 2 3 3 3 .'
+        message: 'Tento dům právě přišel o internetovou konektivitu. Pokud je to závada, je třeba jí nahlásit firmě Interconnect na telefonním čísle 2 2 2  2 6 2  3 3 3 .' 
 
 - alias: 'House is online'
   trigger:
@@ -18,6 +18,6 @@
   action:
     - service: script.wall
       data:
-        message: 'Internet connectivity has been restored'
+        message: 'Internetová konektivita je obnovena'
 
 

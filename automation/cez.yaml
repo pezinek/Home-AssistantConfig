@@ -86,6 +86,7 @@
 
 
 - alias: 'Cheap electricity notification'
+  initial_state: False
   trigger:
     - platform: state
       entity_id: input_boolean.electricity_is_cheap
@@ -93,10 +94,11 @@
   action:
     - service: script.wall
       data:
-        message: 'The electricity is now cheaper.'
+        message: 'Právě byla aktivována levnější sazba za elektřinu. Jedna kilowatthodina teď stojí zhruba jednu korunu a dvacet dva haléřů.'
 
 
 - alias: 'Expensive electricity notification'
+  initial_state: False
   trigger:
     - platform: state
       entity_id: input_boolean.electricity_is_cheap
@@ -104,5 +106,5 @@
   action:
     - service: script.wall
       data:
-        message: 'The electricity is now more expensive.'
+        message: 'Právě byla aktivována dražší sazba za elektřinu. Jedna kilowatthodina teď stojí zhruba jednu korunu a šedesát haléřů.'
 

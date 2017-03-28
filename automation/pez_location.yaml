@@ -7,7 +7,7 @@
   action:
     - service: script.wall
       data:
-        message: 'Petr just arrived to the office'
+        message: 'Hlášení o poloze. Petr právě dorazil do kanceláře.'
 
 - alias: 'PeZ left the Office'
   trigger:
@@ -18,7 +18,7 @@
   action:
     - service: script.wall
       data:
-        message: 'Petr just left the office'
+        message: 'Hlášení o poloze. Petr právě odjel ze své kanceláře.'
 
 - alias: 'PeZ arrived to the School'
   trigger:
@@ -29,7 +29,7 @@
   action:
     - service: script.wall
       data:
-        message: 'Petr just arrived to the School'
+        message: 'Hlášení o poloze. Petr právě dorazil do školy.'
 
 - alias: 'PeZ left the School'
   trigger:
@@ -40,29 +40,5 @@
   action:
     - service: script.wall
       data:
-        message: 'Petr just left the School'
-
-- alias: 'PeZ arrived to the Kindergarten'
-  initial_state: False
-  trigger:
-    platform: zone
-    entity_id: device_tracker.pez_workphone
-    zone: zone.kindergarten
-    event: enter
-  action:
-    - service: script.wall
-      data:
-        message: 'Petr just arrived to the kindergarten'
-
-- alias: 'PeZ left the Kindergarten'
-  initial_state: False
-  trigger:
-    platform: zone
-    entity_id: device_tracker.pez_workphone
-    zone: zone.kindergarten
-    event: leave
-  action:
-    - service: script.wall
-      data:
-        message: 'Petr just left the kindergarten'
+        message: 'Hlášení o poloze. Petr právě opustil školu.'
 
