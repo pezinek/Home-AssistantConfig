@@ -101,8 +101,8 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      self.turn_off(self.args['light'])
 
   def update(self):
-     self.log("update (mode: {}, luminosity: {}, off: {}, cfg: {})".format(
-              self.mode, self.luminosity, self.off_handle, self.get_mode_cfg()))
+     #self.log("update (mode: {}, luminosity: {}, off: {}, cfg: {})".format(
+     #         self.mode, self.luminosity, self.off_handle, self.get_mode_cfg()))
      if self.is_mode_supported():
        cfg = self.get_mode_cfg()
        if self.luminosity < cfg.luminosity:
