@@ -1,6 +1,0 @@
-- name: Night Lights
-  entities: 
-      light.kitchen_counter:
-        state: 'on'
-        rgb_color: [10,0,0]
-

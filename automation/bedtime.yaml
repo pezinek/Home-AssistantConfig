@@ -9,28 +9,3 @@
         entity_id: input_boolean.bed_time
 
 
-- alias: 'Night lights'
-  trigger:
-    - platform: state
-      entity_id: input_boolean.bed_time
-      to: 'on'
-    - platform: state
-      entity_id: light.kitchen_counter
-      from: 'off'
-      to: 'on'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.bed_time
-        state: 'on'
-      - condition: state
-        entity_id: light.kitchen_counter
-        state: 'on'
-  action:
-     - service: light.turn_on
-       data:
-         entity_id: light.kitchen_counter
-         rgb_color: [10,0,0]
-
-
