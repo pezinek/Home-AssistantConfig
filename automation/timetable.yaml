@@ -1,0 +1,102 @@
+- alias: 'School day: morning routine'
+  trigger:
+    - platform: time
+      after: '7:00:00'
+  condition:
+    condition: time
+    weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri 
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.sonoff2
+    # TODO: moodlights still managed in the native app
+    - service: script.wall
+      data:
+        message: 'Hola hola ! Škola volá. Ranní ptáče dál doskáče. Vstávejte lenoši.'
+    #- delay: 00:02:00
+    - delay: 00:30:00
+    #7:30
+    - service: script.wall
+      data:
+        message: 'Dětičky naše zlaté, je čas na snídani. Kdo ještě nemá vyčištěné zuby, nebo je dokonce ještě v pyžamu, tak bude nejspíš o hladu jestli si honem nepospíší.'
+    #- delay: 00:02:00
+    - delay: 00:15:00
+    #7:45
+    - service: script.wall
+      data:
+        message: 'Doufám že vám snídaně chutnala, ale už je čas dojíst a začít se chystat k odchodu. Péťa se nezapomene vyčůrat a zkontroluje, že má svačinu, pití, a že má připraveny všechny věci do školy. Andrejka se nezapomene učesat, a oba nezapomeňte dopít čaj !'
+    #- delay: 00:02:00
+    - delay: 00:05:00
+    #7:50
+    - service: script.wall
+    - delay: 00:00:40
+    - service: tts.google_say
+      entity_id: media_player.kodi
+      data_template:
+        message: "Je čas jít se oblékat, venku je {{states('sensor.pws_feelslike_c')}} stupňů celsia, tak se podle toho oblečte."
+        cache: false
+    #- delay: 00:02:00
+    - delay: 00:05:00
+    - service: script.wall
+      data:
+        message: 'Ahoj, to sem zase já. Už je čas vyrazit do školy. Přeji vám krásný den !  A budu tu na vás čekat až se vrátíte ! Tak zatím ! ... A vykročte pravou !'
+    #- delay: 00:02:00
+    - delay: 00:04:20
+    #8:00
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.sonoff2
+
+    
+- alias: 'School day: evening routine'
+  trigger:
+    - platform: time
+      after: '19:00:00'
+  condition:
+    condition: time
+    weekday:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.sonoff2
+    - service: light.turn_on
+      data:
+        rgb_color: [35,0,1]
+        entity_id: 
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+    - service: script.wall
+      data:
+        message: 'Nerada ruším, ale přiblížila se sedmá hodina a proto zahajuji přípravu na večerku. Dokončete svojí práci a začněte si po sobě uklízet hračky. Péťa si nezapomene připravit věci do školy, a zkontroluje že má hotové všechny úkoly. Tak šup šup, máte na to půl hodiny.'
+    #- delay: 00:02:00
+    - delay: 00:30:00
+    - service: script.wall
+      data:
+        message: 'Je právě půl osmé a vyhlašuji proto, nástup na večerní hygienu. Běžte se umýt, vyčistěte si zuby a převlékněte se do pyžama. Máte na to 15 minut.'
+    #- delay: 00:02:00
+    - delay: 00:15:00
+    - service: script.wall
+      data:
+        message: 'Je právě tři čtvrtě na 8 a zahajuji nástup na večerní pohádku, pokud ale do pěti minut nebudete ležet v posteli, žádná pohádka se už nestihne. Ale jinak vás mám moc ráda, a přeji příjemné zážitky při čtení na dobrou noc.'
+    #- delay: 00:02:00
+    - delay: 00:15:00
+    - service: script.wall
+      data:
+        message: 'pip, pip, pip, pip, pííííííííííííííííp. Časové znamení ohlásilo 8 hodin, a pro osoby mladistvé se vyhlašuje večerka. Přeji vám děti, krásné sny a v noci nad vámi budu bdít všemi svými senzory. Dobrou noc !'
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
