@@ -13,6 +13,10 @@ import appdaemon.appapi as appapi
 #                    we are above this value
 # <mode>_off_timeout: treshold after which light is turned off if no motion
 # <mode>_color: Color to use when turning the light on
+#
+# TODO: listen to light state changes and acc accordingly if humans
+#       interfere manually, e.g. if someone turns on/off the light 
+#       manually, cancell the turn off timer
 
 class ModeSettings(object):
   def __init__(self, luminosity, off_timeout, color):

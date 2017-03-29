@@ -9,3 +9,19 @@
         entity_id: input_boolean.bed_time
 
 
+- alias: 'Stuff off after Bed Time'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bed_time
+      from: 'off'
+      state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - switch.sonoff1
+          - switch.sonoff2
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+      
