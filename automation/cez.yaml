@@ -108,3 +108,37 @@
       data:
         message: 'Právě byla aktivována dražší sazba za elektřinu. Jedna kilowatthodina teď stojí zhruba jednu korunu a šedesát haléřů.'
 
+
+- alias: 'Lighting mode: warm'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      from: 'off'
+      to: 'on'
+  condition:
+      condition: state
+      entity_id: input_boolean.bed_time
+      state: 'off'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.lighting_mode
+        option: Warm
+
+- alias: 'Lighting mode: cold'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      from: 'on'
+      to: 'off'
+  condition:
+      condition: state
+      entity_id: input_boolean.bed_time
+      state: 'off'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.lighting_mode
+        option: Cold
+
+

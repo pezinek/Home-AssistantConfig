@@ -2,14 +2,14 @@
 - alias: 'Bed Time ends at 6:00'
   trigger:
     - platform: time
-      after: '06:00:00'
+      after: '06:59:00'
   action:
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.bed_time
 
 
-- alias: 'Stuff off after Bed Time'
+- alias: 'Bed Time: On actions'
   trigger:
     - platform: state
       entity_id: input_boolean.bed_time
@@ -24,4 +24,21 @@
           - light.kitchen_counter
           - light.kitchen_moodlight
           - light.livingroom_moodlight
+    - service: input_select.select_option
+      data:
+          entity_id: input_select.lighting_mode
+          option: Night
       
+- alias: 'Lighting mode: Night'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bed_time
+      from: 'on'
+      state: 'off'
+  action:
+    - service: input_select.select_option
+      data:
+          entity_id: input_select.lighting_mode
+          option: Warm
+      
+
