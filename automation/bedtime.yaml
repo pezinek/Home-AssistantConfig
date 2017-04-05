@@ -1,8 +1,8 @@
 
-- alias: 'Bed Time ends at 6:00'
+- alias: 'Bed Time ends at 6:55'
   trigger:
     - platform: time
-      after: '06:59:00'
+      after: '06:55:00'
   action:
     - service: input_boolean.turn_off
       data:
