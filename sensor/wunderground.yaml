@@ -1,6 +1,7 @@
 - platform: wunderground
   api_key: !secret wu_api_key
   pws_id: !secret wu_pws_id
+  lang: CZ
   monitored_conditions:
     - temp_c
     - feelslike_c
