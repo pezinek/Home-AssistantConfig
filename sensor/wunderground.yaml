@@ -4,7 +4,15 @@
   lang: CZ
   monitored_conditions:
     - temp_c
-    - feelslike_c
     - relative_humidity
     - pressure_mb
+    - forecast_daily_1_text_metric
+    - forecast_hourly_1_conditions
+    - forecast_hourly_2_conditions
+    - forecast_hourly_3_conditions
+    - forecast_daily_1_high_temp_c
+    - forecast_daily_1_low_temp_c
+    - forecast_daily_1_precip_mm
+    - forecast_daily_1_avg_wind_kph
+    - alerts
 

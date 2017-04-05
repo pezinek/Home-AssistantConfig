@@ -2,9 +2,6 @@
 sensor.pws_temp_c:
   friendly_name: 'Temperature'
 
-sensor.pws_feelslike_c:
-  friendly_name: 'Feels like'
-
 sensor.pws_weather:
   friendly_name: 'Weather conditions'
 
