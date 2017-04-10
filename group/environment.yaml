@@ -9,6 +9,7 @@ Outside:
     - sensor.pws_forecast_daily_1_high_temp_c
     - sensor.pws_forecast_daily_1_low_temp_c
     - sensor.pws_forecast_daily_1_avg_wind_kph
+    - sensor.pws_forecast_daily_1_precip
     - sensor.pws_forecast_daily_1_precip_mm
     - sensor.pws_forecast_daily_1_text_metric
     - sensor.pws_forecast_hourly_1_conditions

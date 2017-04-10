@@ -13,6 +13,7 @@
     - forecast_daily_1_high_temp_c
     - forecast_daily_1_low_temp_c
     - forecast_daily_1_precip_mm
+    - forecast_daily_1_precip
     - forecast_daily_1_avg_wind_kph
     - alerts
 

@@ -102,12 +102,13 @@ class WUCurrentConditionsSensorConfig(WUSensorConfig):
 class WUDailyTextForecastSensorConfig(WUSensorConfig):
     """Helper for defining sensor configurations for daily text forecasts."""
 
-    def __init__(self, period, field):
+    def __init__(self, period, field, unit_of_measurement=None):
         """Constructor.
 
         Args:
             period (int): forecast period number
             field (string):  field name to use as value
+            unit_of_measurement(string): unit of measurement
         """
         super().__init__(
             friendly_name=lambda wu: wu.data['forecast']['txt_forecast'][
@@ -117,6 +118,7 @@ class WUDailyTextForecastSensorConfig(WUSensorConfig):
                 'forecastday'][period][field],
             entity_picture=lambda wu: wu.data['forecast']['txt_forecast'][
                 'forecastday'][period]['icon_url'],
+            unit_of_measurement=unit_of_measurement,
             device_state_attributes={
                 'date': lambda wu: wu.data['forecast']['txt_forecast']['date']
             }
@@ -126,7 +128,8 @@ class WUDailyTextForecastSensorConfig(WUSensorConfig):
 class WUDailySimpleForecastSensorConfig(WUSensorConfig):
     """Helper for defining sensor configurations for daily simpleforecasts."""
 
-    def __init__(self, friendly_name, period, field, wu_unit, ha_unit, icon=None):
+    def __init__(self, friendly_name, period, field, wu_unit=None,
+                 ha_unit=None, icon=None):
         """Constructor.
 
         Args:
@@ -141,8 +144,11 @@ class WUDailySimpleForecastSensorConfig(WUSensorConfig):
         super().__init__(
             friendly_name=friendly_name,
             feature='forecast',
-            value=lambda wu: wu.data['forecast']['simpleforecast'][
-                'forecastday'][period][field][wu_unit],
+            value=(lambda wu: wu.data['forecast']['simpleforecast'][
+                'forecastday'][period][field][wu_unit])
+            if wu_unit else
+            (lambda wu: wu.data['forecast']['simpleforecast'][
+                'forecastday'][period][field]),
             unit_of_measurement=ha_unit,
             entity_picture=lambda wu: wu.data['forecast']['simpleforecast'][
                 'forecastday'][period]['icon_url'] if not icon else None,
@@ -246,9 +252,9 @@ class WUAlertsSensorConfig(WUSensorConfig):
             friendly_name=friendly_name,
             feature="alerts",
             value=lambda wu: len(wu.data['alerts']),
-            icon=lambda wu: "mdi:alert-circle-outline" \
-                if len(wu.data['alerts']) > 0 else \
-                    "mdi:check-circle-outline",
+            icon=lambda wu: "mdi:alert-circle-outline"
+            if len(wu.data['alerts']) > 0
+            else "mdi:check-circle-outline",
             device_state_attributes=self._get_attributes
         )
 
@@ -340,7 +346,7 @@ SENSOR_TYPES = {
     'station_id': WUCurrentConditionsSensorConfig(
         'Station ID', 'station_id', "mdi:home"),
     'solarradiation': WUCurrentConditionsSensorConfig(
-        'Solar Radiation', 'solarradiation', "mdi:weather-sunny"),
+        'Solar Radiation', 'solarradiation', "mdi:weather-sunny", "w/m2"),
     'temperature_string': WUCurrentConditionsSensorConfig(
         'Temperature Summary', 'temperature_string', "mdi:thermometer"),
     'temp_c': WUCurrentConditionsSensorConfig(
@@ -356,7 +362,7 @@ SENSOR_TYPES = {
     'weather': WUCurrentConditionsSensorConfig(
         'Weather Summary', 'weather', None),
     'wind_degrees': WUCurrentConditionsSensorConfig(
-        'Wind Degrees', 'wind_degrees', "mdi:weather-windy"),
+        'Wind Degrees', 'wind_degrees', "mdi:weather-windy", "°"),
     'wind_dir': WUCurrentConditionsSensorConfig(
         'Wind Direction', 'wind_dir', "mdi:weather-windy"),
     'wind_gust_kph': WUCurrentConditionsSensorConfig(
@@ -600,16 +606,28 @@ SENSOR_TYPES = {
         "Precipitation Intensity in 3 Days", 3, 'qpf_allday', 'mm', 'mm',
         "mdi:umbrella"),
     'forecast_daily_1_precip_in': WUDailySimpleForecastSensorConfig(
-        "Precipitation Intensity Today", 0, 'qpf_allday', 'in', LENGTH_INCHES,
-        "mdi:umbrella"),
+        "Precipitation Intensity Today", 0, 'qpf_allday', 'in',
+        LENGTH_INCHES, "mdi:umbrella"),
     'forecast_daily_2_precip_in': WUDailySimpleForecastSensorConfig(
-        "Precipitation Intensity Tomorrow", 1, 'qpf_allday', 'in', LENGTH_INCHES,
-        "mdi:umbrella"),
+        "Precipitation Intensity Tomorrow", 1, 'qpf_allday', 'in',
+        LENGTH_INCHES, "mdi:umbrella"),
     'forecast_daily_3_precip_in': WUDailySimpleForecastSensorConfig(
-        "Precipitation Intensity in 2 Days", 2, 'qpf_allday', 'in', LENGTH_INCHES,
-        "mdi:umbrella"),
+        "Precipitation Intensity in 2 Days", 2, 'qpf_allday', 'in',
+        LENGTH_INCHES, "mdi:umbrella"),
     'forecast_daily_4_precip_in': WUDailySimpleForecastSensorConfig(
-        "Precipitation Intensity in 3 Days", 3, 'qpf_allday', 'in', LENGTH_INCHES,
+        "Precipitation Intensity in 3 Days", 3, 'qpf_allday', 'in',
+        LENGTH_INCHES, "mdi:umbrella"),
+    'forecast_daily_1_precip': WUDailySimpleForecastSensorConfig(
+        "Percipitation Probability Today", 0, "pop", None, "%",
+        "mdi:umbrella"),
+    'forecast_daily_2_precip': WUDailySimpleForecastSensorConfig(
+        "Percipitation Probability Tomorrow", 1, "pop", None, "%",
+        "mdi:umbrella"),
+    'forecast_daily_3_precip': WUDailySimpleForecastSensorConfig(
+        "Percipitation Probability in 2 Days", 2, "pop", None, "%",
+        "mdi:umbrella"),
+    'forecast_daily_4_precip': WUDailySimpleForecastSensorConfig(
+        "Percipitation Probability in 3 Days", 3, "pop", None, "%",
         "mdi:umbrella"),
 }
 
@@ -688,7 +706,7 @@ class WUndergroundSensor(Entity):
             _LOGGER.error("Failed to parse response from WU API: %s", err)
             val = default
         except TypeError:
-            pass # val was not callable - keep original value
+            pass  # val was not callable - keep original value
 
         return val
 
