@@ -36,3 +36,4 @@ Heartbeats:
     - binary_sensor.kitchen_pir_heartbeat
     - binary_sensor.sonoff1_heartbeat
     - binary_sensor.sonoff2_heartbeat
+    - binary_sensor.sonoff_t1_heartbeat

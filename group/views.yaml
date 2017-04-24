@@ -6,6 +6,7 @@ default_view:
     - group.inside
     - group.kitchen
     - group.livingroom
+    - group.office
     - group.home_modes
     - group.phones
     - group.media

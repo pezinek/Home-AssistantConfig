@@ -14,3 +14,7 @@ livingroom:
     - switch.sonoff2
     - sensor.ir_code
 
+office:
+  name: Office
+  entities:
+    - switch.sonoff_t1
