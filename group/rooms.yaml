@@ -18,3 +18,9 @@ office:
   name: Office
   entities:
     - switch.sonoff_t1
+
+kidsroom:
+  name: Kids Room
+  entities:
+    - light.kidsroom_bedlight
+
