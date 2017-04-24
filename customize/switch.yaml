@@ -8,5 +8,5 @@ switch.sonoff2:
   icon: mdi:power-socket
 
 switch.sonoff_t1:
-  friendly_name: 'Sonoff Touch'
+  friendly_name: 'Office light'
   icon: mdi:lightbulb
