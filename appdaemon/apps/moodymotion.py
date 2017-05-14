@@ -100,8 +100,11 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      if self.is_mode_supported():
         self.on_handle = self.listen_state(self.motion_on, 
           self.args['motion_detector'], new="on", old="off")
-
-     self.turn_light_off()
+        if self.light == "on":
+          self.turn_light_on() # change color
+     else:
+        self.log("mode change - light off")
+        self.turn_light_off()
 
   def luminosity_changed(self, entity, attribute, old, new, kwargs):
      self.log("Luminosity changed: {}".format(new))
@@ -163,6 +166,11 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      self.off_handle = self.listen_state(self.motion_off, 
           self.args['motion_detector'], 
           new="off", duration=cfg.off_timeout)
+     #TODO: seems that self.cancel_listen_state doesn't work as expeced
+     # the motion_off is sometimes called even if there have been
+     # motion_on's in between, we need to utilize some noonce usages
+     # or something to prevent the light from being turned off if the
+     # call back have been made obsolete in between.
      self.log("Off trigger armed: (timeout: {})".format(cfg.off_timeout))
 
   def turn_light_off(self):
