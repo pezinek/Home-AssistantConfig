@@ -7,6 +7,8 @@
     - relative_humidity
     - pressure_mb
     - forecast_daily_1_text_metric
+    - forecast_daily_3_text_metric
+    - forecast_daily_5_text_metric
     - forecast_hourly_1_conditions
     - forecast_hourly_2_conditions
     - forecast_hourly_3_conditions

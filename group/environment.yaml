@@ -11,10 +11,12 @@ Outside:
     - sensor.pws_forecast_daily_1_avg_wind_kph
     - sensor.pws_forecast_daily_1_precip
     - sensor.pws_forecast_daily_1_precip_mm
-    - sensor.pws_forecast_daily_1_text_metric
     - sensor.pws_forecast_hourly_1_conditions
     - sensor.pws_forecast_hourly_2_conditions
     - sensor.pws_forecast_hourly_3_conditions
+    - sensor.pws_forecast_daily_1_text_metric
+    - sensor.pws_forecast_daily_3_text_metric
+    - sensor.pws_forecast_daily_5_text_metric
     - sensor.pws_alerts
 
 Inside:
