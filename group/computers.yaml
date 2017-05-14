@@ -29,6 +29,8 @@ Gadgets:
     - device_tracker.leds4
     - device_tracker.sonoff1
     - device_tracker.sonoff2
+    - device_tracker.sonoff_t1
+    - device_tracker.sonoff_t2
 
 Heartbeats:
   entities:
