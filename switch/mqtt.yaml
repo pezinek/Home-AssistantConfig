@@ -16,3 +16,9 @@
   command_topic: "cmnd/sonoff_t1/power"
   retain: true
 
+- platform: mqtt
+  name: sonoff_t2
+  state_topic: "stat/sonoff_t2/POWER"
+  command_topic: "cmnd/sonoff_t2/power"
+  retain: true
+

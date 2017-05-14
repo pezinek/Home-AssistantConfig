@@ -41,3 +41,10 @@
   payload_off: "Offline"
   device_class: connectivity
 
+- platform: mqtt
+  state_topic: tele/sonoff_t2/LWT
+  name: sonoff_t2_heartbeat
+  payload_on: "Online"
+  payload_off: "Offline"
+  device_class: connectivity
+

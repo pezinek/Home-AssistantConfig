@@ -14,4 +14,5 @@ Internet:
     - sensor.sonoff1_wifi_signal
     - sensor.sonoff2_wifi_signal
     - sensor.sonoff_t1_wifi_signal
+    - sensor.sonoff_t2_wifi_signal
 

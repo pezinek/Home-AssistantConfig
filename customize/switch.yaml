@@ -10,3 +10,8 @@ switch.sonoff2:
 switch.sonoff_t1:
   friendly_name: 'Office light'
   icon: mdi:lightbulb
+
+switch.sonoff_t2:
+  friendly_name: 'Kidsroom light'
+  icon: mdi:lightbulb
+

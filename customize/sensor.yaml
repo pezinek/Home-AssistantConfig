@@ -25,6 +25,10 @@ sensor.sonoff_t1_wifi_signal:
   friendly_name: 'Office light WiFi signal'
   icon: mdi:wifi
 
+sensor.sonoff_t2_wifi_signal:
+  friendly_name: 'Kids room light WiFi signal'
+  icon: mdi:wifi
+
 sensor.kitchen_luxmeter:
   friendly_name: 'Light intensity (kitchen counter)'
   icon: mdi:theme-light-dark
@@ -54,6 +58,11 @@ binary_sensor.sonoff2_heartbeat:
   icon: mdi:heart-pulse
 
 binary_sensor.sonoff_t1_heartbeat:
-  friendly_name: 'Sonoff Touch 1'
+  friendly_name: 'Sonoff Touch 1 (Office)'
   icon: mdi:heart-pulse
+
+binary_sensor.sonoff_t2_heartbeat:
+  friendly_name: 'Sonoff Touch 2 (Kids room)'
+  icon: mdi:heart-pulse
+
 

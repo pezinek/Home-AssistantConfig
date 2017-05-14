@@ -23,4 +23,5 @@ kidsroom:
   name: Kids Room
   entities:
     - light.kidsroom_bedlight
+    - switch.sonoff_t2
 
