@@ -1,4 +1,5 @@
 import appdaemon.appapi as appapi
+from threading import RLock
 
 #
 #
@@ -43,11 +44,14 @@ class MoodyMotionTrigger(appapi.AppDaemon):
 
      #self.log("Init started")
 
+     self.update_lock = RLock()
+
      self.on_handle = None
      self.off_handle = None
      self.luminosity = None
      self.mode = None
      self.light = None
+     self.nonce = 0
 
      self._load_modes()
 
@@ -93,9 +97,8 @@ class MoodyMotionTrigger(appapi.AppDaemon):
 
      if self.on_handle:
         self.cancel_listen_state(self.on_handle)
-     if self.off_handle:
-        self.cancel_listen_state(self.off_handle)
-        self.off_handle = None
+
+     self.disarm_off_trigger()
 
      if self.is_mode_supported():
         self.on_handle = self.listen_state(self.motion_on, 
@@ -116,8 +119,11 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      self.update()
 
   def motion_off(self, entity, attribute, old, new, kwargs):
-     self.log("Motion off")
-     self.turn_light_off()
+     if kwargs['nonce'] == self.nonce:
+         self.log("*** Motion off - (nonce: {})".format(self.nonce))
+         self.turn_light_off()
+     else:
+         self.log("*** Motion off ignored - wrong nonce (expected: {}, actual: {}".format(kwargs['nonce'], self.nonce))
 
   def light_on(self, entity, attribute, old, new, kwargs):
      self.log("Light on")
@@ -129,24 +135,27 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      self.disarm_off_trigger()
 
   def update(self):
-     self.log("update (mode: {}, luminosity: {}, off: {}, cfg: {})".format(
-              self.mode, self.luminosity, self.off_handle, self.get_mode_cfg()))
-     if self.is_mode_supported():
-       self.log("update: mode OK")
-       cfg = self.get_mode_cfg()
-       motion = self.get_state(self.args['motion_detector'])
-       if motion == "on":
-          self.log("update: motion OK")
-          if self.luminosity < cfg.luminosity:
-             self.log("update: luminosity OK")
-             if self.light == "off":
-                self.log("update: light OK")
-                self.turn_light_on()
-                self.rearm_off_trigger()
-                return
-          if self.off_handle:
-             self.rearm_off_trigger()
-     self.log("update: end")
+     with self.update_lock:
+         self.log("update (mode: {}, luminosity: {}, off: {}, cfg: {})".format(
+                  self.mode, self.luminosity, self.off_handle, 
+                  self.get_mode_cfg()))
+
+         if self.is_mode_supported():
+           self.log("update: mode OK")
+           cfg = self.get_mode_cfg()
+           motion = self.get_state(self.args['motion_detector'])
+           if motion == "on":
+              self.log("update: motion OK")
+              if self.luminosity < cfg.luminosity:
+                 self.log("update: luminosity OK")
+                 if self.light == "off":
+                    self.log("update: light OK")
+                    self.turn_light_on()
+                    self.rearm_off_trigger()
+                    return
+              if self.off_handle:
+                 self.rearm_off_trigger()
+         self.log("update: end")
 
   def turn_light_on(self):
      cfg = self.get_mode_cfg()
@@ -158,20 +167,19 @@ class MoodyMotionTrigger(appapi.AppDaemon):
   def disarm_off_trigger(self):
      if self.off_handle:
           self.cancel_listen_state(self.off_handle)
+          self.off_handle = None
           self.log("off trigger disarmed")
 
   def rearm_off_trigger(self):
      cfg = self.get_mode_cfg()
      self.disarm_off_trigger()
+     self.nonce+=1
      self.off_handle = self.listen_state(self.motion_off, 
           self.args['motion_detector'], 
-          new="off", duration=cfg.off_timeout)
-     #TODO: seems that self.cancel_listen_state doesn't work as expeced
-     # the motion_off is sometimes called even if there have been
-     # motion_on's in between, we need to utilize some noonce usages
-     # or something to prevent the light from being turned off if the
-     # call back have been made obsolete in between.
-     self.log("Off trigger armed: (timeout: {})".format(cfg.off_timeout))
+          new="off", duration=cfg.off_timeout,
+          nonce=self.nonce)
+     self.log("Off trigger armed: (timeout: {}, nonce: {})".format(
+          cfg.off_timeout, self.nonce))
 
   def turn_light_off(self):
      self.log("turning light off")
