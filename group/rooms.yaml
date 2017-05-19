@@ -3,6 +3,7 @@ kitchen:
   entities:
     - light.kitchen_counter
     - light.kitchen_moodlight
+    - light.kitchen_pir_led
     - sensor.kitchen_luxmeter
     - binary_sensor.kitchen_pir
 
@@ -18,6 +19,9 @@ office:
   name: Office
   entities:
     - switch.sonoff_t1
+    - light.office_pir_led
+    - sensor.office_luxmeter
+    - binary_sensor.office_pir
 
 kidsroom:
   name: Kids Room

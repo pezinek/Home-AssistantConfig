@@ -19,6 +19,16 @@
   unit_of_measurement: 'lx'
 
 - platform: mqtt
+  state_topic: homie/a020a6158af1/$stats/signal
+  name: office_pir_wifi_signal
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: homie/a020a6158af1/photocell/lux
+  name: office_luxmeter
+  unit_of_measurement: 'lx'
+
+- platform: mqtt
   state_topic: tele/sonoff1/STATE
   name: sonoff1_wifi_signal
   unit_of_measurement: '%'

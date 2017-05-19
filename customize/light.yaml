@@ -1,0 +1,7 @@
+
+sensor.kitchen_pir_led:
+  friendly_name: "Kitchen PIR Led"
+
+sensor.office_pir_led:
+  friendly_name: "Office PIR Led"
+

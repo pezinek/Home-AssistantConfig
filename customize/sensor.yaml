@@ -13,6 +13,10 @@ sensor.kitchen_pir_wifi_signal:
   friendly_name: 'Kitchen PIR WiFi signal'
   icon: mdi:wifi
 
+sensor.office_pir_wifi_signal:
+  friendly_name: 'Office PIR WiFi signal'
+  icon: mdi:wifi
+
 sensor.sonoff1_wifi_signal:
   friendly_name: 'Sonoff 1 WiFi signal'
   icon: mdi:wifi
@@ -33,8 +37,16 @@ sensor.kitchen_luxmeter:
   friendly_name: 'Light intensity (kitchen counter)'
   icon: mdi:theme-light-dark
 
+sensor.office_luxmeter:
+  friendly_name: 'Light intensity (office)'
+  icon: mdi:theme-light-dark
+
 binary_sensor.kitchen_pir:
   friendly_name: 'Motion (kitchen counter)'
+  icon: mdi:eye-outline
+
+binary_sensor.office_pir:
+  friendly_name: 'Motion (office)'
   icon: mdi:eye-outline
 
 sensor.ir_code:
@@ -47,6 +59,10 @@ binary_sensor.ir_blaster_heartbeat:
 
 binary_sensor.kitchen_pir_heartbeat:
   friendly_name: 'Kitchen PIR'
+  icon: mdi:heart-pulse
+
+binary_sensor.office_pir_heartbeat:
+  friendly_name: 'Office PIR'
   icon: mdi:heart-pulse
 
 binary_sensor.sonoff1_heartbeat:

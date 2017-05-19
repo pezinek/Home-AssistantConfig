@@ -18,4 +18,14 @@
   payload_on: "ON"
   payload_off: "OFF"
 
+- platform: mqtt
+  name: "office_pir_led"
+  state_topic: "homie/a020a6158af1/led/status"
+  command_topic: "homie/a020a6158af1/led/status/set"
+  brightness_command_topic: "homie/a020a6158af1/led/brightness/set"
+  brightness_state_topic: "homie/a020a6158af1/led/brightness"
+  brightness_scale: 1023
+  payload_on: "ON"
+  payload_off: "OFF"
+
 
