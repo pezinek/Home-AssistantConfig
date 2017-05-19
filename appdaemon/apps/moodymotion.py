@@ -95,18 +95,17 @@ class MoodyMotionTrigger(appapi.AppDaemon):
 
      self.mode = new
 
-     if self.on_handle:
-        self.cancel_listen_state(self.on_handle)
-
-     self.disarm_off_trigger()
-
      if self.is_mode_supported():
         self.on_handle = self.listen_state(self.motion_on, 
           self.args['motion_detector'], new="on", old="off")
         if self.light == "on":
+          self.rearm_off_trigger()
           self.turn_light_on() # change color
      else:
         self.log("mode change - light off")
+        if self.on_handle:
+            self.cancel_listen_state(self.on_handle)
+        self.disarm_off_trigger()
         self.turn_light_off()
 
   def luminosity_changed(self, entity, attribute, old, new, kwargs):
@@ -185,4 +184,6 @@ class MoodyMotionTrigger(appapi.AppDaemon):
      self.log("turning light off")
      self.cancel_listen_state(self.off_handle)
      self.off_handle = None
+     self.turn_off(self.args['light'])
+     #force the off for buggy lights
      self.turn_off(self.args['light'])
