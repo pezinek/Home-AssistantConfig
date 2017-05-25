@@ -47,6 +47,7 @@ recorder:
   include:
     domains:
       - sensor
+      - binary_sensor
       - switch
 
 # Weather Prediction

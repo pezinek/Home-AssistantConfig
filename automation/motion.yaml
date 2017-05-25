@@ -1,0 +1,84 @@
+
+- alias: 'Office light on when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.office_luxmeter
+    below: 0.9
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.sonoff_t1
+
+- alias: 'Office light off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_pir
+      to: 'off'
+      for:
+        minutes: 1
+  condition:
+    condition: state
+    entity_id: switch.sonoff_t1
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.sonoff_t1
+
+
+- alias: 'Office PIR Led on when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_pir
+      from: 'off'
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.office_pir_led
+
+- alias: 'Office PIR Led off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_pir
+      from: 'on'
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.office_pir_led
+
+
+- alias: 'Kitchen PIR Led on when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.kitchen_pir_led
+
+- alias: 'Kitchen PIR Led off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      from: 'on'
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.kitchen_pir_led
+
