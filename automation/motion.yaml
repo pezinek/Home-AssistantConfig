@@ -6,9 +6,14 @@
       from: 'off'
       to: 'on'
   condition:
-    condition: numeric_state
-    entity_id: sensor.office_luxmeter
-    below: 0.9
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.office_luxmeter
+        below: 0.9
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'off'
   action:
     - service: switch.turn_on
       data:
@@ -21,7 +26,7 @@
       entity_id: binary_sensor.office_pir
       to: 'off'
       for:
-        minutes: 1
+        minutes: 5
   condition:
     condition: state
     entity_id: switch.sonoff_t1
