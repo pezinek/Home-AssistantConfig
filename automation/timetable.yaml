@@ -104,15 +104,15 @@
     - service: script.wall
       data:
         message: 'Je právě tři čtvrtě na 8 a zahajuji nástup na večerní pohádku, pokud ale do pěti minut nebudete ležet v posteli, žádná pohádka se už nestihne. Ale jinak vás mám moc ráda, a přeji příjemné zážitky při čtení na dobrou noc.'
-    - service: switch.turn_on
-      data:
-        entity_id: 
-          - switch.sonoff_t2
-    - service: light.turn_on
-      data:
-        rgb_color: [255, 80, 5]
-        entity_id:
-          - light.kidsroom_bedlight
+    #- service: switch.turn_on
+    #  data:
+    #    entity_id: 
+    #      - switch.sonoff_t2
+    #- service: light.turn_on
+    #  data:
+    #    rgb_color: [255, 80, 5]
+    #    entity_id:
+    #      - light.kidsroom_bedlight
     #- delay: 00:02:00
     - delay: 00:15:00
     - service: script.wall
