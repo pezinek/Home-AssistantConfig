@@ -16,13 +16,18 @@
         entity_id:
           - switch.sonoff2
     # TODO: moodlights still managed in the native app
-    - service: script.wall
+    - service: script.wkids
       data:
         message: 'Hola hola ! Škola volá. Ranní ptáče dál doskáče. Vstávejte lenoši.'
-    #- delay: 00:02:00
-    - delay: 00:30:00
+    - delay: 00:01:00
+    - service: media_player.play_media
+      entity_id: media_player.mpd
+      data:
+        media_content_id: "morning_routine"
+        media_content_type: "playlist"
+    - delay: 00:29:00
     #7:30
-    - service: script.wall
+    - service: script.wkids
       data:
         message: 'Dětičky naše zlaté, je čas na snídani. Kdo ještě nemá vyčištěné zuby, nebo je dokonce ještě v pyžamu, tak bude nejspíš o hladu jestli si honem nepospíší.'
     #- delay: 00:02:00
