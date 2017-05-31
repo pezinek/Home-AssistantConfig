@@ -3,14 +3,12 @@ default_view:
   view: yes
   entities:
     - group.outside
-    - group.inside
     - group.kitchen
     - group.livingroom
     - group.office
     - group.kidsroom
     - group.home_modes
     - group.phones
-    - group.media
 
 Network:
   name: Network
