@@ -64,6 +64,8 @@ media_player:
     host: pi3
     port: 80
   - platform: cast
+  - platform: mpd
+    host: orangepi-wifi
 
 mqtt:
   broker: !secret cloudmqtt_host

@@ -2,4 +2,5 @@ Media:
   entities:
     - media_player.kodi
     - media_player.projektor_svetice
+    - media_player.mpd
 
