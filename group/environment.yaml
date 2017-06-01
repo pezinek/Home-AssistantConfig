@@ -3,20 +3,22 @@ Outside:
     - sensor.date
     - sensor.time
     - sun.sun
+    - sensor.pws_temp_high_record_c
+    - sensor.pws_temp_high_1d_c
     - sensor.pws_temp_c
+    - sensor.pws_temp_low_1d_c
+    - sensor.pws_temp_low_record_c
     - sensor.pws_relative_humidity
     - sensor.pws_pressure_mb
-    - sensor.pws_forecast_daily_1_high_temp_c
-    - sensor.pws_forecast_daily_1_low_temp_c
-    - sensor.pws_forecast_daily_1_avg_wind_kph
-    - sensor.pws_forecast_daily_1_precip
-    - sensor.pws_forecast_daily_1_precip_mm
-    - sensor.pws_forecast_hourly_1_conditions
-    - sensor.pws_forecast_hourly_2_conditions
-    - sensor.pws_forecast_hourly_3_conditions
-    - sensor.pws_forecast_daily_1_text_metric
-    - sensor.pws_forecast_daily_3_text_metric
-    - sensor.pws_forecast_daily_5_text_metric
+    - sensor.pws_wind_1d_kph
+    - sensor.pws_precip_1d
+    - sensor.pws_precip_1d_mm
+    - sensor.pws_weather_1h
+    - sensor.pws_weather_2h
+    - sensor.pws_weather_3h
+    - sensor.pws_weather_1d_metric
+    - sensor.pws_weather_2d_metric
+    - sensor.pws_weather_3d_metric
     - sensor.pws_alerts
 
 Inside:

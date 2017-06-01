@@ -6,16 +6,18 @@
     - temp_c
     - relative_humidity
     - pressure_mb
-    - forecast_daily_1_text_metric
-    - forecast_daily_3_text_metric
-    - forecast_daily_5_text_metric
-    - forecast_hourly_1_conditions
-    - forecast_hourly_2_conditions
-    - forecast_hourly_3_conditions
-    - forecast_daily_1_high_temp_c
-    - forecast_daily_1_low_temp_c
-    - forecast_daily_1_precip_mm
-    - forecast_daily_1_precip
-    - forecast_daily_1_avg_wind_kph
+    - weather_1d_metric
+    - weather_2d_metric
+    - weather_3d_metric
+    - weather_1h
+    - weather_2h
+    - weather_3h
+    - temp_high_1d_c
+    - temp_low_1d_c
+    - temp_high_record_c
+    - temp_low_record_c
+    - precip_1d_mm
+    - precip_1d
+    - wind_1d_kph
     - alerts
 

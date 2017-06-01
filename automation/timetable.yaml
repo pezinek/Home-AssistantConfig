@@ -38,7 +38,7 @@
     - service: tts.google_say
       entity_id: media_player.kodi
       data_template:
-        message: "Ehm, ehm, ehm. Právě jsem Vám k té snídani stáhla předpověď počasí na dnešek, tak doufám, že se vám nebude zajídat. Takže dnes bude {{ states('sensor.pws_forecast_daily_1_text_metric') }}."
+        message: "Ehm, ehm, ehm. Právě jsem Vám k té snídani stáhla předpověď počasí na dnešek, tak doufám, že se vám nebude zajídat. Takže dnes bude {{ states('sensor.pws_weather_1d_metric') }}."
         cache: false
     #- delay: 00:02:00
     - delay: 00:05:00
@@ -54,7 +54,7 @@
     - service: tts.google_say
       entity_id: media_player.kodi
       data_template:
-        message: "Je čas jít se oblékat, venku je {{states('sensor.pws_temp_c')}} stupňů celsia a jak už jsem říkala, přes den bude {{ states('sensor.pws_forecast_daily_1_text_metric') }}. Tak se podle toho oblečte."
+        message: "Je čas jít se oblékat, venku je {{states('sensor.pws_temp_c')}} stupňů celsia a jak už jsem říkala, přes den bude {{ states('sensor.pws_weather_1d_metric') }}. Tak se podle toho oblečte."
         cache: false
     #- delay: 00:02:00
     - delay: 00:05:00
