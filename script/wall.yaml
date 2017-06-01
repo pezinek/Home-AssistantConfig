@@ -160,13 +160,6 @@ wkids:
       - condition: state
         entity_id: input_boolean.bed_time
         state: 'off'
-      - condition: template
-        value_template: >
-          {% if is_state('media_player.mpd', 'playing') %}
-            false
-          {% else %}
-            true
-          {% endif %}
     - service: media_player.play_media
       entity_id: media_player.mpd
       data:
