@@ -81,4 +81,11 @@ binary_sensor.sonoff_t2_heartbeat:
   friendly_name: 'Sonoff Touch 2 (Kids room)'
   icon: mdi:heart-pulse
 
+sensor.sonoff1_temperature:
+  friendly_name: 'Temperature (Sonoff 1)'
+  icon: mdi:thermometer
+
+sensor.sonoff1_humidity:
+  friendly_name: 'Humidity (Sonoff 1)'
+  icon: mdi:water-percent
 

@@ -16,6 +16,8 @@ livingroom:
     - sensor.ir_code
     - sensor.living_room_temperature
     - sensor.living_room_pressure
+    - sensor.sonoff1_temperature
+    - sensor.sonoff1_humidity
     - media_player.kodi
     - media_player.projektor_svetice
 
