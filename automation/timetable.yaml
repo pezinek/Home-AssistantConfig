@@ -118,11 +118,14 @@
     #    rgb_color: [255, 80, 5]
     #    entity_id:
     #      - light.kidsroom_bedlight
-    #- delay: 00:02:00
-    - delay: 00:15:00
-    - service: script.wall
+    - delay: 00:02:00
+    - service: script.wkids
       data:
-        message: 'pip, pip, pip, pip, pííííííííííííííííp. Časové znamení ohlásilo 8 hodin, a pro osoby mladistvé se vyhlašuje večerka. Přeji vám děti, krásné sny a v noci nad vámi budu bdít všemi svými senzory. Dobrou noc !'
+        message: 'Haló pohádka, tady, všichni rychle sem a zalehnout do postele. No a až budete ležet tak si řekněte mamce, nebo ať něco přečte Péťa, no a nebo Vám něco můžu přečíst sama, ale to musíte říct taťkovi. No nic tak já už nebudu rušit, a přeji krásný kulturní zážitek.'
+    - delay: 00:13:00
+    - service: script.wkids
+      data:
+        message: 'pip, pip, pip, pip, píííp. Časové znamení ohlásilo 8 hodin, doufám že jste to stihli dočíst, ale teď už musíte spát. Přeji vám moji drahouškové, krásné sny a v noci nad vámi budu bdít všemi svými senzory. Dobrou noc ! .... jo, a žádné povídání, pošťuchování, vylézání z postele, hulákání, zpívání, hlasité prďění, už vůbec ne žádná diskotéka a hlavně, žádné noční přesuny do postele v ložnici a to především na tatínkovu půlku ne. Tak a teď zavřít oči a spát.'
     - service: light.turn_off
       data:
         entity_id:
@@ -138,4 +141,10 @@
       data:
         entity_id:
           - switch.sonoff_t2
+    - delay: 00:01:00
+    - service: media_player.play_media
+      entity_id: media_player.mpd
+      data:
+        media_content_id: "evening_routine"
+        media_content_type: "playlist"
 
