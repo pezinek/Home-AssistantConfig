@@ -1,7 +1,7 @@
 - alias: 'School day: morning routine'
   trigger:
     - platform: time
-      after: '7:00:00'
+      at: '7:00:00'
   condition:
     condition: time
     weekday:
@@ -76,7 +76,7 @@
 - alias: 'School day: evening routine'
   trigger:
     - platform: time
-      after: '19:00:00'
+      at: '19:00:00'
   condition:
     condition: time
     weekday:
