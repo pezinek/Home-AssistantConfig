@@ -14,7 +14,7 @@
     - platform: state
       entity_id: input_boolean.bed_time
       from: 'off'
-      state: 'on'
+      to: 'on'
   action:
     - service: homeassistant.turn_off
       data:
@@ -34,7 +34,7 @@
     - platform: state
       entity_id: input_boolean.bed_time
       from: 'on'
-      state: 'off'
+      to: 'off'
   action:
     - service: input_select.select_option
       data:
