@@ -1,5 +1,5 @@
 
-- alias: 'All off when away'
+- alias: 'Away: All off when away'
   trigger:
     - platform: state
       entity_id: input_boolean.away_mode
@@ -10,4 +10,32 @@
       data:
         entity_id:
           - group.off_when_away
+
+
+- alias: 'Away: nobody home'
+  trigger:
+    - platform: state
+      entity_id: group.people
+      from: 'home'
+      to: 'not home'
+      for:
+        minutes: 15
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id:
+          - input_boolean.away_mode
+
+
+- alias: 'Away: people are home'
+  trigger:
+    - platform: state
+      entity_id: group.people
+      from: 'not home'
+      to: 'home'
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id:
+          - input_boolean.away_mode
 

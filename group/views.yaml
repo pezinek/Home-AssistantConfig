@@ -8,7 +8,7 @@ default_view:
     - group.office
     - group.kidsroom
     - group.home_modes
-    - group.phones
+    - group.people
 
 Network:
   name: Network
