@@ -49,6 +49,7 @@ recorder:
       - sensor
       - binary_sensor
       - switch
+      - input_boolean
 
 # Weather Prediction
 #sensor:

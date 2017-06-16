@@ -3,13 +3,18 @@
     - platform: time
       at: '7:00:00'
   condition:
-    condition: time
-    weekday:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
         - mon
         - tue
         - wed
         - thu
         - fri 
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
   action:
     - service: switch.turn_on
       data:
@@ -78,13 +83,18 @@
     - platform: time
       at: '19:00:00'
   condition:
-    condition: time
-    weekday:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
         - sun
         - mon
         - tue
         - wed
         - thu
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
   action:
     # stairs light on
     - service: switch.turn_on

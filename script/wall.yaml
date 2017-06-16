@@ -8,6 +8,9 @@ wall:
       - condition: state
         entity_id: input_boolean.bed_time
         state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
       - condition: template
         value_template: >
           {% if is_state('media_player.kodi', 'playing') %}
@@ -159,6 +162,9 @@ wkids:
         state: 'on'
       - condition: state
         entity_id: input_boolean.bed_time
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
         state: 'off'
     - service: media_player.play_media
       entity_id: media_player.mpd

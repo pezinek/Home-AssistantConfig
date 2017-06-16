@@ -4,13 +4,18 @@
     - platform: time
       at: '6:42'
   condition:
-    condition: time
-    weekday:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
         - mon
         - tue
         - wed
         - thu
         - fri 
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
   action:
     - service: script.wakeup
 

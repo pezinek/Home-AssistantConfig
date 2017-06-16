@@ -13,3 +13,8 @@ bed_time:
   icon: mdi:sleep
   initial: off
 
+away_mode:
+  name: "Away Mode"
+  icon: mdi:calendar-clock
+  initial: off
+
