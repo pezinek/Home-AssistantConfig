@@ -135,7 +135,7 @@
     - delay: 00:13:00
     - service: script.wkids
       data:
-        message: 'pip, pip, pip, pip, píííp. Časové znamení ohlásilo 8 hodin, doufám že jste to stihli dočíst, ale teď už musíte spát. Přeji vám moji drahouškové, krásné sny a v noci nad vámi budu bdít všemi svými senzory. Dobrou noc ! .... jo, a žádné povídání, pošťuchování, vylézání z postele, hulákání, zpívání, hlasité prďění, už vůbec ne žádná diskotéka a hlavně, žádné noční přesuny do postele v ložnici a to především na tatínkovu půlku ne. Tak a teď zavřít oči a spát.'
+        message: 'pip, pip, pip, pip, píííp. Časové znamení ohlásilo 8 hodin, doufám že jste to stihli dočíst, ale teď už musíte spát. Přeji vám moji drahouškové, krásné sny a v noci nad vámi budu bdít všemi svými senzory. Dobrou noc ! .... jo, a žádné povídání, mumlání, pobrukování, zpívání, hulákání, hlasité tentononc, už vůbec ne žádná diskotéka a taky žádné pošťuchování, popichování, poňoukání, škádlení a zlobení. Tak a teď zavřít oči a spát.'
     - service: light.turn_off
       data:
         entity_id:
