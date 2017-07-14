@@ -97,3 +97,7 @@ binary_sensor.ibutton_heartbeat:
   friendly_name: 'iButton'
   icon: mdi:heart-pulse
 
+sensor.ibutton_wifi_signal:
+  friendly_name: 'iButton WiFi signal'
+  icon: mdi:wifi
+

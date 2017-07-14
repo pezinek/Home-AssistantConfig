@@ -1,0 +1,184 @@
+
+
+- alias: 'iButton LED on when address read'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.ibutton_led
+
+- alias: 'iButton LED off after 3 sec'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      to: '00:00:00:00:00:00:00:00'
+      for:
+        seconds: 3
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.ibutton_led
+
+#
+# Me
+#
+
+- alias: 'iButton 0B:3A:D5:3C:00:00:00:42: Everything off'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+      to: '0B:3A:D5:3C:00:00:00:42'
+  action:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - group.off_when_away
+
+#
+# Petr
+#
+
+- alias: 'iButton 16:06:6F:06:00:00:00:B0: Peter music ON'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+      to: '16:06:6F:06:00:00:00:B0'
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'off'
+  action:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.mpd
+        media_content_id: hodina_zpevu
+        media_content_type: playlist
+    - service: light.turn_on
+      data:
+        entity_id: light.kidsroom_bedlight
+        rgb_color: [0, 255, 56]
+
+- alias: 'iButton 16:06:6F:06:00:00:00:B0: Peter music NEXT'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+      to: '16:06:6F:06:00:00:00:B0'
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'playing'
+  action:
+    - service: media_player.media_next_track
+      data:
+        entity_id: media_player.mpd
+    - service: light.turn_on
+      data:
+        entity_id: light.kidsroom_bedlight
+        rgb_color: [255, 112, 29]
+
+
+- alias: 'iButton 16:06:6F:06:00:00:00:B0: Peter music OFF'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      to: '16:06:6F:06:00:00:00:B0'
+      for:
+        seconds: 10
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'playing'
+  action:
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.mpd
+    - service: light.turn_off
+      data:
+        entity_id: light.kidsroom_bedlight
+
+
+#
+# Andrejka
+#
+
+- alias: 'iButton 16:96:98:05:00:00:00:7E: Andrejka music ON'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+      to: '16:96:98:05:00:00:00:7E'
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'off'
+  action:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.mpd
+        media_content_id: pohadky
+        media_content_type: playlist
+    - service: light.turn_on
+      data:
+        rgb_color: [90, 255, 255]
+        entity_id: 
+          - light.kidsroom_bedlight
+          - light.kitchen_moodlight
+          - light.kitchen_counter
+          - light.livingroom_moodlight
+    - service: switch.turn_on
+      data:
+        entity_id: 
+          - switch.sonoff_t2
+
+- alias: 'iButton 16:96:98:05:00:00:00:7E: Andrejka music NEXT'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+      to: '16:96:98:05:00:00:00:7E'
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'playing'
+  action:
+    - service: media_player.media_next_track
+      data:
+        entity_id: media_player.mpd
+
+
+- alias: 'iButton 16:96:98:05:00:00:00:7E: Andrejka music OFF'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      to: '16:96:98:05:00:00:00:7E'
+      for:
+        seconds: 5
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'playing'
+  action:
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.mpd
+    - service: light.turn_off
+      data:
+        entity_id: 
+          - light.kidsroom_bedlight
+          - light.kitchen_moodlight
+          - light.kitchen_counter
+          - light.livingroom_moodlight
+    - service: switch.turn_off
+      data:
+        entity_id: 
+          - switch.sonoff_t2
+
+
