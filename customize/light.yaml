@@ -5,3 +5,7 @@ light.kitchen_pir_led:
 light.office_pir_led:
   friendly_name: "Office PIR Led"
 
+light.ibutton_led:
+  friendly_name: "iButton Led"
+
+

@@ -89,3 +89,11 @@ sensor.sonoff1_humidity:
   friendly_name: 'Humidity (Sonoff 1)'
   icon: mdi:water-percent
 
+sensor.ibutton:
+  friendly_name: 'iButton reader'
+  icon: mdi:blur-radial
+
+binary_sensor.ibutton_heartbeat:
+  friendly_name: 'iButton'
+  icon: mdi:heart-pulse
+

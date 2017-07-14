@@ -34,5 +34,7 @@ kidsroom:
   entities:
     - light.kidsroom_bedlight
     - switch.sonoff_t2
+    - light.ibutton_led
+    - sensor.ibutton
     - media_player.mpd
 

@@ -29,6 +29,15 @@
   unit_of_measurement: 'lx'
 
 - platform: mqtt
+  state_topic: homie/a020a616f632/$stats/signal
+  name: ibutton_wifi_signal
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: homie/a020a616f632/ibutton/address
+  name: ibutton
+
+- platform: mqtt
   state_topic: tele/sonoff1/STATE
   name: sonoff1_wifi_signal
   unit_of_measurement: '%'
@@ -63,4 +72,5 @@
   name: sonoff_t2_wifi_signal
   unit_of_measurement: '%'
   value_template: '{{ value_json.Wifi.RSSI }}'
+
 

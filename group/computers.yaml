@@ -31,6 +31,7 @@ Gadgets:
     - device_tracker.sonoff2
     - device_tracker.sonoff_t1
     - device_tracker.sonoff_t2
+    - device_tracker.ibutton
 
 Heartbeats:
   entities:
@@ -41,3 +42,4 @@ Heartbeats:
     - binary_sensor.sonoff2_heartbeat
     - binary_sensor.sonoff_t1_heartbeat
     - binary_sensor.sonoff_t2_heartbeat
+    - binary_sensor.ibutton_heartbeat
