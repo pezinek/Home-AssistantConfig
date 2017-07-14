@@ -1,4 +1,5 @@
 - alias: 'Sunrise notification'
+  initial_state: 'off'
   trigger:
     platform: sun
     event: sunrise
@@ -9,6 +10,7 @@
         message: 'Za jednu minutu nastane východ slunce. A možná, že budou i červánky.'
 
 - alias: 'Sunset notification'
+  initial_state: 'off'
   trigger:
     platform: sun
     event: sunset
