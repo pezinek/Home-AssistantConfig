@@ -105,6 +105,24 @@
         entity_id: light.kidsroom_bedlight
 
 
+- alias: 'iButton 16:06:6F:06:00:00:00:B0: Peter fairytailes ON'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      to: '16:06:6F:06:00:00:00:B0'
+      for:
+        seconds: 20
+  condition:
+    condition: state
+    entity_id: media_player.mpd
+    state: 'off'
+  action:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.mpd
+        media_content_id: povesti
+        media_content_type: playlist
+
 #
 # Andrejka
 #
