@@ -3,22 +3,34 @@
   state_topic: "stat/sonoff1/POWER"
   command_topic: "cmnd/sonoff1/power"
   retain: true
+  #availability_topic: "tele/sonoff1/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: sonoff2
   state_topic: "stat/sonoff2/POWER"
   command_topic: "cmnd/sonoff2/power"
   retain: true
+  #availability_topic: "tele/sonoff2/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: sonoff_t1
   state_topic: "stat/sonoff_t1/POWER"
   command_topic: "cmnd/sonoff_t1/power"
   retain: true
+  #availability_topic: "tele/sonoff_t1/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: sonoff_t2
   state_topic: "stat/sonoff_t2/POWER"
   command_topic: "cmnd/sonoff_t2/power"
   retain: true
+  #availability_topic: "tele/sonoff_t2/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
