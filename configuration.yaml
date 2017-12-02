@@ -40,7 +40,6 @@ history:
 logbook:
 
 recorder:
-  purge_days: 7
   include:
     domains:
       - sensor
