@@ -90,3 +90,50 @@
         entity_id:
           - light.kitchen_pir_led
 
+- alias: 'Kitchen light on when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.kitchen_luxmeter
+        below: 15
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 122, 10]
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+
+- alias: 'Kitchen light off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      to: 'off'
+      for:
+        minutes: 5
+  condition:
+    condition: state
+    entity_id: light.kitchen_counter
+    state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+
