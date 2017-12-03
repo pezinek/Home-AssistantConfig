@@ -112,7 +112,7 @@ wall:
     - service: media_player.play_media
       entity_id: media_player.kodi
       data:
-        media_content_id: "http://iot:8123/local/computer_magic.mp3"
+        media_content_id: "http://alexandria:8123/local/computer_magic.mp3"
         media_content_type: audio/mp3
 
     - service: script.lr_amp_vol_up
@@ -169,7 +169,7 @@ wkids:
     - service: media_player.play_media
       entity_id: media_player.mpd
       data:
-        media_content_id: "http://iot:8123/local/computer_magic.mp3"
+        media_content_id: "http://alexandria:8123/local/computer_magic.mp3"
         media_content_type: audio/mp3
 
     - delay: 00:00:05
