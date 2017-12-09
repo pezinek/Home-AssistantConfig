@@ -32,6 +32,7 @@ Development:
     - group.all_scripts
     - group.all_lights
     - group.off_when_away
+    - group.activity_detectors
 
 Neighbours:
   name: Kyselovi

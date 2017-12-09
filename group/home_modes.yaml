@@ -15,3 +15,10 @@ Off_when_away:
     - switch.sonoff2
     - switch.sonoff_t1
     - switch.sonoff_t2
+
+Activity Detectors:
+  entities:
+    - binary_sensor.kitchen_pir
+    - binary_sensor.office_pir
+    - switch.sonoff1
+    

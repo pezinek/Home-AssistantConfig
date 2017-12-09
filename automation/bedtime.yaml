@@ -1,4 +1,27 @@
 
+- alias: 'Bed Time starts when there is dark everywhere and nobody was seen for a while'
+  trigger:
+    - platform: state
+      entity_id: group.activity_detectors
+      from: 'on'
+      to: 'off'
+      for:
+        minutes: 45
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.kitchen_luxmeter
+        below: 1
+      - condition: numeric_state
+        entity_id: sensor.office_luxmeter
+        below: 1
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.bed_time
+
+
 - alias: 'Bed Time ends at 6:55'
   trigger:
     - platform: time
