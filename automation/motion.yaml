@@ -127,9 +127,37 @@
       for:
         minutes: 5
   condition:
-    condition: state
-    entity_id: light.kitchen_counter
-    state: 'on'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'on'
+      - condition: state
+        entity_id: light.kitchen_moodlight
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+
+- alias: 'Kitchen light off when too much light'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.kitchen_luxmeter
+      above: 200
+      for:
+        minutes: 5
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'on'
+      - condition: state
+        entity_id: light.kitchen_moodlight
+        state: 'on'
   action:
     - service: light.turn_off
       data:
