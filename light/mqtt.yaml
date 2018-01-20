@@ -7,6 +7,9 @@
   brightness_scale: 1023
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "homie/5ccf7fd38d01/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   name: "kitchen_pir_led"
@@ -17,6 +20,9 @@
   brightness_scale: 1023
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "homie/a020a61590a1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   name: "office_pir_led"
@@ -27,6 +33,9 @@
   brightness_scale: 1023
   payload_on: "ON"
   payload_off: "OFF"
+  availability_topic: "homie/a020a6158af1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   name: "ibutton_led"
@@ -37,5 +46,7 @@
   brightness_scale: 1023
   payload_on: "ON"
   payload_off: "OFF"
-
+  availability_topic: "homie/a020a616f632/$online"
+  payload_available: "true"
+  payload_not_available: "false" 
 

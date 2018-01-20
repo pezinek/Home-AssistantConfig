@@ -2,75 +2,116 @@
   state_topic: homie/5ccf7fd38d01/$stats/signal
   name: WeeMos D1 mini - WiFi signal 
   unit_of_measurement: '%'
+  availability_topic: "homie/5ccf7fd38d01/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/5ccf7fd38d01/infrared/code
   name: ir_code
   value_template: '{{ value_json.name }}'
+  availability_topic: "homie/5ccf7fd38d01/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/a020a61590a1/$stats/signal
   name: kitchen_pir_wifi_signal
   unit_of_measurement: '%'
+  availability_topic: "homie/a020a61590a1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/a020a61590a1/photocell/lux
   name: kitchen_luxmeter
   unit_of_measurement: 'lx'
+  availability_topic: "homie/a020a61590a1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/a020a6158af1/$stats/signal
   name: office_pir_wifi_signal
   unit_of_measurement: '%'
+  availability_topic: "homie/a020a6158af1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/a020a6158af1/photocell/lux
   name: office_luxmeter
   unit_of_measurement: 'lx'
+  availability_topic: "homie/a020a6158af1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/a020a616f632/$stats/signal
   name: ibutton_wifi_signal
   unit_of_measurement: '%'
+  availability_topic: "homie/a020a616f632/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: homie/a020a616f632/ibutton/address
   name: ibutton
+  availability_topic: "homie/a020a616f632/$online"
+  payload_available: "true"
+  payload_not_available: "false"
 
 - platform: mqtt
   state_topic: tele/sonoff1/STATE
   name: sonoff1_wifi_signal
   unit_of_measurement: '%'
   value_template: '{{ value_json.Wifi.RSSI }}'
+  availability_topic: tele/sonoff1/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
 - platform: mqtt
   state_topic: tele/sonoff1/SENSOR
   name: sonoff1_temperature
   unit_of_measurement: '°C'
   value_template: '{{ value_json.DHT22.Temperature }}'
+  availability_topic: tele/sonoff1/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
 - platform: mqtt
   state_topic: tele/sonoff1/SENSOR
   name: sonoff1_humidity
   unit_of_measurement: '%'
   value_template: '{{ value_json.DHT22.Humidity }}'
+  availability_topic: tele/sonoff1/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
 - platform: mqtt
   state_topic: tele/sonoff2/STATE
   name: sonoff2_wifi_signal
   unit_of_measurement: '%'
   value_template: '{{ value_json.Wifi.RSSI }}'
+  availability_topic: tele/sonoff2/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
 - platform: mqtt
   state_topic: tele/sonoff_t1/STATE
   name: sonoff_t1_wifi_signal
   unit_of_measurement: '%'
   value_template: '{{ value_json.Wifi.RSSI }}'
+  availability_topic: tele/sonoff_t1/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
 - platform: mqtt
   state_topic: tele/sonoff_t2/STATE
   name: sonoff_t2_wifi_signal
   unit_of_measurement: '%'
   value_template: '{{ value_json.Wifi.RSSI }}'
-
+  availability_topic: tele/sonoff_t2/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
