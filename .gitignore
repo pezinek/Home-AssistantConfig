@@ -1,0 +1,10 @@
+*.py[cod]
+*.swp
+*.db
+secrets.yaml
+known_devices.yaml
+home-assistant.log
+.HA_VERSION
+tts/
+www/
+
