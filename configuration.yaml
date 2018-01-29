@@ -43,8 +43,27 @@ http:
 # View all events in a logbook
 #logbook:
 
-#recorder:
-#  include:
+recorder:
+  include:
+     entities:
+       - binary_sensor.kitchen_pir
+       - binary_sensor.office_pir
+       - sensor.kitchen_luxmeter
+       - sensor.office_luxmeter
+       - light.kidsroom_bedlight
+       - light.kitchen_moodlight
+       - light.kitchen_counter
+       - switch.sonoff_t1
+       - switch.sonoff_t2
+       - sensor.living_room_temperature
+       - sensor.living_room_pressure
+       - sensor.sonoff1_temperature
+       - sensor.sonoff1_humidity
+       - input_boolean.bed_time
+       - input_boolean.away_mode
+       - media_player.kodi
+       - media_player.mpd
+       - media_player.projektor_svetice
 #    domains:
 #      - sensor
 #      - binary_sensor
