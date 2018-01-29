@@ -1,30 +1,10 @@
 
 - platform: mqtt
-  state_topic: "homie/5ccf7fd38d01/$online"
-  name: ir_blaster_heartbeat
-  payload_on: "true"
-  payload_off: "false"
-  device_class: connectivity
-  availability_topic: "homie/5ccf7fd38d01/$online"
-  payload_available: "true"
-  payload_not_available: "false"
-
-- platform: mqtt
   state_topic: homie/a020a61590a1/pir/motion
   name: kitchen_pir
   payload_on: "YES"
   payload_off: "NO"
   device_class: occupancy
-  availability_topic: "homie/a020a61590a1/$online"
-  payload_available: "true"
-  payload_not_available: "false"
-
-- platform: mqtt
-  state_topic: homie/a020a61590a1/$online
-  name: kitchen_pir_heartbeat
-  payload_on: "true"
-  payload_off: "false"
-  device_class: connectivity
   availability_topic: "homie/a020a61590a1/$online"
   payload_available: "true"
   payload_not_available: "false"
@@ -38,64 +18,4 @@
   availability_topic: "homie/a020a6158af1/$online"
   payload_available: "true"
   payload_not_available: "false"
-
-- platform: mqtt
-  state_topic: homie/a020a6158af1/$online
-  name: office_pir_heartbeat
-  payload_on: "true"
-  payload_off: "false"
-  device_class: connectivity
-  availability_topic: homie/a020a6158af1/$online
-  payload_available: "true"
-  payload_not_available: "false"
-
-- platform: mqtt
-  state_topic: homie/a020a616f632/$online
-  name: ibutton_heartbeat
-  payload_on: "true"
-  payload_off: "false"
-  device_class: connectivity
-  availability_topic: homie/a020a616f632/$online
-  payload_available: "true"
-  payload_not_available: "false"
-
-- platform: mqtt
-  state_topic: tele/sonoff1/LWT
-  name: sonoff1_heartbeat
-  payload_on: "Online"
-  payload_off: "Offline"
-  device_class: connectivity
-  availability_topic: tele/sonoff1/LWT
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
-  state_topic: tele/sonoff2/LWT
-  name: sonoff2_heartbeat
-  payload_on: "Online"
-  payload_off: "Offline"
-  device_class: connectivity
-  availability_topic: tele/sonoff2/LWT
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
-  state_topic: tele/sonoff_t1/LWT
-  name: sonoff_t1_heartbeat
-  payload_on: "Online"
-  payload_off: "Offline"
-  device_class: connectivity
-  availability_topic: tele/sonoff_t1/LWT
-  payload_available: "Online"
-  payload_not_available: "Offline"
-
-- platform: mqtt
-  state_topic: tele/sonoff_t2/LWT
-  name: sonoff_t2_heartbeat
-  payload_on: "Online"
-  payload_off: "Offline"
-  device_class: connectivity
-  availability_topic: tele/sonoff_t2/LWT
-  payload_available: "Online"
-  payload_not_available: "Offline"
 

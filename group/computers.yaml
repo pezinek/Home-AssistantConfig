@@ -33,13 +33,3 @@ Gadgets:
     - device_tracker.sonoff_t2
     - device_tracker.ibutton
 
-Heartbeats:
-  entities:
-    - binary_sensor.ir_blaster_heartbeat
-    - binary_sensor.kitchen_pir_heartbeat
-    - binary_sensor.office_pir_heartbeat
-    - binary_sensor.sonoff1_heartbeat
-    - binary_sensor.sonoff2_heartbeat
-    - binary_sensor.sonoff_t1_heartbeat
-    - binary_sensor.sonoff_t2_heartbeat
-    - binary_sensor.ibutton_heartbeat

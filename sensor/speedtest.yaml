@@ -3,5 +3,8 @@
     - 'ping'
     - 'download'
     - 'upload'
+  hour:
+    - 4
 #  manual: True
+  
 

@@ -19,7 +19,6 @@ Network:
     - group.computers
     - group.gadgets
     - group.phones
-    - group.heartbeats
 
 Development:
   name: Development 

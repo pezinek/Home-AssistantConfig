@@ -53,34 +53,6 @@ sensor.ir_code:
   friendly_name: 'IR Blaster (code)'
   icon: mdi:remote
 
-binary_sensor.ir_blaster_heartbeat:
-  friendly_name: 'IR Blaster'
-  icon: mdi:heart-pulse
-
-binary_sensor.kitchen_pir_heartbeat:
-  friendly_name: 'Kitchen PIR'
-  icon: mdi:heart-pulse
-
-binary_sensor.office_pir_heartbeat:
-  friendly_name: 'Office PIR'
-  icon: mdi:heart-pulse
-
-binary_sensor.sonoff1_heartbeat:
-  friendly_name: 'Sonoff 1'
-  icon: mdi:heart-pulse
-
-binary_sensor.sonoff2_heartbeat:
-  friendly_name: 'Sonoff 2'
-  icon: mdi:heart-pulse
-
-binary_sensor.sonoff_t1_heartbeat:
-  friendly_name: 'Sonoff Touch 1 (Office)'
-  icon: mdi:heart-pulse
-
-binary_sensor.sonoff_t2_heartbeat:
-  friendly_name: 'Sonoff Touch 2 (Kids room)'
-  icon: mdi:heart-pulse
-
 sensor.sonoff1_temperature:
   friendly_name: 'Temperature (Sonoff 1)'
   icon: mdi:thermometer
@@ -92,10 +64,6 @@ sensor.sonoff1_humidity:
 sensor.ibutton:
   friendly_name: 'iButton reader'
   icon: mdi:blur-radial
-
-binary_sensor.ibutton_heartbeat:
-  friendly_name: 'iButton'
-  icon: mdi:heart-pulse
 
 sensor.ibutton_wifi_signal:
   friendly_name: 'iButton WiFi signal'

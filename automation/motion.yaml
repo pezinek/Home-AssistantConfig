@@ -90,7 +90,7 @@
         entity_id:
           - light.kitchen_pir_led
 
-- alias: 'Kitchen light on when motion'
+- alias: 'Kitchen light on when motion - day'
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_pir
@@ -119,6 +119,45 @@
           - light.kitchen_counter
           - light.kitchen_moodlight
 
+- alias: 'Kitchen light on when motion - night'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.kitchen_luxmeter
+        below: 15
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [15, 0, 0]
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+    # do it twice to work arround a bug in the driver
+    - service: light.turn_on
+      data:
+        rgb_color: [15, 0, 0]
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+
+
 - alias: 'Kitchen light off when no motion'
   trigger:
     - platform: state
@@ -135,12 +174,16 @@
       - condition: state
         entity_id: light.kitchen_moodlight
         state: 'on'
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'on'
   action:
     - service: light.turn_off
       data:
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+          - light.livingroom_moodlight
 
 - alias: 'Kitchen light off when too much light'
   trigger:
