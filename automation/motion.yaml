@@ -143,7 +143,7 @@
   action:
     - service: light.turn_on
       data:
-        rgb_color: [15, 0, 0]
+        rgb_color: [5, 0, 0]
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
@@ -151,7 +151,7 @@
     # do it twice to work arround a bug in the driver
     - service: light.turn_on
       data:
-        rgb_color: [15, 0, 0]
+        rgb_color: [5, 0, 0]
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
