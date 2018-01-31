@@ -53,6 +53,7 @@ recorder:
        - light.kidsroom_bedlight
        - light.kitchen_moodlight
        - light.kitchen_counter
+       - light.livingroom_moodlight
        - switch.sonoff_t1
        - switch.sonoff_t2
        - sensor.living_room_temperature
