@@ -118,6 +118,14 @@
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+    # do it twice to work arround a bug in the driver
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 122, 10]
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+
 
 - alias: 'Kitchen light on when motion - night'
   trigger:
