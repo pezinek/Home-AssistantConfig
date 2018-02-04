@@ -38,3 +38,8 @@ kidsroom:
     - sensor.ibutton
     - media_player.mpd
 
+hall:
+  name: Hall
+  entities:
+    - light.hall_upstairs
+
