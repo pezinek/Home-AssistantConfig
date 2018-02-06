@@ -42,4 +42,7 @@ hall:
   name: Hall
   entities:
     - light.hall_upstairs
+    - light.hall_upstairs_pir_led
+    - sensor.hall_upstairs_luxmeter
+    - binary_sensor.hall_upstairs_pir
 

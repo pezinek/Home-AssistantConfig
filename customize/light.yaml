@@ -8,4 +8,7 @@ light.office_pir_led:
 light.ibutton_led:
   friendly_name: "iButton Led"
 
+light.hall_upstairs_pir_led:
+  friendly_name: "Hall upstairs PIR Led"
+
 

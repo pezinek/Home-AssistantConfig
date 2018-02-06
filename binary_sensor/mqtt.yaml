@@ -19,3 +19,13 @@
   payload_available: "true"
   payload_not_available: "false"
 
+- platform: mqtt
+  state_topic: homie/a020a616efd1/pir/motion
+  name: hall_upstairs_pir
+  payload_on: "YES"
+  payload_off: "NO"
+  device_class: occupancy
+  availability_topic: "homie/a020a616efd1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
+

@@ -1,6 +1,8 @@
 *.py[cod]
 *.swp
 *.db
+*.db-shm
+*.db-wal
 secrets.yaml
 known_devices.yaml
 home-assistant.log

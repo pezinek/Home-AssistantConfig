@@ -48,12 +48,15 @@ recorder:
      entities:
        - binary_sensor.kitchen_pir
        - binary_sensor.office_pir
+       - binary_sensor.hall_upstairs_pir
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
+       - sensor.hall_upstairs_luxmeter
        - light.kidsroom_bedlight
        - light.kitchen_moodlight
        - light.kitchen_counter
        - light.livingroom_moodlight
+       - light.hall_upstairs
        - switch.sonoff_t1
        - switch.sonoff_t2
        - sensor.living_room_temperature

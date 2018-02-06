@@ -8,6 +8,7 @@ Internet:
     - sensor.weemos_d1_mini__wifi_signal
     - sensor.kitchen_pir_wifi_signal
     - sensor.office_pir_wifi_signal
+    - sensor.hall_upstairs_pir_wifi_signal
     - sensor.sonoff1_wifi_signal
     - sensor.sonoff2_wifi_signal
     - sensor.sonoff_t1_wifi_signal

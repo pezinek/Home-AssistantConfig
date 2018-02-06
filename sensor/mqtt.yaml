@@ -115,3 +115,20 @@
   payload_available: Online
   payload_not_available: Offline
 
+- platform: mqtt
+  state_topic: homie/a020a616efd1/$stats/signal
+  name: hall_upstairs_pir_wifi_signal
+  unit_of_measurement: '%'
+  availability_topic: "homie/a020a616efd1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
+
+- platform: mqtt
+  state_topic: homie/a020a616efd1/photocell/lux
+  name: hall_upstairs_luxmeter
+  unit_of_measurement: 'lx'
+  availability_topic: "homie/a020a616efd1/$online"
+  payload_available: "true"
+  payload_not_available: "false"
+
+
