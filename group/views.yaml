@@ -34,11 +34,4 @@ Development:
     - group.off_when_away
     - group.activity_detectors
 
-Neighbours:
-  name: Kyselovi
-  view: yes
-  icon: mdi:home-outline
-  entities:
-    - group.kyselovi
-
 

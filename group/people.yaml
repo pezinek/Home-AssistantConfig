@@ -4,10 +4,3 @@ People:
     - device_tracker.pez_workphone
     - device_tracker.pez_private
 
-Kyselovi:
-  entities:
-    - device_tracker.kyselovi_dell
-    - device_tracker.kyselovi_hell
-    - device_tracker.kyselovi_htc
-    - device_tracker.kyselovi_android
-    - device_tracker.kyselovi_brusinka

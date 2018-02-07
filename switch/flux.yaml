@@ -7,8 +7,7 @@
   stop_time: '20:00'
   start_colortemp: 4000
   sunset_colortemp: 3000
-  stop_colortemp: 1900
-  brightness: 200
+  stop_colortemp: 1000
   mode: rgb
   transition: 1
 
