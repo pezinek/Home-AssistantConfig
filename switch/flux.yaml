@@ -1,0 +1,14 @@
+
+- platform: flux
+  name: hall_fluxer
+  lights:
+    - light.hall_upstairs
+  start_time: '7:00'
+  stop_time: '20:00'
+  start_colortemp: 4000
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
+  brightness: 200
+  mode: rgb
+  transition: 1
+
