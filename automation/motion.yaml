@@ -90,6 +90,30 @@
         entity_id:
           - light.kitchen_pir_led
 
+- alias: 'Hall upstairs PIR Led on when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_upstairs_pir
+      from: 'off'
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.hall_upstairs_pir_led
+
+- alias: 'Hall upstairs PIR Led off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_upstairs_pir
+      from: 'on'
+      to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hall_upstairs_pir_led
+
 - alias: 'Kitchen light on when motion - day'
   trigger:
     - platform: state
@@ -215,4 +239,101 @@
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+
+
+
+- alias: 'Hall upstairs light off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_upstairs_pir
+      to: 'off'
+      for:
+        seconds: 30
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: light.hall_upstairs
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hall_upstairs
+
+
+- alias: 'Hall upstairs light on when motion - day'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_upstairs_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.hall_upstairs_luxmeter
+        below: 15
+      - condition: state
+        entity_id: light.hall_upstairs
+        state: 'off'
+      #- condition: state
+      #  entity_id: input_boolean.bed_time 
+      #  state: 'off'
+      - condition: time
+        after: '07:00:00'
+        before: '20:00:00'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 122, 10]
+        entity_id:
+          - light.hall_upstairs
+    # do it twice to work arround a bug in the driver
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 122, 10]
+        entity_id:
+          - light.hall_upstairs
+
+
+- alias: 'Hall upstairs light on when motion - night'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_upstairs_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.hall_upstairs_luxmeter
+        below: 15
+      - condition: state
+        entity_id: light.hall_upstairs
+        state: 'off'
+      #- condition: state
+      #  entity_id: input_boolean.bed_time 
+      #  state: 'on'
+      - condition: time
+        after: '20:00:00'
+        before: '07:00:00'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [1, 0, 0]
+        entity_id:
+          - light.hall_upstairs
+    # do it twice to work arround a bug in the driver
+    - service: light.turn_on
+      data:
+        rgb_color: [1, 0, 0]
+        entity_id:
+          - light.hall_upstairs
 
