@@ -1,0 +1,133 @@
+
+pez_workphone:
+  hide_if_away: false
+  mac: 00:6D:52:81:AE:AD
+  name: PeZ (workphone)
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+pez_private:
+  hide_if_away: false
+  mac: AC:3C:0B:E4:A7:2E
+  name: PeZ (private phone)
+  track: true
+  vendor: Apple, Inc.
+
+lenka:
+  hide_if_away: false
+  mac: 1C:B0:94:14:B9:01
+  name: Lenka
+  picture:
+  track: true
+  vendor: HTC Corporation
+
+# Computers
+
+lenka_air:
+  hide_if_away: false
+  mac: C4:B3:01:95:84:4A
+  name: Lenka Air
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+lenka_macbook_lan:
+  hide_if_away: false
+  mac: 00:23:32:A0:9C:ED
+  name: Lenka macbook - lan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+lenka_macbook_wifi:
+  hide_if_away: false
+  mac: 00:1E:52:71:5E:85
+  name: Lenka Macbook - wifi
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+pez_macbook_lan:
+  hide_if_away: false
+  mac: 00:23:32:D4:38:F8
+  name: Petr Macbook - lan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+pez_macbook_wifi:
+  hide_if_away: false
+  mac: 00:23:6C:89:F5:5C
+  name: Petr Macbook - wifi
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+pez_hex_lan:
+  hide_if_away: false
+  mac: B8:6B:23:2E:EA:7C
+  name: Petr Hex - lan
+  picture:
+  track: true
+  vendor: Toshiba
+
+pez_hex_wifi:
+  hide_if_away: false
+  mac: 28:B2:BD:16:1F:93
+  name: Petr Hex - wifi
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+peznbw:
+  hide_if_away: false
+  mac: 00:21:5D:62:99:42
+  name: Petr Toshiba - wifi 
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+peznb:
+  hide_if_away: false
+  mac: 00:1C:7E:64:DC:A9
+  name: Petr Toshiba - lan
+  picture:
+  track: true
+  vendor: Toshiba
+
+
+# Gadgets
+
+printer_epson:
+  hide_if_away: false
+  mac: AC:18:26:FF:C2:54
+  name: Epson L565
+  picture:
+  track: true
+  vendor: Seiko Epson Corporation
+
+phone_linksys:
+  hide_if_away: false
+  mac: 00:0E:08:D9:F9:9B
+  name: Linksys SPA922
+  picture:
+  track: true
+  vendor: Cisco-Linksys, LLC
+
+phone_gigaset:
+  hide_if_away: false
+  mac: 7C:2F:80:0D:27:26
+  name: Gigaset A510
+  picture:
+  track: true
+  vendor: Gigaset Communications GmbH
+
+chromecast:
+  hide_if_away: false
+  mac: A4:77:33:3D:AF:B2
+  name: chromecast
+  picture:
+  track: true
+  vendor: Google, Inc.
+
