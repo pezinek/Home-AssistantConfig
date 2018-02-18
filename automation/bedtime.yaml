@@ -42,11 +42,7 @@
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.sonoff1
-          - switch.sonoff2
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-          - light.livingroom_moodlight
+          - group.off_when_bedtime
     - service: input_select.select_option
       data:
           entity_id: input_select.lighting_mode

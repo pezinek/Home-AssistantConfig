@@ -40,6 +40,18 @@
         entity_id:
           - group.off_when_away
 
+- alias: 'iButton 16:D9:EC:05:00:00:00:5D: Bed time on'
+  trigger:
+    - platform: state
+      entity_id: sensor.ibutton
+      from: '00:00:00:00:00:00:00:00'
+      to: '16:D9:EC:05:00:00:00:5D'
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id:
+          - input_boolean.bed_time
+
 #
 # Petr
 #
