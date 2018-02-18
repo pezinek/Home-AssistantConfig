@@ -21,7 +21,6 @@ Off_when_bedtime:
     - group.all_lights
     - group.all_media
     - switch.sonoff1
-    - switch.sonoff2
     - switch.sonoff_t1
     - switch.sonoff_t2
 

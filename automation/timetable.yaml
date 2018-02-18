@@ -16,10 +16,6 @@
         entity_id: input_boolean.away_mode
         state: 'off'
   action:
-    - service: switch.turn_on
-      data:
-        entity_id:
-          - switch.sonoff2
     # TODO: moodlights still managed in the native app
     - service: script.wkids
       data:
@@ -69,10 +65,6 @@
     #- delay: 00:02:00
     - delay: 00:04:20
     #8:00
-    - service: switch.turn_off
-      data:
-        entity_id:
-          - switch.sonoff2
     - service: light.turn_off
       data:
         entity_id:
@@ -96,10 +88,6 @@
         entity_id: input_boolean.away_mode
         state: 'off'
   action:
-    # stairs light on
-    - service: switch.turn_on
-      data:
-        entity_id: switch.sonoff2
     - service: light.turn_on
       data:
         rgb_color: [35,0,1]
