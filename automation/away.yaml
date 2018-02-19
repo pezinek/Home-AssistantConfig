@@ -11,6 +11,17 @@
         entity_id:
           - group.off_when_away
 
+- alias: 'Away: Stuff on when back from away'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away_mode
+      from: 'on'
+      to: 'off'
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+          - group.On_when_away_disabled
 
 - alias: 'Away: nobody home'
   trigger:

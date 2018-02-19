@@ -16,6 +16,9 @@ Off_when_away:
     - switch.sonoff_t1
     - switch.sonoff_t2
 
+On_when_away_disabled:
+    - switch.sonoff2
+
 Off_when_bedtime:
   entities:
     - group.all_lights
