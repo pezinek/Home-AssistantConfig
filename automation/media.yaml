@@ -1,0 +1,17 @@
+
+- alias: 'HDMI to 1 if kodi is playing'
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'playing'
+  action:
+    - service: script.hdmi_1
+
+- alias: 'HDMI to 5 if chromecast is playing'
+  trigger:
+    - platform: state
+      entity_id: media_player.projektor_svetice
+      to: 'playing'
+  action:
+    - service: script.hdmi_5
+
