@@ -70,6 +70,7 @@ recorder:
        - media_player.kodi
        - media_player.mpd
        - media_player.projektor_svetice
+       - input_number.life_intensity_hr
 #    domains:
 #      - sensor
 #      - binary_sensor
@@ -141,6 +142,7 @@ group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation
 input_boolean: !include_dir_merge_named input_boolean
 input_select: !include_dir_merge_named input_select
+input_number: !include_dir_merge_named input_number
 scene: !include_dir_merge_list scene
 counter: !include_dir_merge_named counter
 
