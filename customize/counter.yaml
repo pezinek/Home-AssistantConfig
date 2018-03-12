@@ -1,0 +1,4 @@
+
+counter.human_actions_hourly:
+  friendly_name: "Human actions (per hour)"
+

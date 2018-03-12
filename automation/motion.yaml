@@ -376,3 +376,25 @@
         rgb_color: [5, 0, 0]
         entity_id:
           - light.hall_upstairs
+
+- alias: "Motion detector counters increment"
+  trigger:
+    - platform: state
+      entity_id: group.activity_detectors
+      from: 'off'
+      to: 'on'
+  action:
+    - service: counter.increment
+      data:
+        entity_id: 'counter.human_actions_hourly'
+
+- alias: "Reset motion counters hourly"
+  trigger:
+    - platform: time
+      minutes: 00
+      seconds: 00
+  action:
+    - service: counter.reset
+      data:
+        entity_id: 'counter.human_actions_hourly'
+       

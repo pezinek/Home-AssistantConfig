@@ -5,6 +5,7 @@ Home modes:
     - input_boolean.bed_time
     - input_boolean.away_mode
     - input_select.lighting_mode
+    - counter.human_actions_hourly
 
 
 Off_when_away:
@@ -32,5 +33,6 @@ Activity Detectors:
     - binary_sensor.kitchen_pir
     - binary_sensor.office_pir
     - binary_sensor.hall_upstairs_pir
-    - switch.sonoff1
+    # - switch.sonoff1
+    - counter.human_actions_hourly
     

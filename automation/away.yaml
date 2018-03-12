@@ -58,6 +58,11 @@
       entity_id: group.activity_detectors
       from: 'off'
       to: 'on'
+      for:
+        seconds: 10
+    - platform: numeric_state
+      entity_id: counter.human_actions_hourly
+      above: 5
   condition:
     condition: state
     entity_id: input_boolean.away_mode
