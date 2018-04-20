@@ -1,7 +1,7 @@
 life_intensity_hr:
   name: Life Intensity
+  unit_of_measurement: interactions/hour
   mode: box
-  unit_of_measurement: Human Actions Detected / hour
   initial: 0
   min: 0
   max: 36000

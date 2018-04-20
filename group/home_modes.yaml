@@ -34,6 +34,4 @@ Activity Detectors:
     - binary_sensor.office_pir
     - binary_sensor.hall_upstairs_pir
     # - switch.sonoff1
-    - counter.human_actions_hourly
-    # - input_number.life_intensity_hr
     

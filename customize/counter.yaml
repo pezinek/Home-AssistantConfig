@@ -1,4 +1,5 @@
 
 counter.human_actions_hourly:
-  friendly_name: "Human actions (per hour)"
+  friendly_name: "Human Interactions"
+  unit_of_measurement: interactions/hour
 
