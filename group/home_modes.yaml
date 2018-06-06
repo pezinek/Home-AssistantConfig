@@ -16,6 +16,7 @@ Off_when_away:
     - switch.sonoff2
     - switch.sonoff_t1
     - switch.sonoff_t2
+    - switch.pool
 
 On_when_away_disabled:
     - switch.sonoff2
