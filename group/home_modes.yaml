@@ -16,10 +16,12 @@ Off_when_away:
     - switch.sonoff2
     - switch.sonoff_t1
     - switch.sonoff_t2
+    - input_boolean.pool_automation
     - switch.pool
 
 On_when_away_disabled:
     - switch.sonoff2
+    - input_boolean.pool_automation
 
 Off_when_bedtime:
   entities:

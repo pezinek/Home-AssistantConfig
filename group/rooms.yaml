@@ -53,4 +53,5 @@ garden:
     - sensor.pool_temperature
     - sensor.solar_collector_temperature
     - sensor.pool_controller_temperature
+    - input_boolean.pool_automation
 

@@ -90,3 +90,7 @@ sensor.solar_collector_temperature:
 sensor.pool_controller_temperature:
   friendly_name: "Controller Temperature"
 
+sensor.pool_controller_wifi_signal:
+  friendly_name: "Pool controller WiFi signal"
+  icon: mdi:wifi
+

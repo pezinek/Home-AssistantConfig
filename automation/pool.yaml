@@ -2,17 +2,20 @@
 - alias: 'Pool pump on when solar collector hot'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.solar_collector_temperature
-      above: 30
+      entity_id: sensor.solar_pool_delta
+      above: 3
   condition:
     condition: and
     conditions:
       - condition: numeric_state
         entity_id: sensor.pool_temperature
-        below: 30
+        below: 29.8
       - condition: state
-        entity_id: input_boolean.away_mode
+        entity_id: switch.pool
         state: 'off'
+      - condition: state
+        entity_id: input_boolean.pool_automation
+        state: 'on'
   action:
     - service: switch.turn_on
       data:
@@ -22,11 +25,20 @@
 - alias: 'Pool pump off when solar collector cold'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.solar_collector_temperature
-      below: 27 
+      entity_id: sensor.solar_pool_delta
+      below: 2
     - platform: numeric_state
       entity_id: sensor.pool_temperature
       above: 30
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.pool
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.pool_automation
+        state: 'on'
   action:
     - service: switch.turn_off
       data:

@@ -1,20 +1,27 @@
+# Note: when initial not set value would be loaded from recorder
+
 electricity_is_cheap:
   name: "Cheap electricity"
   icon: mdi:power-plug
-  initial: off
+#  initial: off
 
 speech_notifications:
   name: "Speech Notifications"
   icon: mdi:speaker-wireless
-  initial: on
+#  initial: on
 
 bed_time:
   name: "Bed Time"
   icon: mdi:sleep
-  initial: off
+#  initial: off
 
 away_mode:
   name: "Away Mode"
   icon: mdi:calendar-clock
-  initial: off
+#  initial: off # without initial the value should be loaded from recorder
+
+pool_automation:
+  name: "Pool Automation"
+  icon: mdi:auto-fix
+#  initial: on
 

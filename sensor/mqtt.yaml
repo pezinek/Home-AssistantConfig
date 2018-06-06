@@ -133,7 +133,7 @@
 
 - platform: mqtt
   name: solar_collector_temperature
-  state_topic: sonoff3/temperature/0
+  state_topic: sonoff3/temperature/1
   availability_topic: "sonoff3/status"
   payload_available: "1"
   payload_not_available: "0"
@@ -141,7 +141,7 @@
 
 - platform: mqtt
   name: pool_controller_temperature
-  state_topic: sonoff3/temperature/1
+  state_topic: sonoff3/temperature/0
   availability_topic: "sonoff3/status"
   payload_available: "1"
   payload_not_available: "0"
@@ -154,4 +154,12 @@
   payload_available: "1"
   payload_not_available: "0"
   unit_of_measurement: °C
+
+- platform: mqtt
+  state_topic: sonoff3/rssi
+  name: pool_controller_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "sonoff3/status"
+  payload_available: "1"
+  payload_not_available: "0"
 

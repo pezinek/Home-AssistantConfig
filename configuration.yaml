@@ -65,8 +65,8 @@ recorder:
        - sensor.living_room_pressure
        - sensor.sonoff1_temperature
        - sensor.sonoff1_humidity
-       - input_boolean.bed_time
-       - input_boolean.away_mode
+#      - input_boolean.bed_time
+#      - input_boolean.away_mode
        - media_player.kodi
        - media_player.mpd
        - media_player.projektor_svetice
@@ -74,11 +74,13 @@ recorder:
        - sensor.pool_temperature
        - sensor.solar_collector_temperature
        - switch.pool
-#    domains:
+#      - input_boolean.pool_automation
+     domains:
+       - input_boolean
 #      - sensor
 #      - binary_sensor
 #      - switch
-#      - input_boolean
+
 
 # Text to speech
 tts:

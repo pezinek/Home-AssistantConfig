@@ -21,4 +21,4 @@ switch.hall_fluxer:
 
 switch.pool:
   friendly_name: 'Pool'
-  icon: mdi:water-pump
+  icon: mdi:autorenew
