@@ -131,4 +131,27 @@
   payload_available: "true"
   payload_not_available: "false"
 
+- platform: mqtt
+  name: solar_collector_temperature
+  state_topic: sonoff3/temperature/0
+  availability_topic: "sonoff3/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  unit_of_measurement: °C
+
+- platform: mqtt
+  name: pool_controller_temperature
+  state_topic: sonoff3/temperature/1
+  availability_topic: "sonoff3/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  unit_of_measurement: °C
+
+- platform: mqtt
+  name: pool_temperature
+  state_topic: sonoff3/temperature/2
+  availability_topic: "sonoff3/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  unit_of_measurement: °C
 

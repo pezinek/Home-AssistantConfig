@@ -46,3 +46,11 @@ hall:
     - sensor.hall_upstairs_luxmeter
     - binary_sensor.hall_upstairs_pir
 
+garden:
+  name: Garden
+  entities:
+    - switch.pool
+    - sensor.pool_temperature
+    - sensor.solar_collector_temperature
+    - sensor.pool_controller_temperature
+

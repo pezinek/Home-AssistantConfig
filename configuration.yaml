@@ -71,6 +71,9 @@ recorder:
        - media_player.mpd
        - media_player.projektor_svetice
        - input_number.life_intensity_hr
+       - sensor.pool_temperature
+       - sensor.solar_collector_temperature
+       - switch.pool
 #    domains:
 #      - sensor
 #      - binary_sensor

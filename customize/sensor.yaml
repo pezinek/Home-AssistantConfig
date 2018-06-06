@@ -81,3 +81,12 @@ binary_sensor.hall_upstairs_pir:
   friendly_name: 'Motion (hall upstairs)'
   icon: mdi:eye-outline
 
+sensor.pool_temperature:
+  friendly_name: "Pool Temperature"
+
+sensor.solar_collector_temperature:
+  friendly_name: "Collector Temperature"
+
+sensor.pool_controller_temperature:
+  friendly_name: "Controller Temperature"
+

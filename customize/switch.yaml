@@ -19,3 +19,6 @@ switch.hall_fluxer:
   friendly_name: 'Hall Fluxer'
   icon: mdi:palette
 
+switch.pool:
+  friendly_name: 'Pool'
+  icon: mdi:water-pump
