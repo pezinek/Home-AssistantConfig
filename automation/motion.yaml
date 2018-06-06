@@ -173,9 +173,9 @@
       - condition: numeric_state
         entity_id: sensor.kitchen_luxmeter
         below: 15
-      - condition: state
-        entity_id: light.kitchen_counter
-        state: 'off'
+      #- condition: state
+      #  entity_id: light.kitchen_counter
+      #  state: 'off'
       - condition: state
         entity_id: input_boolean.bed_time 
         state: 'on'
