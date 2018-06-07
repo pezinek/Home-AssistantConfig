@@ -81,6 +81,25 @@ recorder:
 #      - binary_sensor
 #      - switch
 
+homekit:
+  filter:
+    include_entities:
+      - switch.sonoff_t1
+      - switch.sonoff_t2
+      - switch.sonoff1
+      - switch.pool
+      - input_boolean.away_mode
+      - input_boolean.bed_time
+      - input_boolean.speech_notifications
+      - input_boolean.pool_automation
+      - light.kitchen_counter
+      - light.kitchen_moodlight
+      - light.livingroom_moodlight
+      - light.kidsroom_bedlight
+      - light.hall_upstairs
+      - sensor.pool_temperature
+      - sensor.solar_collector_temperature
+      - sensor.living_room_temperature
 
 # Text to speech
 tts:
