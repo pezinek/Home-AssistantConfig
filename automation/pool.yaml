@@ -9,7 +9,7 @@
     conditions:
       - condition: numeric_state
         entity_id: sensor.pool_temperature
-        below: 29.8
+        below: 31
       - condition: state
         entity_id: switch.pool
         state: 'off'
@@ -29,7 +29,7 @@
       below: 2
     - platform: numeric_state
       entity_id: sensor.pool_temperature
-      above: 30
+      above: 32
   condition:
     condition: and
     conditions:
