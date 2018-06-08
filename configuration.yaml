@@ -88,10 +88,6 @@ homekit:
       - switch.sonoff_t2
       - switch.sonoff1
       - switch.pool
-      - input_boolean.away_mode
-      - input_boolean.bed_time
-      - input_boolean.speech_notifications
-      - input_boolean.pool_automation
       - light.kitchen_counter
       - light.kitchen_moodlight
       - light.livingroom_moodlight
@@ -100,6 +96,9 @@ homekit:
       - sensor.pool_temperature
       - sensor.solar_collector_temperature
       - sensor.living_room_temperature
+      - sensor.hall_upstairs_luxmeter
+      - sensor.kitchen_luxmeter
+      - sensor.office_luxmeter
 
 # Text to speech
 tts:
