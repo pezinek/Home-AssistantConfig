@@ -1,0 +1,22 @@
+- platform: template
+  sensors:
+    solar_pool_delta:
+      friendly_name: "Temperature difference between pool and solar colector"
+      entity_id:
+        - sensor.pool_temperature
+        - sensor.solar_collector_temperature
+#     unit_of_measurement: °C
+      value_template: "{{ states.sensor.solar_collector_temperature.state|float - states.sensor.pool_temperature.state|float }}"
+
+#- platform: rest
+#  resource: http://jee-01/
+#  name: Living Room temperature
+#  value_template: '{{ value_json.temperature }}'
+#  unit_of_measurement: '°C'
+#
+#- platform: rest
+#  resource: http://jee-01/
+#  name: Living Room pressure
+#  value_template: '{{ value_json.pressure | multiply(0.01) | round(2) }}'
+#  unit_of_measurement: 'mb'
+
