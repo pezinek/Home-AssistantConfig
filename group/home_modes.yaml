@@ -36,5 +36,6 @@ Activity Detectors:
     - binary_sensor.kitchen_pir
     - binary_sensor.office_pir
     - binary_sensor.hall_upstairs_pir
+    - binary_sensor.pool_button
     # - switch.sonoff1
     

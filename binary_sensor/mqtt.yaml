@@ -29,3 +29,12 @@
   payload_available: "true"
   payload_not_available: "false"
 
+- platform: mqtt
+  state_topic: "sonoff3/button/0"
+  name: pool_button
+  payload_on: "1"
+  payload_off: "2"
+  availability_topic: "sonoff3/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
