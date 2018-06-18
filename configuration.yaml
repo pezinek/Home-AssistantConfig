@@ -112,6 +112,9 @@ media_player:
   - platform: cast
   - platform: mpd
     host: orangepi-wifi
+  - platform: mpd
+    name: office
+    host: octoprint
 
 mqtt:
   broker: mqtt

@@ -28,6 +28,7 @@ office:
     - light.office_pir_led
     - sensor.office_luxmeter
     - binary_sensor.office_pir
+    - media_player.office
 
 kidsroom:
   name: Kids Room
