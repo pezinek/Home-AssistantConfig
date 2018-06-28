@@ -25,3 +25,7 @@ pool_automation:
   icon: mdi:auto-fix
 #  initial: on
 
+school_mode:
+  name: "School Mode"
+  icon: mdi:school
+

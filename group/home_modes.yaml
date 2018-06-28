@@ -4,6 +4,7 @@ Home modes:
     - input_boolean.speech_notifications
     - input_boolean.bed_time
     - input_boolean.away_mode
+    - input_boolean.school_mode
     - input_select.lighting_mode
     - counter.human_actions_hourly
 

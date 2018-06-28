@@ -15,6 +15,9 @@
       - condition: state
         entity_id: input_boolean.away_mode
         state: 'off'
+      - condition: state
+        entity_id: input_boolean.school_mode
+        state: 'on'
   action:
     # TODO: moodlights still managed in the native app
     - service: script.wkids
@@ -87,6 +90,9 @@
       - condition: state
         entity_id: input_boolean.away_mode
         state: 'off'
+      - condition: state
+        entity_id: input_boolean.school_mode
+        state: 'on'
   action:
     - service: light.turn_on
       data:
@@ -132,6 +138,7 @@
     - service: light.turn_on
       data:
         rgb_color: [1,0,0]
+        brightness: 5
         entity_id:
           - light.kidsroom_bedlight
     - delay: 00:01:00
