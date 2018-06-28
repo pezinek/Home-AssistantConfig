@@ -135,10 +135,15 @@
         entity_id:
           - light.kitchen_moodlight
           - light.livingroom_moodlight
+    # TODO: remove after upgrade to 0.72.1
+    - service: light.turn_on
+      data:
+        brightness: 1
+        entity_id:
+          - light.kidsroom_bedlight
     - service: light.turn_on
       data:
         rgb_color: [1,0,0]
-        brightness: 5
         entity_id:
           - light.kidsroom_bedlight
     - delay: 00:01:00
