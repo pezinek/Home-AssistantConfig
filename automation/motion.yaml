@@ -413,4 +413,25 @@
     - service: counter.reset
       data:
         entity_id: 'counter.human_actions_hourly'
-       
+
+- alias: "Kitchen socket on when someone seen in the morning"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '6:00'
+        before: '9:30'
+      - condition: state
+        entity_id: switch.socket1
+        state: 'off'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: 
+          - switch.socket1 
+
