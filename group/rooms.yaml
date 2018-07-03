@@ -6,6 +6,7 @@ kitchen:
     - light.kitchen_pir_led
     - sensor.kitchen_luxmeter
     - binary_sensor.kitchen_pir
+    - switch.socket1
 
 livingroom:
   name: Living Room

@@ -1,11 +1,11 @@
 
 switch.sonoff1:
   friendly_name: 'Sonoff 1 (Lamp)'
-  icon: mdi:power-socket
+  icon: mdi:power-socket-eu
 
 switch.sonoff2:
   friendly_name: 'Sonoff 2 (Electronic)'
-  icon: mdi:power-socket
+  icon: mdi:power-socket-eu
 
 switch.sonoff_t1:
   friendly_name: 'Office light'
@@ -22,3 +22,8 @@ switch.hall_fluxer:
 switch.pool:
   friendly_name: 'Pool'
   icon: mdi:autorenew
+
+switch.socket1:
+  friendly_name: 'Socket 1'
+  icon: mdi:power-socket-eu
+

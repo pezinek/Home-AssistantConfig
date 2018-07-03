@@ -163,3 +163,13 @@
   payload_available: "1"
   payload_not_available: "0"
 
+- platform: mqtt
+  state_topic: s20-1/rssi
+  name: socket1_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "s20-1/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+
+
