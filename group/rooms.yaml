@@ -29,6 +29,9 @@ office:
     - light.office_pir_led
     - sensor.office_luxmeter
     - binary_sensor.office_pir
+    - switch.pow1
+    - sensor.pow1_apparent
+    - sensor.pow1_energy
     - media_player.office
 
 kidsroom:

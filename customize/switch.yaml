@@ -27,3 +27,8 @@ switch.socket1:
   friendly_name: 'Socket 1'
   icon: mdi:power-socket-eu
 
+switch.pow1:
+  friendly_name: 'Pow 1'
+  icon: mdi:power-socket-eu
+
+

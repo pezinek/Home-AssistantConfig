@@ -94,3 +94,11 @@ sensor.pool_controller_wifi_signal:
   friendly_name: "Pool controller WiFi signal"
   icon: mdi:wifi
 
+sensor.pow1_apparent:
+  friendly_name: "Pow 1 power"
+  icon: mdi:flash
+
+sensor.pow1_energy:
+  friendly_name: "Pow 1 energy consumed"
+  icon: mdi:flash-auto
+
