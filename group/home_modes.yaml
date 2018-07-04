@@ -19,6 +19,7 @@ Off_when_away:
     - switch.sonoff_t2
     - input_boolean.pool_automation
     - switch.pool
+    - switch.socket1
 
 On_when_away_disabled:
     - switch.sonoff2

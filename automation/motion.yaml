@@ -425,7 +425,7 @@
     conditions:
       - condition: time
         after: '6:00'
-        before: '9:30'
+        before: '11:30'
       - condition: state
         entity_id: switch.socket1
         state: 'off'
