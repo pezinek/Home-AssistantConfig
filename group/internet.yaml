@@ -16,4 +16,6 @@ Internet:
     - sensor.ibutton_wifi_signal
     - sensor.pool_controller_wifi_signal
     - sensor.socket1_wifi_signal
+    - sensor.pow1_wifi_signal
+    - sensor.rfbridge_wifi_signal
 

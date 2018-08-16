@@ -64,3 +64,83 @@
   payload_available: 1
   payload_not_available: 0
 
+- platform: mqtt
+  name: rfbridge1
+  state_topic: sonoff-rfbridge/relay/0
+  command_topic: sonoff-rfbridge/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge2
+  state_topic: sonoff-rfbridge/relay/1
+  command_topic: sonoff-rfbridge/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge3
+  state_topic: sonoff-rfbridge/relay/2
+  command_topic: sonoff-rfbridge/relay/2/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge4
+  state_topic: sonoff-rfbridge/relay/3
+  command_topic: sonoff-rfbridge/relay/3/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge5
+  state_topic: sonoff-rfbridge/relay/4
+  command_topic: sonoff-rfbridge/relay/4/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge6
+  state_topic: sonoff-rfbridge/relay/5
+  command_topic: sonoff-rfbridge/relay/5/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge7
+  state_topic: sonoff-rfbridge/relay/6
+  command_topic: sonoff-rfbridge/relay/6/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: rfbridge8
+  state_topic: sonoff-rfbridge/relay/7
+  command_topic: sonoff-rfbridge/relay/7/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-rfbridge/status
+  payload_available: 1
+  payload_not_available: 0
+

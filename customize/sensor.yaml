@@ -102,3 +102,15 @@ sensor.pow1_energy:
   friendly_name: "Pow 1 energy consumed"
   icon: mdi:flash-auto
 
+sensor.pow1_wifi_signal:
+  friendly_name: "Pow 1 WiFi signal"
+  icon: mdi:wifi
+
+sensor.socket1_wifi_signal:
+  friendly_name: "Socket 1 WiFi signal"
+  icon: mdi:wifi
+
+sensor.rfbridge_wifi_signal:
+  friendly_name: "Sonoff RF Bridge WiFi signal"
+  icon: mdi:wifi
+
