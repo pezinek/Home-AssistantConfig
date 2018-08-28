@@ -106,7 +106,8 @@ wall:
     - service: script.lr_amp_51
     - delay:
         milliseconds: 150
-    - service: script.lr_amp_input_aux
+    #- service: script.lr_amp_input_aux
+    - service: script.lr_amp_input_ac3
     - delay:
         milliseconds: 150
     - service: media_player.play_media
