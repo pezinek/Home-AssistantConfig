@@ -1,0 +1,7 @@
+
+- platform: template
+  sensors:
+    door_guestroom:
+      device_class: motion
+      value_template: '{{ states("timer.door_guestroom_open") == "active" }}'
+

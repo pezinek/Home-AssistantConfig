@@ -114,3 +114,10 @@ sensor.rfbridge_wifi_signal:
   friendly_name: "Sonoff RF Bridge WiFi signal"
   icon: mdi:wifi
 
+sensor.rf_code:
+  friendly_name: 'RF Bridge (code)'
+  icon: mdi:remote
+
+binary_sensor.door_guestroom:
+  friendly_name: "Guestroom door opening"
+  icon: mdi:eye-outline

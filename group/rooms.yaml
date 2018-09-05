@@ -15,6 +15,7 @@ livingroom:
     - switch.sonoff1
     - switch.sonoff2
     - sensor.ir_code
+    - sensor.rf_code
     - sensor.living_room_temperature
     - sensor.living_room_pressure
     - sensor.sonoff1_temperature
@@ -50,6 +51,7 @@ hall:
     - light.hall_upstairs_pir_led
     - sensor.hall_upstairs_luxmeter
     - binary_sensor.hall_upstairs_pir
+    - binary_sensor.door_guestroom
 
 garden:
   name: Garden

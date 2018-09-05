@@ -114,7 +114,7 @@ media_player:
     port: 80
   - platform: cast
   - platform: mpd
-    host: orangepi-wifi
+    host: mpd
   - platform: mpd
     name: office
     host: octoprint
@@ -174,9 +174,11 @@ input_select: !include_dir_merge_named input_select
 input_number: !include_dir_merge_named input_number
 scene: !include_dir_merge_list scene
 counter: !include_dir_merge_named counter
+timer: !include_dir_merge_named timer
 
 #logger:
 #  default: warning
 #  logs:
 #     homeassistant.components.mqtt: debug
+
 

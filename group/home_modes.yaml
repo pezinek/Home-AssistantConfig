@@ -43,4 +43,5 @@ Activity Detectors:
     - binary_sensor.pool_button
     - binary_sensor.socket1_button
     # - switch.sonoff1
+    - binary_sensor.door_guestroom
     
