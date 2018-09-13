@@ -11,4 +11,6 @@ light.ibutton_led:
 light.hall_upstairs_pir_led:
   friendly_name: "Hall upstairs PIR Led"
 
+light.office_lamp:
+  friendly_name: "Office Lamp"
 

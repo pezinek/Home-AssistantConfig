@@ -1,4 +1,47 @@
 
+- alias: 'Office lamp on when monitors are on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.pow1_apparent
+      above: 180
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.office_luxmeter
+        below: 8 
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+      - condition: state
+        entity_id: light.office_lamp
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255,0,64]
+        brightness: 255
+        entity_id:
+          - light.office_lamp
+
+- alias: 'Office lamp off when monitors are off'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.pow1_apparent
+      below: 160
+  condition:
+    condition: state
+    entity_id: light.office_lamp
+    state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.office_lamp
+
 - alias: 'Office light on when motion'
   trigger:
     - platform: state

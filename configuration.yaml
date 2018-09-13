@@ -51,6 +51,7 @@ recorder:
        - binary_sensor.hall_upstairs_pir
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
+       - light.office_lamp
        - sensor.hall_upstairs_luxmeter
        - light.kidsroom_bedlight
        - light.kitchen_moodlight
