@@ -79,3 +79,25 @@
       entity_id:
         - timer.door_guestroom_open
 
+
+- alias: 'Viteks controller - random colors on all lights'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  action:
+    - service_template: >
+        {% if trigger.to_state.state[-6:-1] == "8E3FE" %}
+        light.turn_on
+        {% endif %}
+      data_template:
+        rgb_color: ['{{ "{0:d}".format(range(0,255)|random) }}',
+                    '{{ "{0:d}".format(range(0,255)|random) }}',
+                    '{{ "{0:d}".format(range(0,255)|random) }}']
+        entity_id:
+          - light.office_lamp
+          - light.hall_upstairs
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+          - light.kidsroom_bedlight
+
