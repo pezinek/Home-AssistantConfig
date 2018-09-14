@@ -97,6 +97,7 @@ homekit:
       - light.livingroom_moodlight
       - light.kidsroom_bedlight
       - light.hall_upstairs
+      - light.office_lamp
       - sensor.pool_temperature
       - sensor.solar_collector_temperature
       - sensor.living_room_temperature
