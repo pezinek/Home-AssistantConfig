@@ -2,9 +2,9 @@
 
 - alias: 'Office lamp on when monitors are on'
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.pow1_apparent
-      above: 180
+    - platform: state
+      entity_id: binary_sensor.office_screens
+      to: 'on'
   condition:
     condition: and
     conditions:
@@ -30,9 +30,9 @@
 
 - alias: 'Office lamp off when monitors are off'
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.pow1_apparent
-      below: 160
+    - platform: state
+      entity_id: binary_sensor.office_screens
+      to: 'off'
   condition:
     condition: state
     entity_id: light.office_lamp
@@ -434,6 +434,13 @@
           - switch.hall_fluxer
     - service: light.turn_on
       data:
+        brightness: 255
+        entity_id:
+          - light.hall_upstairs
+    # do it twice to work arround a bug in the driver
+    - service: light.turn_on
+      data:
+        brightness: 255
         entity_id:
           - light.hall_upstairs
     - service: switch.hall_fluxer_update

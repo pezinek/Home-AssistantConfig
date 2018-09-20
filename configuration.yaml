@@ -49,6 +49,7 @@ recorder:
        - binary_sensor.kitchen_pir
        - binary_sensor.office_pir
        - binary_sensor.hall_upstairs_pir
+       - binary_sensor.office_screens
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
        - light.office_lamp

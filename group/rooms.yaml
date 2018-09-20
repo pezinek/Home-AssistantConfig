@@ -31,6 +31,7 @@ office:
     - light.office_pir_led
     - sensor.office_luxmeter
     - binary_sensor.office_pir
+    - binary_sensor.office_screens
     - switch.pow1
     - sensor.pow1_apparent
     - sensor.pow1_energy

@@ -121,3 +121,7 @@ sensor.rf_code:
 binary_sensor.door_guestroom:
   friendly_name: "Guestroom door opening"
   icon: mdi:eye-outline
+
+binary_sensor.office_screens:
+  friendly_name: "Office screens"
+  icon: mdi:monitor-multiple

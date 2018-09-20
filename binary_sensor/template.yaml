@@ -4,4 +4,7 @@
     door_guestroom:
       device_class: motion
       value_template: '{{ states("timer.door_guestroom_open") == "active" }}'
+    
+    office_screens:
+      value_template: '{{ states("sensor.pow1_apparent")|float > 180 }}'
 
