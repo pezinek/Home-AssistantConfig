@@ -1,10 +1,13 @@
 
 
-- alias: 'Office lamp on when monitors are on'
+- alias: 'Office lamp on when monitors are on or is dark'
   trigger:
     - platform: state
       entity_id: binary_sensor.office_screens
       to: 'on'
+    - platform: numeric_state
+      entity_id: sensor.office_luxmeter
+      below: 8
   condition:
     condition: and
     conditions:
@@ -20,6 +23,9 @@
       - condition: state
         entity_id: light.office_lamp
         state: 'off'
+      - condition: state
+        entity_id: binary_sensor.office_screens
+        state: 'on'
   action:
     - service: light.turn_on
       data:
@@ -33,6 +39,9 @@
     - platform: state
       entity_id: binary_sensor.office_screens
       to: 'off'
+    - platform: numeric_state
+      entity_id: sensor.office_luxmeter
+      above: 20
   condition:
     condition: state
     entity_id: light.office_lamp
