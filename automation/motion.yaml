@@ -41,7 +41,7 @@
       to: 'off'
     - platform: numeric_state
       entity_id: sensor.office_luxmeter
-      above: 20
+      above: 30
   condition:
     condition: state
     entity_id: light.office_lamp

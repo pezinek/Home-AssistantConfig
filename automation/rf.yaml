@@ -38,6 +38,7 @@
     - platform: state
       entity_id:
         - switch.rfbridge3
+        - switch.rfbridge6
         - light.kidsroom_bedlight
   action:
     - service_template: >
@@ -48,6 +49,7 @@
         {% endif %}
       entity_id:
         - switch.rfbridge3
+        - switch.rfbridge6
         - light.kidsroom_bedlight
 
 - alias: 'Group kids room light switches'
@@ -55,6 +57,7 @@
     - platform: state
       entity_id:
         - switch.rfbridge2
+        - switch.rfbridge7
         - switch.sonoff_t2
   action:
     - service_template: >
@@ -65,6 +68,7 @@
         {% endif %}
       entity_id:
         - switch.rfbridge2
+        - switch.rfbridge7
         - switch.sonoff_t2
 
 - alias: 'Guest Room Door Opened'
@@ -99,5 +103,21 @@
           - light.kitchen_counter
           - light.kitchen_moodlight
           - light.livingroom_moodlight
+          - light.kidsroom_bedlight
+
+- alias: 'Andrejka controller - random color on bed light'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  action:
+    - service_template: >
+        {% if trigger.to_state.state[-6:] == "2E54B3" %}
+        light.turn_on
+        {% endif %}
+      data_template:
+        rgb_color: ['{{ "{0:d}".format(range(0,128)|random) }}',
+                    '{{ "{0:d}".format(range(0,128)|random) }}',
+                    '{{ "{0:d}".format(range(0,128)|random) }}']
+        entity_id:
           - light.kidsroom_bedlight
 
