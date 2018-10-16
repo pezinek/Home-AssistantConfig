@@ -121,3 +121,67 @@
         entity_id:
           - light.kidsroom_bedlight
 
+
+#
+# Playlists
+#
+# kidsroom_1 - andrejciny/petovo pisnicky
+# kidsroom_2 - pohadkove pisnicky
+# kidsroom_3 - uhlir
+# kidsroom_4 - Soundtracky
+# kidsroom_5 - Elder scrolls
+# kidsroom_6 - Country
+# kidsroom_7 - Dance
+# kidsroom_8 - Radio
+# kidsroom_9 - Vanocni
+
+- alias: 'Kidsroom player - play/next playlist/prev playlist'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: media_player.mpd
+        state: 'off'
+      - condition: state
+        entity_id: media_player.mpd
+        state: 'paused'
+  action:
+    - service_template: >
+        {% if trigger.to_state.state[-6:] == "374271" %}
+        media_player.play_media
+        {% elif trigger.to_state.state[-6:] == "374272" %}
+        media_player.play_media
+        {% elif trigger.to_state.state[-6:] == "374274" %}
+        media_player.play_media
+        {% endif %}
+      data_template:
+        media_content_id: '{{ "kidsroom_{0:d}".format(range(1,9)|random) }}'
+        media_content_type: 'playlist'
+        entity_id:
+          - media_player.mpd
+
+
+- alias: 'Kidsroom player - stop/next/prev'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+      - condition: state
+        entity_id: media_player.mpd
+        state: 'playing'
+  action:
+    - service_template: >
+        {% if trigger.to_state.state[-6:] == "374271" %}
+        media_player.media_stop
+        {% elif trigger.to_state.state[-6:] == "374272" %}
+        media_player.media_previous_track
+        {% elif trigger.to_state.state[-6:] == "374274" %}
+        media_player.media_next_track
+        {% endif %}
+      data:
+        entity_id:
+          - media_player.mpd
+
