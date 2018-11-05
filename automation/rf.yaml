@@ -202,3 +202,25 @@
         entity_id:
           - media_player.mpd
 
+
+- alias: 'Kidsroom player - presets'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  action:
+    - service: media_player.play_media
+      data_template:
+        media_content_id: >
+          {% if trigger.to_state.state[-6:] == "0CD671" %}
+          kidsroom_8
+          {% elif trigger.to_state.state[-6:] == "0CD672" %}
+          countryradio
+          {% elif trigger.to_state.state[-6:] == "0CD674" %}
+          pohadky
+          {% elif trigger.to_state.state[-6:] == "0CD678" %}
+          povesti
+          {% endif %}
+        media_content_type: 'playlist'
+        entity_id:
+          - media_player.mpd
+      
