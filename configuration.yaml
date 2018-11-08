@@ -178,6 +178,7 @@ input_number: !include_dir_merge_named input_number
 scene: !include_dir_merge_list scene
 counter: !include_dir_merge_named counter
 timer: !include_dir_merge_named timer
+alarm_control_panel: !include_dir_merge_list alarm
 
 #logger:
 #  default: warning

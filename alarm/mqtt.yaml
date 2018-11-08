@@ -1,0 +1,11 @@
+- platform: mqtt
+  name: jablotron
+  state_topic: "alarm/mode"
+  command_topic: "alarm/key/press"
+  payload_disarm: !secret alarm_code
+  payload_arm_home: "F1"
+  payload_arm_away: !secret alarm_code
+  availability_topic: "alarm/online"
+  payload_available: "1"
+  payload_not_available: "0"
+
