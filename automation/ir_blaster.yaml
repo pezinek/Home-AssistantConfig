@@ -1,300 +1,102 @@
-
-# IR Codes for LED strip remote APA 1616
-
-- alias: 'LEDs ON via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'UNKNOWN: 0xCE1972FD'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-
-- alias: 'LEDs OFF via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF740BF'
-  action:
-    - service: light.turn_off
-      entity_id:
-        - group.kitchen
-
-- alias: 'LEDs DARKER via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7807F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        brightness: 128
-
-- alias: 'LEDs BRIGHTER via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF700FF'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        brightness: 255
-
-
-# basic colors
-
-- alias: 'LEDs RED via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF720DF'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,0,0]
-
-- alias: 'LEDs GREEN via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7A05F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [0,255,0]
-
-- alias: 'LEDs BLUE via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7609F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [0,0,255]
-
-- alias: 'LEDs WHITE via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7E01F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,255,255]
-
-# effects
-
-- alias: 'LEDs FLASH via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7D02F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        effect: random
-
-- alias: 'LEDs STROBE via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7F00F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        effect: random
-
-- alias: 'LEDs FADE via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7C837'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        effect: random
-
-- alias: 'LEDs SMOOTH via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7E817'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        effect: random
-
-# row 3
-
-- alias: 'LEDs db4c44 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF710EF'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,20,0]
-
-- alias: 'LEDs 44b87d via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7906F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,255,4]
-
-- alias: 'LEDs 1759a3 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF750AF'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [66,128,255]
-
-# row 4
-
-- alias: 'LEDs bd483f via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF730CF'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,55,3]
-
-- alias: 'LEDs 2f9891 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7B04F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,255,20]
-
-- alias: 'LEDs 393b48 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7708F'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [30,0,32]
-
-# row 5
-
-- alias: 'LEDs e97a28 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF708F7'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,40,0]
-
-- alias: 'LEDs 1d889c via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF78877'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [129,129,20]
-
-- alias: 'LEDs 403345 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF748B7'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [32,0,5]
-
-# row 6
-
-- alias: 'LEDs dac667 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF728D7'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,130,0]
-
-- alias: 'LEDs 0e6d89 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF7A857'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [0,7,3]
-
-- alias: 'LEDs cd5a79 via IR'
-  trigger:
-    - platform: state
-      entity_id: sensor.ir_code
-      to: 'NEC: 0xF76897'
-  action:
-    - service: light.turn_on
-      entity_id:
-        - group.kitchen
-      data:
-        rgb_color: [255,0,216]
+# The IR Blaster is currently not working correctly
+#
+#- alias: 'LEDs: Remote APA 1616 - on/off'
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.ir_code
+#  action:
+#    - service_template: >
+#        {% if trigger.to_state == "NEC: 0xF740BF" %}
+#        light.turn_off
+#        {% elif trigger.to_state == "UNKNOWN: 0xCE1972FD" %}
+#        light.turn_on 
+#        {% endif %}
+#      entity_id:
+#        - group.kitchen
+#
+#
+#- alias: 'LEDs: Remote APA 1616 - colors'
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.ir_code
+#  action:
+#    - service_template: >
+#        {% if trigger.to_state == "NEC: 0xF740BF" %}
+#        light.turn_off
+#        {% else %}
+#        light.turn_on 
+#        {% endif %}
+#      data_template:
+#        rgb_color: >
+#          {% if trigger.to_state == "NEC: 0xF720DF" %}
+#          [ 255, 0, 0]
+#          {% elif trigger.to_state == "NEC: 0xF7A05F" %}
+#          [ 0, 255, 0]
+#          {% elif trigger.to_state == "NEC: 0xF7609F" %}
+#          [ 0, 0, 255]
+#          {% elif trigger.to_state == "NEC: 0xF7E01F" %}
+#          [255,255,255]
+#          {% elif trigger.to_state == "NEC: 0xF710EF" %}
+#          [255,20,0] 
+#          {% elif trigger.to_state == "NEC: 0xF7906F" %}
+#          [255,255,4]
+#          {% elif trigger.to_state == "NEC: 0xF750AF" %}
+#          [66,128,255]          
+#          {% elif trigger.to_state == "NEC: 0xF730CF" %}
+#          [255,55,3]
+#          {% elif trigger.to_state == "NEC: 0xF7B04F" %}
+#          [255,255,20]
+#          {% elif trigger.to_state == "NEC: 0xF7708F" %}
+#          [30,0,32]
+#          {% elif trigger.to_state == "NEC: 0xF708F7" %}
+#          [255,40,0]
+#          {% elif trigger.to_state == "NEC: 0xF78877" %}
+#          [129,129,20]
+#          {% elif trigger.to_state == "NEC: 0xF748B7" %}
+#          [32,0,5]
+#          {% elif trigger.to_state == "NEC: 0xF728D7" %}
+#          [255,130,0]
+#          {% elif trigger.to_state == "NEC: 0xF7A857" %}
+#          [0,7,3]
+#          {% elif trigger.to_state == "NEC: 0xF76897" %}
+#          [255,0,216]
+#          {% endif %}
+#      entity_id:
+#        - group.kitchen
+#
+#- alias: 'LEDs: Remote APA 1616 - brightness'
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.ir_code
+#  action:
+#    - service: light.turn_on
+#      data_template:
+#        brightness: >
+#          {% if trigger.to_state == "NEC: 0xF7807F" %}
+#          128
+#          {% elif trigger.to_state == "NEC: 0xF700FF" %}
+#          255
+#          {% endif %}
+#      entity_id:
+#        - group.kitchen
+#
+#- alias: 'LEDs: Remote APA 1616 - effects'
+#  trigger:
+#    - platform: state
+#      entity_id: sensor.ir_code
+#  action:
+#    - service: light.turn_on
+#      data_template:
+#        effect: >
+#          {% if trigger.to_state == "NEC: 0xF7D02F" %}
+#          colorjump
+#          {% elif trigger.to_state == "NEC: 0xF7F00F" %}
+#          colorstrobe
+#          {% elif trigger.to_state == "NEC: 0xF7C837" %}
+#          white_fade
+#          {% elif trigger.to_state == "NEC: 0xF7E817" %}
+#          rb_cross_fade
+#          {% endif %}
+#      entity_id:
+#        - group.kitchen
 
