@@ -249,4 +249,13 @@
   availability_topic: "sonoff-rfbridge/status"
   payload_available: "1"
   payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: leds7/rssi
+  name: office_lamp_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "leds7/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
   

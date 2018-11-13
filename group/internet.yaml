@@ -18,4 +18,5 @@ Internet:
     - sensor.socket1_wifi_signal
     - sensor.pow1_wifi_signal
     - sensor.rfbridge_wifi_signal
+    - sensor.office_lamp_wifi_signal
 

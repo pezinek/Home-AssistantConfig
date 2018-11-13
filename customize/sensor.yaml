@@ -125,3 +125,8 @@ binary_sensor.door_guestroom:
 binary_sensor.office_screens:
   friendly_name: "Office screens"
   icon: mdi:monitor-multiple
+
+sensor.office_lamp_wifi_signal:
+  friendly_name: "Office Lamp WiFi signal"
+  icon: mdi:wifi
+
