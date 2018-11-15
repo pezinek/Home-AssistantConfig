@@ -224,3 +224,27 @@
         entity_id:
           - media_player.mpd
       
+- alias: 'Toggle things by RF code'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  action:
+    - service: homeassistant.toggle
+      data_template:
+        entity_id: >
+          {% if trigger.to_state.state[-6:] == "DAF2E8" %}
+            group.kitchen_lights
+          {% elif trigger.to_state.state[-6:] == "DAF2E2" %}
+            switch.sonoff1
+          {% elif trigger.to_state.state[-6:] == "DAF2E4" %}
+            light.livingroom_moodlight
+          {% elif trigger.to_state.state[-6:] == "DAF2E6" %}
+            script.cinema_scene
+          {% elif trigger.to_state.state[-6:] == "DAF2EA" %}
+            switch.socket1
+          {% elif trigger.to_state.state[-6:] == "DAF2EC" %}
+            script.disco_scene
+          {% elif trigger.to_state.state[-6:] == "DAF2EE" %}
+            script.black_scene
+          {% endif %}
+

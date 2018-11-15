@@ -1,0 +1,64 @@
+
+
+cinema_scene:
+  sequence:
+    - service: switch.turn_off 
+      data:
+        entity_id: switch.sonoff1
+    - service: light.turn_on
+      data:
+        entity_id:
+          - group.kitchen_lights
+          - light.livingroom_moodlight
+        rgb_color: [ 5, 0, 1 ]
+    - service: light.turn_on
+      data:
+        entity_id:
+          - group.kitchen_lights
+          - light.livingroom_moodlight
+        brightness: 50
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.livingroom_moodlight
+        rgb_color: [ 5, 0, 1 ]
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.livingroom_moodlight
+        brightness: 5 
+
+
+disco_scene:
+  sequence:
+    - service: switch.turn_off 
+      data:
+        entity_id: switch.sonoff1
+    - service: light.turn_on
+      data:
+        entity_id:
+          - group.kitchen_lights
+          - light.livingroom_moodlight
+        effect: "colorjump"
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.livingroom_moodlight
+        effect: "colorjump"
+
+
+black_scene:
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - group.kitchen_lights
+          - light.livingroom_moodlight
+          - switch.sonoff1
+          - switch.socket1
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+          - light.livingroom_moodlight
+
+

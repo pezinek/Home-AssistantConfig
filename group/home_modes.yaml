@@ -45,3 +45,7 @@ Activity Detectors:
     # - switch.sonoff1
     - binary_sensor.door_guestroom
     
+kitchen_lights:
+  entities:
+    - light.kitchen_counter
+    - light.kitchen_moodlight
