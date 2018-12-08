@@ -1,13 +1,7 @@
 - platform: flux_led
   devices:
-    leds6:
-      name: "Hall upstairs"
-      mode: 'rgb'
     leds5:
       name: "Kidsroom Bedlight"
-      mode: 'rgb'
-    leds4:
-      name: "Livingroom Moodlight"
       mode: 'rgb'
     leds3:
       name: "Kitchen Moodlight"

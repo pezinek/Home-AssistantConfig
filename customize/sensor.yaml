@@ -130,3 +130,11 @@ sensor.office_lamp_wifi_signal:
   friendly_name: "Office Lamp WiFi signal"
   icon: mdi:wifi
 
+sensor.livingroom_moodlight_wifi_signal:
+  friendly_name: "Livingroom moodlight WiFi signal"
+  icon: mdi:wifi
+
+sensor.hall_upstairs_light_wifi_signal:
+  friendly_name: "Hall upstairs light WiFi signal"
+  icon: mdi:wifi
+

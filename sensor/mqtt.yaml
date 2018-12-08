@@ -258,4 +258,21 @@
   payload_available: "1"
   payload_not_available: "0"
 
+- platform: mqtt
+  state_topic: leds4/rssi
+  name: hall_upstairs_light_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "leds4/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: leds8/rssi
+  name: livingroom_moodlight_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "leds8/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+  
   

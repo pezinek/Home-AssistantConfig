@@ -14,3 +14,9 @@ light.hall_upstairs_pir_led:
 light.office_lamp:
   friendly_name: "Office Lamp"
 
+light.hall_upstairs:
+  friendly_name: "Hall upstairs"
+
+light.livingroom_moodlight:
+  friendly_name: "Livingroom Moodlight"
+
