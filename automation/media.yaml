@@ -15,3 +15,52 @@
   action:
     - service: script.hdmi_5
 
+- alias: "Moodlight on if kodi or chromecast is playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'playing'
+    - platform: state
+      entity_id: media_player.projektor_svetice
+      to: 'playing'
+  condition: 
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.kitchen_luxmeter
+        below: 25
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [2, 0, 1]
+        brightness: 25
+        entity_id:
+          - light.livingroom_moodlight
+        
+
+- alias: "Moodlight off if kodi or chromecast are off"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'idle'
+    - platform: state
+      entity_id: media_player.projektor_svetice
+      to: 'idle'
+  condition: 
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.kitchen_luxmeter
+        below: 25
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.livingroom_moodlight
+        
