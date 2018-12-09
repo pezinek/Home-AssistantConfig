@@ -329,15 +329,33 @@
       - condition: state
         entity_id: light.kitchen_moodlight
         state: 'on'
-      - condition: state
-        entity_id: light.livingroom_moodlight
-        state: 'on'
   action:
     - service: light.turn_off
       data:
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+
+- alias: 'Living room light off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      to: 'off'
+      for:
+        minutes: 5
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
           - light.livingroom_moodlight
 
 - alias: 'Kitchen light off when too much light'

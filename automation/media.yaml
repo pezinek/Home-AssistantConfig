@@ -15,14 +15,11 @@
   action:
     - service: script.hdmi_5
 
-- alias: "Moodlight on if kodi or chromecast is playing"
+- alias: "Moodlight on if projector is on"
   trigger:
     - platform: state
-      entity_id: media_player.kodi
-      to: 'playing'
-    - platform: state
-      entity_id: media_player.projektor_svetice
-      to: 'playing'
+      entity_id: binary_sensor.projector
+      to: 'on'
   condition: 
     condition: and
     conditions:
@@ -41,14 +38,13 @@
           - light.livingroom_moodlight
         
 
-- alias: "Moodlight off if kodi or chromecast are off"
+- alias: "Moodlight off projector is off"
   trigger:
     - platform: state
-      entity_id: media_player.kodi
-      to: 'idle'
-    - platform: state
-      entity_id: media_player.projektor_svetice
-      to: 'idle'
+      entity_id: binary_sensor.projector
+      to: "off"
+      for:
+        minutes: 5
   condition: 
     condition: and
     conditions:

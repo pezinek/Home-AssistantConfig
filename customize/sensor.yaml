@@ -106,6 +106,18 @@ sensor.pow1_wifi_signal:
   friendly_name: "Pow 1 WiFi signal"
   icon: mdi:wifi
 
+sensor.pow2_apparent:
+  friendly_name: "Pow 2 power"
+  icon: mdi:flash
+
+sensor.pow2_energy:
+  friendly_name: "Pow 2 energy consumed"
+  icon: mdi:flash-auto
+
+sensor.pow2_wifi_signal:
+  friendly_name: "Pow 2 WiFi signal"
+  icon: mdi:wifi
+
 sensor.socket1_wifi_signal:
   friendly_name: "Socket 1 WiFi signal"
   icon: mdi:wifi
@@ -125,6 +137,10 @@ binary_sensor.door_guestroom:
 binary_sensor.office_screens:
   friendly_name: "Office screens"
   icon: mdi:monitor-multiple
+
+binary_sensor.projector:
+  friendly_name: "Projector"
+  icon: mdi:projector
 
 sensor.office_lamp_wifi_signal:
   friendly_name: "Office Lamp WiFi signal"

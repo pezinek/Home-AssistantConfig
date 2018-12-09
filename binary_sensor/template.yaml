@@ -8,3 +8,6 @@
     office_screens:
       value_template: '{{ states("sensor.pow1_apparent")|float > 180 }}'
 
+    projector:
+      value_template: '{{ states("sensor.pow2_apparent")|float > 180 }}'
+

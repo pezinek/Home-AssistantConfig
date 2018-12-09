@@ -17,6 +17,7 @@ Internet:
     - sensor.pool_controller_wifi_signal
     - sensor.socket1_wifi_signal
     - sensor.pow1_wifi_signal
+    - sensor.pow2_wifi_signal
     - sensor.rfbridge_wifi_signal
     - sensor.office_lamp_wifi_signal
     - sensor.livingroom_moodlight_wifi_signal

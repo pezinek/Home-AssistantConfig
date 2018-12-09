@@ -15,7 +15,7 @@ Off_when_away:
     - group.all_lights
     - group.all_media
     - switch.sonoff1
-    - switch.sonoff2
+    - switch.pow2
     - switch.sonoff_t1
     - switch.sonoff_t2
     - input_boolean.pool_automation
@@ -24,7 +24,7 @@ Off_when_away:
     - switch.pow1
 
 On_when_away_disabled:
-    - switch.sonoff2
+    - switch.pow2
     - input_boolean.pool_automation
     - switch.pow1
 

@@ -236,6 +236,79 @@
   payload_not_available: "0"
 
 - platform: mqtt
+  name: pow2_current
+  state_topic: sonoff-pow2/current
+  unit_of_measurement: A
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_voltage
+  platform: mqtt
+  state_topic: sonoff-pow2/voltage
+  unit_of_measurement: V
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_power
+  state_topic: sonoff-pow2/power
+  unit_of_measurement: W
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_reactive
+  state_topic: sonoff-pow2/reactive
+  unit_of_measurement: W
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_apparent
+  state_topic: sonoff-pow2/apparent
+  unit_of_measurement: W
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_factor
+  state_topic: sonoff-pow2/factor
+  unit_of_measurement: '%'
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_energy
+  state_topic: sonoff-pow2/energy
+  unit_of_measurement: kWh
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  name: pow2_energy
+  state_topic: sonoff-pow2/energy
+  unit_of_measurement: kWh
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: sonoff-pow2/rssi
+  name: pow2_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "sonoff-pow2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
   state_topic: sonoff-rfbridge/rssi
   name: rfbridge_wifi_signal
   unit_of_measurement: 'RSSI'

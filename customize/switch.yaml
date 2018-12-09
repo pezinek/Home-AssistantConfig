@@ -4,7 +4,7 @@ switch.sonoff1:
   icon: mdi:power-socket-eu
 
 switch.sonoff2:
-  friendly_name: 'Sonoff 2 (Electronic)'
+  friendly_name: 'Sonoff 2'
   icon: mdi:power-socket-eu
 
 switch.sonoff_t1:
@@ -29,6 +29,10 @@ switch.socket1:
 
 switch.pow1:
   friendly_name: 'Pow 1'
+  icon: mdi:power-socket-eu
+
+switch.pow2:
+  friendly_name: 'Pow 2 (Electronic)'
   icon: mdi:power-socket-eu
 
 switch.bathroom_socket:
