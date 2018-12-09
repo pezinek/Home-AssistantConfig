@@ -288,7 +288,6 @@
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
-          - light.livingroom_moodlight
     # workarround - merge after 0.72.1
     - service: light.turn_on
       data:
@@ -296,6 +295,11 @@
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 0, 0]
+        brightness: 10
+        entity_id:
           - light.livingroom_moodlight
 
 

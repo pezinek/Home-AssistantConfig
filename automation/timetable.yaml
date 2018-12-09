@@ -55,6 +55,13 @@
     #7:50
     - service: script.wall
     - delay: 00:00:40
+    - service: light.turn_on
+      data:
+        brightness: 255
+        rgb_color: [255, 90, 0]
+        entity_id:
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
     - service: tts.google_say
       entity_id: media_player.kodi
       data_template:
@@ -62,16 +69,34 @@
         cache: false
     #- delay: 00:02:00
     - delay: 00:05:00
+    - service: light.turn_on
+      data:
+        brightness: 255
+        rgb_color: [255, 0, 0]
+        entity_id:
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
     - service: script.wall
       data:
         message: 'Ahoj, to sem zase já. Už je čas vyrazit do školy. Přeji vám krásný den !  A budu tu na vás čekat až se vrátíte ! Tak zatím ! ... A vykročte pravou !'
     #- delay: 00:02:00
     - delay: 00:04:20
     #8:00
+    - service: light.turn_on
+      data:
+        brightness: 255
+        rgb_color: [255, 0, 127]
+        entity_id:
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+    - delay: 00:05:00
     - service: light.turn_off
       data:
         entity_id:
           - light.kidsroom_bedlight
+          - light.livingroom_moodlight
+          - light.kitchen_moodlight 
+          - light.kitchen_counter
     
 - alias: 'School day: evening routine'
   trigger:

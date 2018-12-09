@@ -1,5 +1,5 @@
 
-- alias: 'Bed Time starts when there is dark everywhere and nobody was seen for a while'
+- alias: 'Bed Time starts when there is dark everywhere and nobody was seen for a while and nobody is watching TV'
   trigger:
     - platform: state
       entity_id: group.activity_detectors
@@ -7,6 +7,11 @@
       to: 'off'
       for:
         minutes: 45
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'idle'
+      for:
+        minutes: 10
   condition:
     condition: and
     conditions:
@@ -19,6 +24,9 @@
       - condition: time
         after: '20:00:00'
         before: '04:00:00'
+      - condition: state
+        entity_id: media_player.kodi
+        state: 'idle'
   action:
     - service: input_boolean.turn_on
       data:

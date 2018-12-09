@@ -114,6 +114,7 @@
         rgb_color: ['{{ "{0:d}".format(range(0,255)|random) }}',
                     '{{ "{0:d}".format(range(0,255)|random) }}',
                     '{{ "{0:d}".format(range(0,255)|random) }}']
+        brightness: 255
         entity_id:
           - light.office_lamp
           - light.hall_upstairs
