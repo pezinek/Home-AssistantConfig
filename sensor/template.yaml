@@ -1,3 +1,6 @@
+# Cheap electricity schedule is at:
+# https://www.cezdistribuce.cz/edee/content/sysutf/ds3/data/hdo_data.json?&code=197&regionStred=1
+
 - platform: template
   sensors:
     solar_pool_delta:
@@ -8,15 +11,40 @@
 #     unit_of_measurement: °C
       value_template: "{{ states.sensor.solar_collector_temperature.state|float - states.sensor.pool_temperature.state|float }}"
 
-#- platform: rest
-#  resource: http://jee-01/
-#  name: Living Room temperature
-#  value_template: '{{ value_json.temperature }}'
-#  unit_of_measurement: '°C'
-#
-#- platform: rest
-#  resource: http://jee-01/
-#  name: Living Room pressure
-#  value_template: '{{ value_json.pressure | multiply(0.01) | round(2) }}'
-#  unit_of_measurement: 'mb'
-
+    cheap_electricity_left:
+      friendly_name: "Cheap electricity left"
+      entity_id:
+        - sensor.time
+      unit_of_measurement: min
+      value_template: >-
+        0
+        {%- if now().weekday() in [5,6] -%}
+          {%- set timetable = [
+                              {"start": [20, 15], "stop": [7, 55]},
+                              {"start": [8, 50], "stop": [10, 55]},
+                              {"start": [11, 50], "stop": [14, 10]},
+                              {"start": [15, 10], "stop": [19, 15]}
+                              ]
+          -%}
+        {%- else -%}
+          {%- set timetable = [
+                              {"start": [20, 50], "stop": [7, 55]},
+                              {"start": [8, 50], "stop": [10, 55]},
+                              {"start": [11, 50], "stop": [14, 35]},
+                              {"start": [15, 35], "stop": [19, 50]}
+                              ]
+          -%}
+        {%- endif -%}
+        {%- for timedelta in timetable -%}
+          {%- set start = timedelta["start"][0]*60 + timedelta["start"][1] -%}
+          {%- set stop = timedelta["stop"][0]*60 + timedelta["stop"][1] -%}
+          {%- if start > stop -%}
+            {%- set stop = stop + 24*60 -%}
+          {%- endif -%}
+          {%- set cur_time = now().hour*60 + now().minute -%}
+          {%- if cur_time > start and cur_time < stop -%}
+            {%- set time_left = stop - cur_time -%}
+            {{- stop - cur_time -}}
+          {%- endif -%}
+        {%- endfor -%}
+    

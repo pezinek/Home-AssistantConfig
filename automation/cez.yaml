@@ -1,112 +1,28 @@
-- alias: 'Cheap electricity on weekdays'
-  trigger:
-    - platform: time
-      at: '8:50:00'
-    - platform: time
-      at: '11:50:00'
-    - platform: time
-      at: '15:35:00'
-    - platform: time
-      at: '20:50:00'
-  condition:
-    condition: time
-    weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri 
-  action:
-    - service: input_boolean.turn_on
-      data:
-        entity_id: input_boolean.electricity_is_cheap
+# Electricity rate schedule
+#
+# https://www.cezdistribuce.cz/edee/content/sysutf/ds3/data/hdo_data.json?&code=197&regionStred=1
+#
+# schedule maintained in the template sensor cheap_electricity_left
 
-- alias: 'Expensive electricity on weekdays'
-  trigger:
-    - platform: time
-      at: '7:55:00'
-    - platform: time
-      at: '10:55:00'
-    - platform: time
-      at: '14:35:00'
-    - platform: time
-      at: '19:50:00'
-  condition:
-    condition: time
-    weekday:
-        - mon
-        - tue
-        - wed 
-        - thu
-        - fri
+- alias: 'Cheap electricity off'
+  trigger: 
+    - platform: numeric_state
+      entity_id: sensor.cheap_electricity_left
+      below: 1
   action:
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.electricity_is_cheap
 
-- alias: 'Cheap electricity on weekends'
-  trigger:
-    - platform: time
-      at: '8:50:00'
-    - platform: time
-      at: '11:50:00'
-    - platform: time
-      at: '15:10:00'
-    - platform: time
-      at: '20:15:00'
-  condition:
-    condition: time
-    weekday:
-        - sat
-        - sun
+- alias: 'Cheap electricity on'
+  trigger: 
+    - platform: numeric_state
+      entity_id: sensor.cheap_electricity_left
+      above: 0
   action:
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.electricity_is_cheap
-
-- alias: 'Expensive electricity on weekends'
-  trigger:
-    - platform: time
-      at: '7:55:00'
-    - platform: time
-      at: '10:55:00'
-    - platform: time
-      at: '14:10:00'
-    - platform: time
-      at: '19:15:00'
-  condition:
-    condition: time
-    weekday:
-        - sat
-        - sun
-  action:
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.electricity_is_cheap
-
-
-- alias: 'Cheap electricity notification'
-  initial_state: False
-  trigger:
-    - platform: state
-      entity_id: input_boolean.electricity_is_cheap
-      to: 'on'
-  action:
-    - service: script.wall
-      data:
-        message: 'Právě byla aktivována levnější sazba za elektřinu. Jedna kilowatthodina teď stojí zhruba jednu korunu a dvacet dva haléřů.'
-
-
-- alias: 'Expensive electricity notification'
-  initial_state: False
-  trigger:
-    - platform: state
-      entity_id: input_boolean.electricity_is_cheap
-      to: 'off'
-  action:
-    - service: script.wall
-      data:
-        message: 'Právě byla aktivována dražší sazba za elektřinu. Jedna kilowatthodina teď stojí zhruba jednu korunu a šedesát haléřů.'
 
 
 - alias: 'Lighting mode: warm'

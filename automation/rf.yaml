@@ -247,5 +247,7 @@
             script.disco_scene
           {% elif trigger.to_state.state[-6:] == "DAF2EE" %}
             script.black_scene
+          {% elif trigger.to_state.state[-6:] == "0623B1" %}
+            input_boolean.washingmachine_scheduled
           {% endif %}
 

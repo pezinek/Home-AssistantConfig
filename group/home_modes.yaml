@@ -1,6 +1,7 @@
 Home modes:
   entities:
     - input_boolean.electricity_is_cheap
+    - sensor.cheap_electricity_left
     - input_boolean.speech_notifications
     - input_boolean.bed_time
     - input_boolean.away_mode

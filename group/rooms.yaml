@@ -65,3 +65,9 @@ garden:
     - sensor.pool_controller_temperature
     - input_boolean.pool_automation
 
+bathroom:
+  name: Bathroom
+  entities:
+    - input_boolean.washingmachine_scheduled
+    - switch.bathroom_socket
+

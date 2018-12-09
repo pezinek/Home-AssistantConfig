@@ -29,3 +29,7 @@ school_mode:
   name: "School Mode"
   icon: mdi:school
 
+washingmachine_scheduled:
+  name: "Washing Machine Scheduled"
+  icon: mdi:washing-machine
+

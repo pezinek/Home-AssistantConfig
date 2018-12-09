@@ -31,4 +31,7 @@ switch.pow1:
   friendly_name: 'Pow 1'
   icon: mdi:power-socket-eu
 
+switch.bathroom_socket:
+  friendly_name: "Bathroom socket"
+  icon: mdi:power-socket-eu
 

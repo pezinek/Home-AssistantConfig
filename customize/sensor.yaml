@@ -138,3 +138,7 @@ sensor.hall_upstairs_light_wifi_signal:
   friendly_name: "Hall upstairs light WiFi signal"
   icon: mdi:wifi
 
+sensor.cheap_electricity_left:
+  friendly_name: "Cheap electricity left"
+  icon: mdi:alarm
+

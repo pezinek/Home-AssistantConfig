@@ -77,6 +77,7 @@ recorder:
        - sensor.solar_collector_temperature
        - switch.pool
        - switch.socket1
+       - switch.bathroom_socket
        - switch.pow1
        - sensor.pow1_apparent
 #      - input_boolean.pool_automation
