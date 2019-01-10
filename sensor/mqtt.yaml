@@ -245,7 +245,6 @@
 
 - platform: mqtt
   name: pow2_voltage
-  platform: mqtt
   state_topic: sonoff-pow2/voltage
   unit_of_measurement: V
   availability_topic: "sonoff-pow2/status"
