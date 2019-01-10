@@ -139,6 +139,10 @@ device_tracker:
 #      track_new_devices: False
   - platform: owntracks
 
+neato:
+  username: !secret neato_username
+  password: !secret neato_passwd
+
 # Zones
 
 zone:
