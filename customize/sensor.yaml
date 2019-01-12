@@ -61,6 +61,14 @@ sensor.sonoff1_humidity:
   friendly_name: 'Humidity (Sonoff 1)'
   icon: mdi:water-percent
 
+sensor.sonoff2_temperature:
+  friendly_name: 'Temperature (Sonoff 2)'
+  icon: mdi:thermometer
+
+sensor.sonoff2_humidity:
+  friendly_name: 'Humidity (Sonoff 2)'
+  icon: mdi:water-percent
+
 sensor.ibutton:
   friendly_name: 'iButton reader'
   icon: mdi:blur-radial

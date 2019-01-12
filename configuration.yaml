@@ -50,6 +50,7 @@ recorder:
        - binary_sensor.office_pir
        - binary_sensor.hall_upstairs_pir
        - binary_sensor.office_screens
+       - binary_sensor.projector
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
        - light.office_lamp
@@ -67,6 +68,8 @@ recorder:
        - sensor.living_room_pressure
        - sensor.sonoff1_temperature
        - sensor.sonoff1_humidity
+       - sensor.sonoff2_temperature
+       - sensor.sonoff2_humidity
 #      - input_boolean.bed_time
 #      - input_boolean.away_mode
        - media_player.kodi

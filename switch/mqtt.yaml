@@ -9,12 +9,13 @@
 
 - platform: mqtt
   name: sonoff2
-  state_topic: "stat/sonoff2/POWER"
-  command_topic: "cmnd/sonoff2/power"
-  retain: true
-  availability_topic: "tele/sonoff2/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
+  state_topic: sonoff2/relay/0
+  command_topic: sonoff2/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff2/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
   name: sonoff_t1

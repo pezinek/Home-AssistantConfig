@@ -13,14 +13,17 @@ livingroom:
   entities:
     - light.livingroom_moodlight
     - switch.sonoff1
+    - switch.sonoff2
     - switch.pow2
     - binary_sensor.projector
     - sensor.ir_code
     - sensor.rf_code
-    - sensor.living_room_temperature
-    - sensor.living_room_pressure
+#    - sensor.living_room_temperature
+#    - sensor.living_room_pressure
     - sensor.sonoff1_temperature
     - sensor.sonoff1_humidity
+    - sensor.sonoff2_temperature
+    - sensor.sonoff2_humidity
     - sensor.pow2_apparent
     - sensor.pow2_energy
     - media_player.kodi
