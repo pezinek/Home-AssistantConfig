@@ -234,17 +234,17 @@
       data_template:
         entity_id: >
           {% if trigger.to_state.state[-6:] == "DAF2E8" %}
-            group.kitchen_lights
+            light.livingroom_moodlight
           {% elif trigger.to_state.state[-6:] == "DAF2E2" %}
             switch.sonoff1
           {% elif trigger.to_state.state[-6:] == "DAF2E4" %}
-            light.livingroom_moodlight
+            group.kitchen_lights
           {% elif trigger.to_state.state[-6:] == "DAF2E6" %}
-            script.cinema_scene
-          {% elif trigger.to_state.state[-6:] == "DAF2EA" %}
             switch.socket1
+          {% elif trigger.to_state.state[-6:] == "DAF2EA" %}
+            switch.sonoff2
           {% elif trigger.to_state.state[-6:] == "DAF2EC" %}
-            script.disco_scene
+            script.cinema_scene
           {% elif trigger.to_state.state[-6:] == "DAF2EE" %}
             script.black_scene
           {% elif trigger.to_state.state[-6:] == "0623B1" %}
