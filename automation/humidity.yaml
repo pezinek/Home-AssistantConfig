@@ -3,13 +3,13 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
-      below: 40
+      below: 45
   condition:
     condition: and
     conditions:
       - condition: numeric_state
         entity_id: sensor.sonoff2_humidity
-        below: 40
+        below: 45
       - condition: state
         entity_id: switch.sonoff2
         state: 'off'
@@ -33,7 +33,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
-      above: 45
+      above: 50
     - platform: state
       entity_id: input_boolean.electricity_is_cheap
       from: 'on'
