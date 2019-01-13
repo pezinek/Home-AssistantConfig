@@ -4,6 +4,12 @@
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
       below: 45
+    - platform: state
+      entity_id: input_boolean.away_mode
+      to: 'off'
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      to: 'on'
   condition:
     condition: and
     conditions:
