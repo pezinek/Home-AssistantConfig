@@ -1,0 +1,60 @@
+
+- alias: 'Humidifier on when dry air'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.sonoff2_humidity
+      below: 40
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.sonoff2_humidity
+        below: 40
+      - condition: state
+        entity_id: switch.sonoff2
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.electricity_is_cheap
+        state: 'on'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.sonoff2
+
+# Humidifier tank size: 3.5 l
+# Evaporation: 0.24 l/h
+# Max run time with full tank: 14.4h
+
+- alias: 'Humidifier off when wet air'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.sonoff2_humidity
+      above: 45
+    - platform: state
+      entity_id: input_boolean.electricity_is_cheap
+      from: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: switch.sonoff2
+      to: 'on'
+      for: 
+        hours: 1
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.sonoff2
+        state: 'on'
+#      - condition: numeric_state
+#        entity_id: sensor.sonoff2_humidity
+#        above: 40
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.sonoff2
+
