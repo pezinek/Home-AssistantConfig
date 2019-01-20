@@ -10,6 +10,11 @@
     - platform: state
       entity_id: input_boolean.electricity_is_cheap
       to: 'on'
+    - platform: state
+      entity_id: switch.sonoff2
+      to: 'off'
+      for:
+        minutes: 15
   condition:
     condition: and
     conditions:
