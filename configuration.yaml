@@ -49,6 +49,7 @@ recorder:
        - binary_sensor.kitchen_pir
        - binary_sensor.office_pir
        - binary_sensor.hall_upstairs_pir
+       - binary_sensor.basement_pir
        - binary_sensor.office_screens
        - binary_sensor.projector
        - sensor.kitchen_luxmeter
@@ -64,6 +65,7 @@ recorder:
        - switch.sonoff_t2
        - switch.sonoff1
        - switch.sonoff2
+       - switch.sonoff4
        - sensor.living_room_temperature
        - sensor.living_room_pressure
        - sensor.sonoff1_temperature
