@@ -62,6 +62,8 @@ hall:
     - binary_sensor.door_guestroom
     - vacuum.n2d7
     - switch.n2d7_schedule
+    - binary_sensor.basement_pir
+    - switch.sonoff4
     - camera.n2d7_cleaning_map
     - alarm_control_panel.jablotron
 

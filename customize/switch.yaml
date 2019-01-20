@@ -7,6 +7,10 @@ switch.sonoff2:
   friendly_name: 'Sonoff 2 (Humidifier)'
   icon: mdi:power-socket-eu
 
+switch.sonoff4:
+  friendly_name: 'Basement light'
+  icon: mdi:lightbulb
+
 switch.sonoff_t1:
   friendly_name: 'Office light'
   icon: mdi:lightbulb

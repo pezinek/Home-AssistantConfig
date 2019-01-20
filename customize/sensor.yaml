@@ -25,6 +25,10 @@ sensor.sonoff2_wifi_signal:
   friendly_name: 'Sonoff 2 WiFi signal'
   icon: mdi:wifi
 
+sensor.sonoff4_wifi_signal:
+  friendly_name: 'Sonoff 4 WiFi signal'
+  icon: mdi:wifi
+
 sensor.sonoff_t1_wifi_signal:
   friendly_name: 'Office light WiFi signal'
   icon: mdi:wifi
@@ -47,6 +51,10 @@ binary_sensor.kitchen_pir:
 
 binary_sensor.office_pir:
   friendly_name: 'Motion (office)'
+  icon: mdi:eye-outline
+
+binary_sensor.basement_pir:
+  friendly_name: 'Motion (basement)'
   icon: mdi:eye-outline
 
 sensor.ir_code:
