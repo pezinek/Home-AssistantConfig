@@ -249,5 +249,9 @@
             script.black_scene
           {% elif trigger.to_state.state[-6:] == "0623B1" %}
             input_boolean.washingmachine_scheduled
+          {% elif trigger.to_state.state[-6:] == "029C74" %}
+            input_boolean.away_mode
+          {% elif trigger.to_state.state[-6:] == "2AF3E1" %}
+            input_boolean.bed_time
           {% endif %}
 
