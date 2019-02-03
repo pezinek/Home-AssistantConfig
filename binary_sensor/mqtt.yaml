@@ -52,6 +52,7 @@
   name: basement_pir
   payload_on: "1"
   payload_off: "5"
+  device_class: occupancy
   availability_topic: "sonoff4/status"
   payload_available: "1"
   payload_not_available: "0"
