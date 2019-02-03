@@ -1,0 +1,38 @@
+
+- alias: 'Warning when vacuum got stuck'
+  trigger:
+    - platform: state
+      entity_id: vacuum.n2d7
+      to: 'error'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: script.wall
+      data:
+        message: 'Haló haló, zasekl se vysavač, nemohla by ho nějaká dobrá duše vyprostit prosím ?'
+
+
+- alias: 'Locate stuck vacuum if someone is nearby'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hall_upstairs_pir
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: vacuum.n2d7
+        state: 'error'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: vacuum.locate
+      data:
+        entity_id: vacuum.n2d7
+
+
