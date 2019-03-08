@@ -45,6 +45,8 @@
         homeassistant.turn_on
         {% elif trigger.to_state.state == "off" %}
         homeassistant.turn_off
+        {% else %}
+        script.dummy
         {% endif %}
       entity_id:
         - switch.rfbridge4 
@@ -96,6 +98,8 @@
     - service_template: >
         {% if trigger.to_state.state[-6:] == "68C4A1" %}
         timer.start
+        {% else %}
+        script.dummy
         {% endif %}
       entity_id:
         - timer.door_guestroom_open
@@ -106,10 +110,12 @@
     - platform: state
       entity_id: sensor.rf_code
   action:
-    - service_template: >
-        {% if trigger.to_state.state[-6:-1] == "8E3FE" %}
+    - service_template: >-
+        {%- if trigger.to_state.state[-6:-1] == "8E3FE" -%}
         light.turn_on
-        {% endif %}
+        {%- else -%}
+        script.dummy
+        {%- endif -%}
       data_template:
         rgb_color: ['{{ "{0:d}".format(range(0,255)|random) }}',
                     '{{ "{0:d}".format(range(0,255)|random) }}',
@@ -131,6 +137,8 @@
     - service_template: >
         {% if trigger.to_state.state[-6:] == "2E54B3" %}
         light.turn_on
+        {% else %}
+        script.dummy
         {% endif %}
       data_template:
         rgb_color: ['{{ "{0:d}".format(range(0,128)|random) }}',
@@ -174,6 +182,8 @@
         media_player.play_media
         {% elif trigger.to_state.state[-6:] == "374274" %}
         media_player.play_media
+        {% else %}
+        script.dummy
         {% endif %}
       data_template:
         media_content_id: '{{ "kidsroom_{0:d}".format(range(1,9)|random) }}'
@@ -198,6 +208,8 @@
         media_player.media_previous_track
         {% elif trigger.to_state.state[-6:] == "374274" %}
         media_player.media_next_track
+        {% else %}
+        script.dummy
         {% endif %}
       data:
         entity_id:
@@ -209,7 +221,12 @@
     - platform: state
       entity_id: sensor.rf_code
   action:
-    - service: media_player.play_media
+    - service_template: >
+        {% if trigger.to_state.state[-6:-1] == "0CD67" %}
+        media_player.play_media
+        {% else %}
+        script.dummy
+        {% endif %}
       data_template:
         media_content_id: >
           {% if trigger.to_state.state[-6:] == "0CD671" %}
@@ -253,5 +270,7 @@
             input_boolean.away_mode
           {% elif trigger.to_state.state[-6:] == "2AF3E1" %}
             input_boolean.bed_time
+          {% else %}
+            script.dummy
           {% endif %}
 
