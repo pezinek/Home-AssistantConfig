@@ -228,6 +228,10 @@
       entity_id: binary_sensor.kitchen_pir
       from: 'off'
       to: 'on'
+    - platform: state
+      entity_id: binary_sensor.patio_door
+      from: 'on'
+      to: 'off'
   condition:
     condition: and
     conditions:
@@ -242,6 +246,9 @@
         state: 'off'
       - condition: state
         entity_id: input_boolean.away_mode
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.patio_door
         state: 'off'
   action:
     - service: light.turn_on
@@ -266,6 +273,10 @@
       entity_id: binary_sensor.kitchen_pir
       from: 'off'
       to: 'on'
+    - platform: state
+      entity_id: binary_sensor.patio_door
+      from: 'on'
+      to: 'off'
   condition:
     condition: and
     conditions:
@@ -335,6 +346,34 @@
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+
+
+- alias: 'Living and Kitchen lights off when patio door opens'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.patio_door
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: light.kitchen_counter
+        state: 'on'
+      - condition: state
+        entity_id: light.kitchend_moodlight
+        state: 'on'
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+ 
 
 - alias: 'Living room light off when no motion'
   trigger:

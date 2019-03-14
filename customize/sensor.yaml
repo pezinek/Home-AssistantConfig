@@ -174,3 +174,6 @@ sensor.cheap_electricity_left:
   friendly_name: "Cheap electricity left"
   icon: mdi:alarm
 
+binary_sensor.patio_door:
+  friendly_name: "Patio Door"
+
