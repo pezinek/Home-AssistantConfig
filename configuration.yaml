@@ -46,6 +46,7 @@ history:
 recorder:
   include:
      entities:
+       - alarm_control_panel.jablotron
        - binary_sensor.kitchen_pir
        - binary_sensor.office_pir
        - binary_sensor.hall_upstairs_pir
@@ -85,7 +86,7 @@ recorder:
        - switch.socket1
        - switch.bathroom_socket
        - switch.pow1
-       - sensor.pow1_apparent
+#      - sensor.pow1_apparent
 #      - input_boolean.pool_automation
        - vacuum.n2d7
      domains:

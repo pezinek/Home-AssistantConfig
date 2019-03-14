@@ -1,11 +1,8 @@
 Internet:
   entities:
-    - device_tracker.internet
-    - device_tracker.internet6
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping
-    - sensor.weemos_d1_mini__wifi_signal
     - sensor.kitchen_pir_wifi_signal
     - sensor.office_pir_wifi_signal
     - sensor.hall_upstairs_pir_wifi_signal

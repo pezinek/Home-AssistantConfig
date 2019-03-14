@@ -13,7 +13,7 @@ Home modes:
 Off_when_away:
   entities:
     - group.all_lights
-    - group.all_media
+    - group.media
     - switch.sonoff1
     - switch.sonoff2
     - switch.sonoff4
