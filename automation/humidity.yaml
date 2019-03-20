@@ -1,5 +1,5 @@
 
-- alias: 'Humidifier on when dry air'
+- alias: 'Humidifier on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
@@ -15,6 +15,12 @@
       to: 'off'
       for:
         minutes: 15
+    - platform: state
+      entity_id: binary_sensor.patio_door
+      from: 'on'
+      to: 'off'
+      for:
+        minutes: 5
   condition:
     condition: and
     conditions:
@@ -30,6 +36,9 @@
       - condition: state
         entity_id: input_boolean.electricity_is_cheap
         state: 'on'
+      - condition: state
+        entity_id: binary_sensor.patio_door
+        state: 'off'
   action:
     - service: switch.turn_on
       data:
@@ -40,7 +49,7 @@
 # Evaporation: 0.24 l/h
 # Max run time with full tank: 14.4h
 
-- alias: 'Humidifier off when wet air'
+- alias: 'Humidifier off'
   trigger:
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
@@ -54,6 +63,11 @@
       to: 'on'
       for: 
         hours: 1
+    - platform: state
+      entity_id: binary_sensor.patio_door
+      from: 'off'
+      to: 'on'
+
   condition:
     condition: and
     conditions:
