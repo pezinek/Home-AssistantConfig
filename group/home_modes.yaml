@@ -24,6 +24,7 @@ Off_when_away:
     - switch.pool
     - switch.socket1
     - switch.pow1
+    - switch.bathroom_light
 
 On_when_away_disabled:
     - switch.pow2
@@ -38,6 +39,7 @@ Off_when_bedtime:
     - switch.sonoff4
     - switch.sonoff_t1
     - switch.sonoff_t2
+    - switch.bathroom_light
 
 Activity Detectors:
   entities:
@@ -49,6 +51,7 @@ Activity Detectors:
     # - switch.sonoff1
     - binary_sensor.door_guestroom
     - binary_sensor.basement_pir
+    - binary_sensor.bathroom_pir
     
 kitchen_lights:
   entities:

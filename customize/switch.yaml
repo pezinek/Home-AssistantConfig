@@ -19,6 +19,10 @@ switch.sonoff_t2:
   friendly_name: 'Kidsroom light'
   icon: mdi:lightbulb
 
+switch.bathroom_light:
+  friendly_name: 'Bathroom light'
+  icon: mdi:lightbulb
+
 switch.hall_fluxer:
   friendly_name: 'Hall Fluxer'
   icon: mdi:palette

@@ -28,6 +28,16 @@
   payload_not_available: 0
 
 - platform: mqtt
+  name: bathroom_light
+  state_topic: sonoff5/relay/0
+  command_topic: sonoff5/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff5/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
   name: sonoff_t1
   state_topic: "stat/sonoff_t1/POWER"
   command_topic: "cmnd/sonoff_t1/power"

@@ -597,3 +597,52 @@
         entity_id: 
           - switch.socket1 
 
+
+- alias: 'Bathroom light on when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_pir
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.bathroom_luxmeter
+        below: 50
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.bathroom_light
+
+- alias: 'Bathroom light off when no motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_pir
+      to: 'off'
+      for:
+        seconds: 20
+    - platform: state
+      entity_id: switch.bathroom_light
+      to: 'on'
+      for:
+        seconds: 20
+  condition:
+    condition: state
+    entity_id: switch.bathroom_light
+    state: 'on'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.bathroom_light
+
+
+

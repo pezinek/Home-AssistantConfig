@@ -80,6 +80,10 @@ garden:
 bathroom:
   name: Bathroom
   entities:
+    - switch.bathroom_light
+    - binary_sensor.bathroom_pir
     - input_boolean.washingmachine_scheduled
     - switch.bathroom_socket
+    - sensor.bathroom_luxmeter
+
 

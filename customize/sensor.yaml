@@ -177,3 +177,15 @@ sensor.cheap_electricity_left:
 binary_sensor.patio_door:
   friendly_name: "Patio Door"
 
+binary_sensor.bathroom_pir:
+  friendly_name: 'Motion (bathroom)'
+  icon: mdi:eye-outline
+
+sensor.bathroom_luxmeter:
+  friendly_name: 'Light intensity (bathroom)'
+  icon: mdi:theme-light-dark
+
+sensor.bathroom_light_wifi_signal:
+  friendly_name: 'Bathroom light WiFi signal'
+  icon: mdi:wifi
+

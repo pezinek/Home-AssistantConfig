@@ -54,6 +54,8 @@ recorder:
        - binary_sensor.office_screens
        - binary_sensor.projector
        - binary_sensor.patio_door
+       - binary_sensor.bathroom_pir
+       - sensor.bathroom_luxmeter  
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
        - light.office_lamp
@@ -63,6 +65,7 @@ recorder:
        - light.kitchen_counter
        - light.livingroom_moodlight
        - light.hall_upstairs
+       - light.bathroom_light
        - switch.sonoff_t1
        - switch.sonoff_t2
        - switch.sonoff1

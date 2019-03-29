@@ -369,5 +369,21 @@
   payload_available: "1"
   payload_not_available: "0"
 
+- platform: mqtt
+  state_topic: sonoff5/lux
+  name: bathroom_luxmeter
+  unit_of_measurement: 'lx'
+  availability_topic: "sonoff5/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: sonoff5/rssi
+  name: bathroom_light_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "sonoff5/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
   
   
