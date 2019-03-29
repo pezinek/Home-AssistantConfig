@@ -10,6 +10,10 @@
       data:
         entity_id:
           - group.off_when_away
+    - service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id:
+          - alarm_control_panel.jablotron
 
 - alias: 'Away: Stuff on when back from away'
   trigger:
