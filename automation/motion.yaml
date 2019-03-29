@@ -628,12 +628,12 @@
       entity_id: binary_sensor.bathroom_pir
       to: 'off'
       for:
-        seconds: 20
+        seconds: 30
     - platform: state
       entity_id: switch.bathroom_light
       to: 'on'
       for:
-        seconds: 20
+        seconds: 30
   condition:
     condition: state
     entity_id: switch.bathroom_light
