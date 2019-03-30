@@ -633,7 +633,7 @@
       entity_id: switch.bathroom_light
       to: 'on'
       for:
-        seconds: 30
+        minutes: 15
   condition:
     condition: state
     entity_id: switch.bathroom_light
