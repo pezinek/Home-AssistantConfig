@@ -57,3 +57,13 @@ kitchen_lights:
   entities:
     - light.kitchen_counter
     - light.kitchen_moodlight
+
+rgb_lights:
+  entities:
+    - light.office_lamp
+    - light.hall_upstairs
+    - light.kitchen_counter
+    - light.kitchen_moodlight
+    - light.livingroom_moodlight
+    - light.kidsroom_bedlight
+

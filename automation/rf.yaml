@@ -279,68 +279,145 @@
           {% endif %}
 
 
-- alias: 'RF controller identification - Peta'
+- alias: 'RF controller identification ON - Peta'
   trigger:
     - platform: state
       entity_id: sensor.rf_code
   condition:
+    condition: and
+    conditions:
       - condition: state
         entity_id: sensor.rf_code_6
         state: '5B33A2'
+      - condition: state
+        entity_id: group.rgb_lights
+        state: 'off'
   action:
     - service: light.turn_on
       data:
         rgb_color: [0, 255, 0]
         brightness: 255
-        entity_id:
-          - light.office_lamp
-          - light.hall_upstairs
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-          - light.livingroom_moodlight
-          - light.kidsroom_bedlight
+        entity_id: 
+          - group.rgb_lights
 
-
-- alias: 'RF controller identification - Vitek'
+- alias: 'RF controller identification OFF - Peta'
   trigger:
     - platform: state
       entity_id: sensor.rf_code
   condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '5B33A2'
+      - condition: state
+        entity_id: group.rgb_lights
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: 
+          - group.rgb_lights
+
+- alias: 'RF controller Peta - bed light red'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '5B33A8'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 0, 0]
+        brightness: 13
+        entity_id: 
+          - light.kidsroom_bedlight
+
+
+- alias: 'RF controller identification ON - Vitek'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+    condition: and
+    conditions:
       - condition: state
         entity_id: sensor.rf_code_6
         state: '8E3FE4'
+      - condition: state
+        entity_id: group.rgb_lights
+        state: 'off'
   action:
     - service: light.turn_on
       data:
         rgb_color: [255, 55, 0]
         brightness: 255
         entity_id:
-          - light.office_lamp
-          - light.hall_upstairs
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-          - light.livingroom_moodlight
-          - light.kidsroom_bedlight
+          - group.rgb_lights
 
 
-- alias: 'RF controller identification - Andrejka'
+- alias: 'RF controller identification OFF - Vitek'
   trigger:
     - platform: state
       entity_id: sensor.rf_code
   condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '8E3FE4'
+      - condition: state
+        entity_id: group.rgb_lights
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.rgb_lights
+
+
+- alias: 'RF controller identification ON - Andrejka'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+    condition: and
+    conditions:
       - condition: state
         entity_id: sensor.rf_code_6
         state: '5D91A2'
+      - condition: state
+        entity_id: group.rgb_lights
+        state: 'off'
   action:
     - service: light.turn_on
       data:
         rgb_color: [120, 0, 255]
         brightness: 255
         entity_id:
-          - light.office_lamp
-          - light.hall_upstairs
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-          - light.livingroom_moodlight
-          - light.kidsroom_bedlight
+          - group.rgb_lights
+
+- alias: 'RF controller identification OFF - Andrejka'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '5D91A2'
+      - condition: state
+        entity_id: group.rgb_lights
+        state: 'on'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.rgb_lights
+
 
