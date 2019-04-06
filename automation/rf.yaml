@@ -272,6 +272,8 @@
             input_boolean.away_mode
           {% elif trigger.to_state.state[-6:] == "2AF3E1" %}
             input_boolean.bed_time
+          {% elif trigger.to_state.state[-6:] == "5B33A4" %}
+            switch.sonoff_t2
           {% else %}
             script.dummy
           {% endif %}
