@@ -19,6 +19,7 @@ livingroom:
     - binary_sensor.patio_door
     - sensor.ir_code
     - sensor.rf_code
+    - sensor.rf_code_6
 #    - sensor.living_room_temperature
 #    - sensor.living_room_pressure
     - sensor.sonoff1_temperature

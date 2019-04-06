@@ -146,6 +146,9 @@ sensor.rf_code:
   friendly_name: 'RF Bridge (code)'
   icon: mdi:remote
 
+sensor.rf_code_6:
+  icon: mdi:remote
+
 binary_sensor.door_guestroom:
   friendly_name: "Guestroom door opening"
   icon: mdi:eye-outline

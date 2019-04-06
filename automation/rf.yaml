@@ -111,7 +111,9 @@
       entity_id: sensor.rf_code
   action:
     - service_template: >-
-        {%- if trigger.to_state.state[-6:-1] == "8E3FE" -%}
+        {%- if trigger.to_state.state[-6:] == "8E3FE4" -%}
+        script.dummy
+        {%- elif trigger.to_state.state[-6:-1] == "8E3FE" -%}
         light.turn_on
         {%- else -%}
         script.dummy
@@ -273,4 +275,70 @@
           {% else %}
             script.dummy
           {% endif %}
+
+
+- alias: 'RF controller identification - Peta'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '5B33A2'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [0, 255, 0]
+        brightness: 255
+        entity_id:
+          - light.office_lamp
+          - light.hall_upstairs
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+          - light.kidsroom_bedlight
+
+
+- alias: 'RF controller identification - Vitek'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '8E3FE4'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 55, 0]
+        brightness: 255
+        entity_id:
+          - light.office_lamp
+          - light.hall_upstairs
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+          - light.kidsroom_bedlight
+
+
+- alias: 'RF controller identification - Andrejka'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  condition:
+      - condition: state
+        entity_id: sensor.rf_code_6
+        state: '5D91A2'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [120, 0, 255]
+        brightness: 255
+        entity_id:
+          - light.office_lamp
+          - light.hall_upstairs
+          - light.kitchen_counter
+          - light.kitchen_moodlight
+          - light.livingroom_moodlight
+          - light.kidsroom_bedlight
 
