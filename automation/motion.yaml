@@ -455,6 +455,11 @@
       to: 'off'
       for:
         seconds: 90
+    - platform: state
+      entity_id: light.hall_upstairs
+      to: 'on'
+      for:
+        minutes: 15
   condition:
     condition: or
     conditions:
