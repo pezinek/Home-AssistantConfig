@@ -180,6 +180,18 @@ sensor.cheap_electricity_left:
 binary_sensor.patio_door:
   friendly_name: "Patio Door"
 
+binary_sensor.kids_room_door:
+  friendly_name: "Kids Room Door"
+
+binary_sensor.kids_room_window:
+  friendly_name: "Kids Room Window"
+
+binary_sensor.bathroom_door_upstairs:
+  friendly_name: "Bathroom Door Upstairs"
+
+binary_sensor.entrance_door:
+  friendly_name: "Entrance Door"
+
 binary_sensor.bathroom_pir:
   friendly_name: 'Motion (bathroom)'
   icon: mdi:eye-outline

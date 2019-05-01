@@ -53,6 +53,8 @@ kidsroom:
     - light.ibutton_led
     - sensor.ibutton
     - media_player.mpd
+    - binary_sensor.kids_room_window
+    - binary_sensor.kids_room_door
 
 hall:
   name: Hall
@@ -68,6 +70,8 @@ hall:
     - switch.sonoff4
     - camera.n2d7_cleaning_map
     - alarm_control_panel.jablotron
+    - binary_sensor.bathroom_door_upstairs
+    - binary_sensor.entrance_door
 
 garden:
   name: Garden

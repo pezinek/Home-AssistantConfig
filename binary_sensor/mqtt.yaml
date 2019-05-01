@@ -78,5 +78,48 @@
   payload_available: "1"
   payload_not_available: "0"
   
-
-
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: kids_room_door
+  payload_on: "32E50A"
+  payload_off: "32E50E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: kids_room_window
+  payload_on: "31520A"
+  payload_off: "31520E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: bathroom_door_upstairs
+  payload_on: "32F40A"
+  payload_off: "32F40E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: entrance_door
+  payload_on: "33E00A"
+  payload_off: "33E00E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  
+  
