@@ -354,6 +354,8 @@
       entity_id: binary_sensor.patio_door
       from: 'off'
       to: 'on'
+      for:
+        seconds: 20
   condition:
     condition: or
     conditions:
