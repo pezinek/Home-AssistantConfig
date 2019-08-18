@@ -1,8 +1,5 @@
 Internet:
   entities:
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.speedtest_ping
     - sensor.kitchen_pir_wifi_signal
     - sensor.office_pir_wifi_signal
     - sensor.hall_upstairs_pir_wifi_signal
