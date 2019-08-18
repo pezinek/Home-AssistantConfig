@@ -5,7 +5,7 @@ sensor.living_room_temperature:
 sensor.living_room_pressure:
   icon: mdi:cloud
 
-sensor.weemos_d1_mini__wifi_signal:
+sensor.weemos_d1_mini_wifi_signal:
   friendly_name: 'IR Blaster WiFi signal'
   icon: mdi:wifi
 
