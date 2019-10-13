@@ -52,10 +52,14 @@
         entity_id:
           - light.office_lamp
 
-- alias: 'Office lamp on when motion at night'
+- alias: 'Office lamp on when motion/door at night'
   trigger:
     - platform: state
       entity_id: binary_sensor.office_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.office_door
       from: 'off'
       to: 'on'
   condition:
@@ -97,10 +101,14 @@
         entity_id:
           - light.office_lamp
 
-- alias: 'Office light on when motion'
+- alias: 'Office light on when motion/door'
   trigger:
     - platform: state
       entity_id: binary_sensor.office_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.office_door
       from: 'off'
       to: 'on'
   condition:
@@ -588,6 +596,11 @@
     - platform: time
       minutes: 00
       seconds: 00
+    # This needs to be changed after HA 0.86+ to something like this:
+    #
+    # - platform: time_pattern
+    #   minutes: 0
+    #   seconds: 0
   action:
     - service: input_number.set_value
       data_template:

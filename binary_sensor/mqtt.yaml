@@ -122,4 +122,14 @@
   payload_available: "1"
   payload_not_available: "0"
   
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: office_door
+  payload_on: "322D0A"
+  payload_off: "322D0E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
   

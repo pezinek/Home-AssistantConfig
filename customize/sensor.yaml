@@ -204,3 +204,6 @@ sensor.bathroom_light_wifi_signal:
   friendly_name: 'Bathroom light WiFi signal'
   icon: mdi:wifi
 
+binary_sensor.office_door:
+  friendly_name: "Office Door"
+
