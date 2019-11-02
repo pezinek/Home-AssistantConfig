@@ -168,14 +168,14 @@ wkids:
         entity_id: input_boolean.away_mode
         state: 'off'
     - service: media_player.play_media
-      entity_id: media_player.mpd
+      entity_id: media_player.bedplayer
       data:
         media_content_id: "http://alexandria:8123/local/computer_magic.mp3"
         media_content_type: audio/mp3
 
     - delay: 00:00:05
     - service: tts.google_say
-      entity_id: media_player.mpd
+      entity_id: media_player.bedplayer
       data_template:
         message: "{{ message }}"
 

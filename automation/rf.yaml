@@ -171,10 +171,10 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
         state: 'off'
       - condition: state
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
         state: 'paused'
   action:
     - service_template: >
@@ -191,7 +191,7 @@
         media_content_id: '{{ "kidsroom_{0:d}".format(range(1,9)|random) }}'
         media_content_type: 'playlist'
         entity_id:
-          - media_player.mpd
+          - media_player.bedplayer
 
 
 - alias: 'Kidsroom player - stop/next/prev'
@@ -200,7 +200,7 @@
       entity_id: sensor.rf_code
   condition:
       - condition: state
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
         state: 'playing'
   action:
     - service_template: >
@@ -215,7 +215,7 @@
         {% endif %}
       data:
         entity_id:
-          - media_player.mpd
+          - media_player.bedplayer
 
 
 - alias: 'Kidsroom player - presets'
@@ -242,7 +242,7 @@
           {% endif %}
         media_content_type: 'playlist'
         entity_id:
-          - media_player.mpd
+          - media_player.bedplayer
       
 - alias: 'Toggle things by RF code'
   trigger:

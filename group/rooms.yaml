@@ -53,7 +53,7 @@ kidsroom:
     - switch.sonoff_t2
     - light.ibutton_led
     - sensor.ibutton
-    - media_player.mpd
+    - media_player.bedplayer
     - binary_sensor.kids_room_window
     - binary_sensor.kids_room_door
 

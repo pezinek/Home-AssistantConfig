@@ -64,12 +64,12 @@
       to: '16:06:6F:06:00:00:00:B0'
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'off'
   action:
     - service: media_player.play_media
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
         media_content_id: hodina_zpevu
         media_content_type: playlist
     - service: light.turn_on
@@ -85,12 +85,12 @@
       to: '16:06:6F:06:00:00:00:B0'
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'playing'
   action:
     - service: media_player.media_next_track
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
     - service: light.turn_on
       data:
         entity_id: light.kidsroom_bedlight
@@ -106,12 +106,12 @@
         seconds: 10
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'playing'
   action:
     - service: media_player.turn_off
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
     - service: light.turn_off
       data:
         entity_id: light.kidsroom_bedlight
@@ -126,12 +126,12 @@
         seconds: 20
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'off'
   action:
     - service: media_player.play_media
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
         media_content_id: povesti
         media_content_type: playlist
 
@@ -147,12 +147,12 @@
       to: '16:96:98:05:00:00:00:7E'
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'off'
   action:
     - service: media_player.play_media
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
         media_content_id: pohadky
         media_content_type: playlist
     - service: light.turn_on
@@ -176,12 +176,12 @@
       to: '16:96:98:05:00:00:00:7E'
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'playing'
   action:
     - service: media_player.media_next_track
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
 
 
 - alias: 'iButton 16:96:98:05:00:00:00:7E: Andrejka music OFF'
@@ -193,12 +193,12 @@
         seconds: 5
   condition:
     condition: state
-    entity_id: media_player.mpd
+    entity_id: media_player.bedplayer
     state: 'playing'
   action:
     - service: media_player.turn_off
       data:
-        entity_id: media_player.mpd
+        entity_id: media_player.bedplayer
     - service: light.turn_off
       data:
         entity_id: 

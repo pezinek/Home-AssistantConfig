@@ -84,8 +84,9 @@ recorder:
 #      - input_boolean.bed_time
 #      - input_boolean.away_mode
        - media_player.kodi
-       - media_player.mpd
+       - media_player.bedplayer
        - media_player.projektor_svetice
+       - media_player.office
        - input_number.life_intensity_hr
        - sensor.pool_temperature
        - sensor.solar_collector_temperature
@@ -124,6 +125,7 @@ homekit:
 
 # Text to speech
 tts:
+  # this needs to be changed to google_translate after HA 0.92
   platform: google
   language: cs
 
@@ -132,8 +134,9 @@ media_player:
     host: pi3
     port: 80
   - platform: cast
-  - platform: mpd
-    host: mpd
+  - platform: volumio
+    name: bedplayer
+    host: bedplayer
   - platform: mpd
     name: office
     host: octoprint

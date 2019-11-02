@@ -25,7 +25,7 @@
         message: 'Hola hola ! Škola volá. Ranní ptáče dál doskáče. Vstávejte lenoši.'
     - delay: 00:01:00
     - service: media_player.play_media
-      entity_id: media_player.mpd
+      entity_id: media_player.bedplayer
       data:
         media_content_id: "morning_routine"
         media_content_type: "playlist"
@@ -168,7 +168,7 @@
           - switch.sonoff_t2
     - delay: 00:01:00
     - service: media_player.play_media
-      entity_id: media_player.mpd
+      entity_id: media_player.bedplayer
       data:
         media_content_id: "evening_routine"
         media_content_type: "playlist"
