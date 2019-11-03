@@ -114,6 +114,9 @@
   condition:
     condition: and
     conditions:
+      - condition: state
+        entity_id: binary_sensor.office_window
+        state: 'on'
       - condition: numeric_state
         entity_id: sensor.office_luxmeter
         below: 0.9
@@ -628,7 +631,14 @@
         - binary_sensor.kids_room_door
         - binary_sensor.kids_room_window
         - binary_sensor.bathroom_door_upstairs
+        - binary_sensor.bathroom_door_downstairs
+        - binary_sensor.office_door
+        - binary_sensor.office_window
         - binary_sensor.entrance_door
+        - binary_sensor.vestibule_door
+        - binary_sensor.vestibule_window
+        - binary_sensor.bedroom_window
+        - binary_sensor.attic_window
       from: 'off'
       to: 'on'
     - platform: state
@@ -637,7 +647,14 @@
         - binary_sensor.kids_room_door
         - binary_sensor.kids_room_window
         - binary_sensor.bathroom_door_upstairs
+        - binary_sensor.bathroom_door_downstairs
+        - binary_sensor.office_door
+        - binary_sensor.office_window
         - binary_sensor.entrance_door
+        - binary_sensor.vestibule_door
+        - binary_sensor.vestibule_window
+        - binary_sensor.bedroom_window
+        - binary_sensor.attic_window
       from: 'on'
       to: 'off'
   action:
@@ -690,6 +707,10 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.bathroom_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.bathroom_door_downstairs
       from: 'off'
       to: 'on'
   condition:

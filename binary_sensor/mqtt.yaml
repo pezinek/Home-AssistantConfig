@@ -69,6 +69,18 @@
 
 - platform: mqtt
   state_topic: "sonoff-rfbridge/rfin"
+  name: bathroom_door_downstairs
+  payload_on: "468C0A"
+  payload_off: "468C0E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+  
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
   name: patio_door
   payload_on: "337A0A"
   payload_off: "337A0E"
@@ -121,6 +133,29 @@
   availability_topic: "sonoff-rfbridge/status"
   payload_available: "1"
   payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: vestibule_door
+  payload_on: "4CB60A"
+  payload_off: "4CB60E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: vestibule_window
+  payload_on: "4E0E0A"
+  payload_off: "4E0E0E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
   
 - platform: mqtt
   state_topic: "sonoff-rfbridge/rfin"
@@ -128,6 +163,17 @@
   payload_on: "322D0A"
   payload_off: "322D0E"
   device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: office_window
+  payload_on: "47AB0A"
+  payload_off: "47AB0E"
+  device_class: "window"
   value_template: '{{ value[-6:] }}'
   availability_topic: "sonoff-rfbridge/status"
   payload_available: "1"
@@ -142,4 +188,27 @@
   availability_topic: "livingroom-pir/status"
   payload_available: "1"
   payload_not_available: "0"
-  
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: bedroom_window
+  payload_on: "4E750A"
+  payload_off: "4E750E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: attic_window
+  payload_on: "497B0A"
+  payload_off: "497B0E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+

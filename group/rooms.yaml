@@ -41,6 +41,7 @@ office:
     - sensor.office_luxmeter
     - binary_sensor.office_pir
     - binary_sensor.office_door
+    - binary_sensor.office_window
     - binary_sensor.office_screens
     - switch.pow1
     - sensor.pow1_apparent
@@ -74,6 +75,8 @@ hall:
     - alarm_control_panel.jablotron
     - binary_sensor.bathroom_door_upstairs
     - binary_sensor.entrance_door
+    - binary_sensor.vestibule_door
+    - binary_sensor.vestibule_window
 
 garden:
   name: Garden
@@ -92,5 +95,17 @@ bathroom:
     - input_boolean.washingmachine_scheduled
     - switch.bathroom_socket
     - sensor.bathroom_luxmeter
+    - binary_sensor.bathroom_door_downstairs
+
+bedroom:
+  name: Bedroom
+  entities:
+    - binary_sensor.bedroom_window
+
+attic:
+  name: Attic
+  entities:
+    - binary_sensor.attic_window
+
 
 

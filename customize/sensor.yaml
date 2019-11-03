@@ -193,6 +193,9 @@ binary_sensor.kids_room_window:
 binary_sensor.bathroom_door_upstairs:
   friendly_name: "Bathroom Door Upstairs"
 
+binary_sensor.bathroom_door_downstairs:
+  friendly_name: "Bathroom Door Downstairs"
+
 binary_sensor.entrance_door:
   friendly_name: "Entrance Door"
 
@@ -211,7 +214,23 @@ sensor.bathroom_light_wifi_signal:
 binary_sensor.office_door:
   friendly_name: "Office Door"
 
+binary_sensor.office_window:
+  friendly_name: "Office Window"
+
 sensor.livingroom_pir_wifi_signal:
   friendly_name: 'Livingroom PIR WiFi signal'
   icon: mdi:wifi
+
+binary_sensor.vestibule_door:
+  friendly_name: "Vestibule Door"
+
+binary_sensor.vestibule_window:
+  friendly_name: "Vestibule Window"
+
+binary_sensor.attic_window:
+  friendly_name: "Attic Window"
+
+binary_sensor.bedroom_window:
+  friendly_name: "Bedroom Window"
+
 

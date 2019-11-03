@@ -8,6 +8,8 @@ default_view:
     - group.kidsroom
     - group.hall
     - group.bathroom
+    - group.bedroom
+    - group.attic
     - group.garden
     - group.home_modes
     - group.outside
