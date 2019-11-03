@@ -407,7 +407,7 @@
     conditions:
       - condition: numeric_state
         entity_id: sensor.kitchen_luxmeter
-        below: 15
+        below: 30
       - condition: state
         entity_id: light.livingroom_moodlight
         state: 'off'
@@ -433,7 +433,7 @@
     # workarround - merge after 0.72.1
     - service: light.turn_on
       data:
-        rgb_color: [255, 122, 10]
+        rgb_color: [255, 67, 15]
         entity_id:
           - light.livingroom_moodlight
  
@@ -451,14 +451,12 @@
       - condition: state
         entity_id: light.livingroom_moodlight
         state: 'on'
-      - condition: state
-        entity_id: input_boolean.bed_time 
-        state: 'on'
   action:
     - service: light.turn_off
       data:
         entity_id:
           - light.livingroom_moodlight
+
 
 - alias: 'Kitchen/Livingroom lights off when too much light'
   trigger:
