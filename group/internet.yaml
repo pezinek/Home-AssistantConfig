@@ -18,4 +18,5 @@ Internet:
     - sensor.livingroom_moodlight_wifi_signal
     - sensor.hall_upstairs_light_wifi_signal
     - sensor.bathroom_light_wifi_signal
+    - sensor.livingroom_pir_wifi_signal
 

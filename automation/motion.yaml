@@ -275,10 +275,14 @@
           - light.kitchen_moodlight
 
 
-- alias: 'Kitchen light on when motion - night'
+- alias: 'Kitchen and Livingroom light on when motion - night'
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.livingroom_pir
       from: 'off'
       to: 'on'
     - platform: state
@@ -383,12 +387,58 @@
           - light.kitchen_counter
           - light.kitchen_moodlight
           - light.livingroom_moodlight
+
+
+- alias: 'Living room light on when motion - day'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.livingroom_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.patio_door
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.kitchen_luxmeter
+        below: 15
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.bed_time 
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.patio_door
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.projector
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        brightness: 255
+        entity_id:
+          - light.livingroom_moodlight
+    # do it twice to work arround a bug in the driver
+    # workarround - merge after 0.72.1
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 122, 10]
+        entity_id:
+          - light.livingroom_moodlight
  
 
 - alias: 'Living room light off when no motion'
   trigger:
     - platform: state
-      entity_id: binary_sensor.kitchen_pir
+      entity_id: binary_sensor.livingroom_pir
       to: 'off'
       for:
         minutes: 5
@@ -407,7 +457,7 @@
         entity_id:
           - light.livingroom_moodlight
 
-- alias: 'Kitchen light off when too much light'
+- alias: 'Kitchen/Livingroom lights off when too much light'
   trigger:
     - platform: numeric_state
       entity_id: sensor.kitchen_luxmeter
@@ -433,12 +483,16 @@
       - condition: state
         entity_id: light.kitchen_moodlight
         state: 'on'
+      - condition: state
+        entity_id: light.livingroom_moodlight
+        state: 'on'
   action:
     - service: light.turn_off
       data:
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
+          - light.livingroom_moodlight
 
 
 

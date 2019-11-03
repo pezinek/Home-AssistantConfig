@@ -52,6 +52,7 @@ Activity Detectors:
     - binary_sensor.door_guestroom
     - binary_sensor.basement_pir
     - binary_sensor.bathroom_pir
+    - binary_sensor.livingroom_pir
     
 kitchen_lights:
   entities:

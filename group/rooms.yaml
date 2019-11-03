@@ -17,6 +17,7 @@ livingroom:
     - switch.pow2
     - binary_sensor.projector
     - binary_sensor.patio_door
+    - binary_sensor.livingroom_pir
     - sensor.ir_code
     - sensor.rf_code
     - sensor.rf_code_6

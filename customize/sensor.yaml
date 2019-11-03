@@ -57,6 +57,10 @@ binary_sensor.basement_pir:
   friendly_name: 'Motion (basement)'
   icon: mdi:eye-outline
 
+binary_sensor.livingroom_pir:
+  friendly_name: 'Motion (livingroom)'
+  icon: mdi:eye-outline
+
 sensor.ir_code:
   friendly_name: 'IR Blaster (code)'
   icon: mdi:remote
@@ -206,4 +210,8 @@ sensor.bathroom_light_wifi_signal:
 
 binary_sensor.office_door:
   friendly_name: "Office Door"
+
+sensor.livingroom_pir_wifi_signal:
+  friendly_name: 'Livingroom PIR WiFi signal'
+  icon: mdi:wifi
 

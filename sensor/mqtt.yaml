@@ -385,5 +385,11 @@
   payload_available: "1"
   payload_not_available: "0"
 
-  
-  
+- platform: mqtt
+  state_topic: livingroom-pir/rssi
+  name: livingroom_pir_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "livingroom-pir/status"
+  payload_available: "1"
+  payload_not_available: "0"
+

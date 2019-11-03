@@ -59,6 +59,7 @@ recorder:
        - binary_sensor.kids_room_door
        - binary_sensor.kids_room_window
        - binary_sensor.bathroom_door_upstairs
+       - binary_sensor.livingroom_pir
        - sensor.bathroom_luxmeter  
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
