@@ -1,0 +1,14 @@
+red_alert:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "alarm/key/press"
+        payload: !secret red_alert_code
+    - service: light.turn_on
+      data:
+        entity_id: group.all_lights
+        color_name: red
+    - service: homeassistant.turn_on
+      data:
+        entity_id: group.on_when_red_alert
+

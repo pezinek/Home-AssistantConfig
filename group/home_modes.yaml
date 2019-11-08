@@ -68,3 +68,9 @@ rgb_lights:
     - light.livingroom_moodlight
     - light.kidsroom_bedlight
 
+On_when_red_alert:
+    - switch.sonoff1
+    - switch.sonoff_t1
+    - switch.sonoff_t2
+    - switch.bathroom_light
+
