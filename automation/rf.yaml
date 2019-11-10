@@ -244,6 +244,7 @@
         entity_id:
           - media_player.bedplayer
       
+
 - alias: 'Toggle things by RF code'
   trigger:
     - platform: state
@@ -262,21 +263,35 @@
             switch.socket1
           {% elif trigger.to_state.state[-6:] == "DAF2EA" %}
             switch.sonoff2
-          {% elif trigger.to_state.state[-6:] == "DAF2EC" %}
-            script.cinema_scene
-          {% elif trigger.to_state.state[-6:] == "DAF2EE" %}
-            script.black_scene
           {% elif trigger.to_state.state[-6:] == "0623B1" %}
             input_boolean.washingmachine_scheduled
-          {% elif trigger.to_state.state[-6:] == "029C74" %}
-            input_boolean.away_mode
-          {% elif trigger.to_state.state[-6:] == "2AF3E1" %}
-            input_boolean.bed_time
           {% elif trigger.to_state.state[-6:] == "5B33A4" %}
             switch.sonoff_t2
           {% else %}
             script.dummy
           {% endif %}
+
+
+- alias: 'Turn things on by RF code'
+  trigger:
+    - platform: state
+      entity_id: sensor.rf_code
+  action:
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: >
+          {% if trigger.to_state.state[-6:] == "DAF2EC" %}
+            script.cinema_scene
+          {% elif trigger.to_state.state[-6:] == "DAF2EE" %}
+            script.black_scene
+          {% elif trigger.to_state.state[-6:] == "029C74" %}
+            input_boolean.away_mode
+          {% elif trigger.to_state.state[-6:] == "2AF3E1" %}
+            input_boolean.bed_time
+          {% else %}
+            script.dummy
+          {% endif %}
+
 
 
 - alias: 'RF controller identification ON - Peta'
