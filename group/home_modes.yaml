@@ -42,6 +42,8 @@ Off_when_bedtime:
     - switch.bathroom_light
 
 Activity Detectors:
+  # Controll Away_mode and Bed_Time
+  # if you add something here add it to automation/motion.yml as well
   entities:
     - binary_sensor.kitchen_pir
     - binary_sensor.office_pir
