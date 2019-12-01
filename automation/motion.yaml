@@ -617,6 +617,44 @@
         entity_id:
           - light.hall_upstairs
 
+
+- alias: 'Bathroom upstairs light on when motion - day'
+  trigger:
+      - platform: state
+        entity_id:
+          - binary_sensor.bathroom_door_upstairs
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id:
+          - binary_sensor.bathroom_door_upstairs
+        from: 'on'
+        to: 'off'
+
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.hall_upstairs_luxmeter
+        below: 15
+      - condition: state
+        entity_id: light.bathroom_upstairs
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.bed_time
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 255, 255]
+        brightness: 100
+        entity_id:
+          - light.bathroom_upstairs
+
+
 - alias: 'Bathroom upstairs light on when motion - night'
   trigger:
     - platform: state
@@ -634,6 +672,9 @@
     condition: and
     conditions:
       - condition: state
+        entity_id: light.bathroom_upstairs
+        state: 'off'
+      - condition: state
         entity_id: input_boolean.bed_time
         state: 'on'
       - condition: state
@@ -647,7 +688,7 @@
         entity_id:
           - light.bathroom_upstairs
 
-- alias: 'Bathroom light upstairs - off'
+- alias: 'Bathroom upstairs - light off'
   trigger:
     - platform: state
       entity_id:
@@ -656,6 +697,20 @@
       to: 'on'
       for:
         seconds: 600
+    - platform: state
+      entity_id:
+        - light.bathroom_upstairs
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 660
+    - platform: state
+      entity_id:
+        - light.bathroom_upstairs
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 720
   action:
     - service: light.turn_off
       data:
