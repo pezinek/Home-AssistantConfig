@@ -20,3 +20,6 @@ light.hall_upstairs:
 light.livingroom_moodlight:
   friendly_name: "Livingroom Moodlight"
 
+light.bathroom_upstaris:
+  friendly_name: "Bathroom Light upstaris"
+

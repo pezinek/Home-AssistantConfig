@@ -9,6 +9,7 @@ default_view:
     - group.hall
     - group.bathroom
     - group.bedroom
+    - group.bathroom_upstairs
     - group.attic
     - group.garden
     - group.home_modes

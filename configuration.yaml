@@ -78,6 +78,7 @@ recorder:
        - light.livingroom_moodlight
        - light.hall_upstairs
        - light.bathroom_light
+       - light.bathroom_upstairs
        - switch.sonoff_t1
        - switch.sonoff_t2
        - switch.sonoff1

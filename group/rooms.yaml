@@ -73,7 +73,6 @@ hall:
     - switch.sonoff4
     - camera.n2d7_cleaning_map
     - alarm_control_panel.jablotron
-    - binary_sensor.bathroom_door_upstairs
     - binary_sensor.entrance_door
     - binary_sensor.vestibule_door
     - binary_sensor.vestibule_window
@@ -96,6 +95,12 @@ bathroom:
     - switch.bathroom_socket
     - sensor.bathroom_luxmeter
     - binary_sensor.bathroom_door_downstairs
+
+bathroom_upstairs:
+  name: Bathroom Upstairs
+  entities:
+    - light.bathroom_upstairs
+    - binary_sensor.bathroom_door_upstairs
 
 bedroom:
   name: Bedroom

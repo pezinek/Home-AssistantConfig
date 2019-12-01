@@ -617,6 +617,51 @@
         entity_id:
           - light.hall_upstairs
 
+- alias: 'Bathroom upstairs light on when motion - night'
+  trigger:
+    - platform: state
+      entity_id:
+        - light.hall_upstairs
+        - binary_sensor.bathroom_door_upstairs
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id:
+        - binary_sensor.bathroom_door_upstairs
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.bed_time
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        rgb_color: [255, 0, 0]
+        brightness: 100
+        entity_id:
+          - light.bathroom_upstairs
+
+- alias: 'Bathroom light upstairs - off'
+  trigger:
+    - platform: state
+      entity_id:
+        - light.bathroom_upstairs
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 600
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.bathroom_upstairs
+
 - alias: "Motion detector counters increment"
   trigger:
     - platform: state
