@@ -12,7 +12,7 @@
     leds1:
       name: "Flux LED controller 1"
       mode: 'rgb'
-    leds6:
+    leds11:
       name: "Bathroom upstairs"
       mode: 'rgb'
 
