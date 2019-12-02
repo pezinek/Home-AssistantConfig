@@ -103,6 +103,7 @@ recorder:
        - switch.socket1
        - switch.bathroom_socket
        - switch.pow1
+       - switch.water_circulator
 #      - sensor.pow1_apparent
 #      - input_boolean.pool_automation
        - vacuum.n2d7

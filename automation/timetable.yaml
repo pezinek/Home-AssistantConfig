@@ -20,6 +20,8 @@
         state: 'on'
   action:
     # TODO: moodlights still managed in the native app
+    - service: timer.start
+      entity_id: timer.water_circulator
     - service: script.wkids
       data:
         message: 'Hola hola ! Škola volá. Ranní ptáče dál doskáče. Vstávejte lenoši.'

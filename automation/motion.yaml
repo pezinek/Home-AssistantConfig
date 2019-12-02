@@ -806,6 +806,8 @@
       data:
         entity_id: 
           - switch.socket1 
+    - service: timer.start
+      entity_id: timer.water_circulator
 
 
 - alias: 'Bathroom light on when motion'

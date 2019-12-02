@@ -76,6 +76,7 @@ hall:
     - binary_sensor.entrance_door
     - binary_sensor.vestibule_door
     - binary_sensor.vestibule_window
+    - switch.water_circulator
 
 garden:
   name: Garden
