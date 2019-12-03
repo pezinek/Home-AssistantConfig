@@ -1,3 +1,6 @@
 
 water_circulator:
-    duration: '00:05:00'
+    # circulator flow: 0.4 m^3/h
+    # pipes len: 14m (one way)
+    # pipes diameter: 0.5"
+    duration: '00:02:12'

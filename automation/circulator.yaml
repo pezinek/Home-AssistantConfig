@@ -71,6 +71,28 @@
       entity_id: timer.water_circulator
 
 
+- alias: 'Circulator on when permanent motion in the kitchen'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.away_mode
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.bed_time
+        state: 'off'
+  action:
+    - service: timer.start
+      entity_id: timer.water_circulator
+
+
 - alias: 'Circulator off when bathroom gets abandoned'
   trigger:
     - platform: state
@@ -86,3 +108,4 @@
   action:
     - service: timer.cancel
       entity_id: timer.water_circulator
+
