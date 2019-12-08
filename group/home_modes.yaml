@@ -46,6 +46,7 @@ Activity Detectors:
   # if you add something here add it to automation/motion.yml as well
   entities:
     - binary_sensor.kitchen_pir
+    - binary_sensor.socket1_pir
     - binary_sensor.office_pir
     - binary_sensor.hall_upstairs_pir
     - binary_sensor.pool_button

@@ -240,6 +240,10 @@
       from: 'off'
       to: 'on'
     - platform: state
+      entity_id: binary_sensor.socket1_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
       entity_id: binary_sensor.patio_door
       from: 'on'
       to: 'off'
@@ -282,6 +286,10 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.socket1_pir
       from: 'off'
       to: 'on'
     - platform: state
@@ -331,6 +339,11 @@
 
 - alias: 'Kitchen light off when no motion'
   trigger:
+    - platform: state
+      entity_id: binary_sensor.socket1_pir
+      to: 'off'
+      for:
+        minutes: 5
     - platform: state
       entity_id: binary_sensor.kitchen_pir
       to: 'off'
@@ -723,6 +736,7 @@
       entity_id: 
         # one way sensors
         - binary_sensor.kitchen_pir
+        - binary_sensor.socket1_pir
         - binary_sensor.office_pir
         - binary_sensor.hall_upstairs_pir
         - binary_sensor.pool_button
@@ -789,7 +803,15 @@
 - alias: "Kitchen socket on when someone seen in the morning"
   trigger:
     - platform: state
+      entity_id: binary_sensor.socket1_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
       entity_id: binary_sensor.kitchen_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.livingroom_pir
       from: 'off'
       to: 'on'
   condition:

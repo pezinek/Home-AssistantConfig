@@ -49,6 +49,10 @@ binary_sensor.kitchen_pir:
   friendly_name: 'Motion (kitchen counter)'
   icon: mdi:eye-outline
 
+binary_sensor.socket1_pir:
+  friendly_name: 'Motion (kitchen)'
+  icon: mdi:eye-outline
+
 binary_sensor.office_pir:
   friendly_name: 'Motion (office)'
   icon: mdi:eye-outline

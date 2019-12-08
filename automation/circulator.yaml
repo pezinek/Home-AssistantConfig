@@ -78,7 +78,13 @@
       from: 'off'
       to: 'on'
       for:
-        seconds: 30
+        seconds: 15
+    - platform: state
+      entity_id: binary_sensor.socket1_pir
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 15
   condition:
     condition: and
     conditions:

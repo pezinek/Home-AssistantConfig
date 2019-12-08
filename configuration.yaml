@@ -48,6 +48,7 @@ recorder:
      entities:
        - alarm_control_panel.jablotron
        - binary_sensor.kitchen_pir
+       - binary_sensor.socket1_pir
        - binary_sensor.office_pir
        - binary_sensor.hall_upstairs_pir
        - binary_sensor.basement_pir
