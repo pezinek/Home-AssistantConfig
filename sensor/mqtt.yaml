@@ -393,3 +393,27 @@
   payload_available: "1"
   payload_not_available: "0"
 
+- platform: mqtt
+  state_topic: sonoff10/rssi
+  name: water_circulator_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "sonoff10/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: s26-1/rssi
+  name: bathroom_socket_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "s26-1/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: s20-2/rssi
+  name: bathroom_socket_upstairs_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "s20-2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+

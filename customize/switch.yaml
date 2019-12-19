@@ -47,6 +47,10 @@ switch.bathroom_socket:
   friendly_name: "Bathroom socket"
   icon: mdi:power-socket-eu
 
+switch.bathroom_socket_upstairs:
+  friendly_name: "Bathroom socket upstairs"
+  icon: mdi:power-socket-eu
+
 switch.water_circulator:
   friendly_name: "Water Circulator"
   icon: mdi:water-pump

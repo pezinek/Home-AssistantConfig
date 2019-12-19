@@ -102,7 +102,9 @@ bathroom_upstairs:
   name: Bathroom Upstairs
   entities:
     - light.bathroom_upstairs
+    - binary_sensor.bathroom_pir_upstairs
     - binary_sensor.bathroom_door_upstairs
+    - switch.bathroom_socket_upstairs
 
 bedroom:
   name: Bedroom

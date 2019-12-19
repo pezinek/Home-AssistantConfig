@@ -65,6 +65,10 @@ binary_sensor.livingroom_pir:
   friendly_name: 'Motion (livingroom)'
   icon: mdi:eye-outline
 
+binary_sensor.bathroom_pir_upstairs:
+  friendly_name: 'Motion (bathroom upstairs)'
+  icon: mdi:eye-outline
+
 sensor.ir_code:
   friendly_name: 'IR Blaster (code)'
   icon: mdi:remote
@@ -237,4 +241,15 @@ binary_sensor.attic_window:
 binary_sensor.bedroom_window:
   friendly_name: "Bedroom Window"
 
+sensor.water_circulator_wifi_signal:
+  friendly_name: 'Water Circulator WiFi signal'
+  icon: mdi:wifi
+
+sensor.bathroom_socket_wifi_signal:
+  friendly_name: 'Bathroom socket WiFi signal'
+  icon: mdi:wifi
+
+sensor.bathroom_socket_upstairs_wifi_signal:
+  friendly_name: 'Bathroom socket upstairs WiFi signal'
+  icon: mdi:wifi
 

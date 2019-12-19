@@ -29,6 +29,7 @@
         - binary_sensor.bathroom_door_downstairs
         - binary_sensor.bathroom_door_upstairs
         - binary_sensor.bathroom_pir
+        - binary_sensor.bathroom_pir_upstairs
       from: "off"
       to: "on"
     - platform: state
@@ -107,6 +108,12 @@
       to: "off"
       for:
         seconds: 30
+    - platform: state
+      entity_id: binary_sensor.bathroom_pir_upstairs
+      from: "on"
+      to: "off"
+      for:
+        seconds: 60
   condition:
       condition: state
       entity_id: timer.water_circulator

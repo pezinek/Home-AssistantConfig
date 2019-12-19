@@ -56,6 +56,7 @@ recorder:
        - binary_sensor.projector
        - binary_sensor.patio_door
        - binary_sensor.bathroom_pir
+       - binary_sensor.bathroom_pir_upstairs
        - binary_sensor.entrance_door
        - binary_sensor.kids_room_door
        - binary_sensor.kids_room_window

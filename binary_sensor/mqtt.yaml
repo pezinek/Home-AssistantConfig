@@ -221,4 +221,13 @@
   payload_available: "1"
   payload_not_available: "0"
 
+- platform: mqtt
+  state_topic: "s20-2/relay/1"
+  name: bathroom_pir_upstairs
+  payload_on: "1"
+  payload_off: "0"
+  device_class: occupancy
+  availability_topic: "s20-2/status"
+  payload_available: "1"
+  payload_not_available: "0"
 

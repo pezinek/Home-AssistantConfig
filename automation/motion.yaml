@@ -636,6 +636,7 @@
       - platform: state
         entity_id:
           - binary_sensor.bathroom_door_upstairs
+          - binary_sensor.bathroom_pir_upstairs
         from: 'off'
         to: 'on'
       - platform: state
@@ -674,6 +675,7 @@
       entity_id:
         - light.hall_upstairs
         - binary_sensor.bathroom_door_upstairs
+        - binary_sensor.bathroom_pir_upstairs
       from: 'off'
       to: 'on'
     - platform: state
@@ -724,6 +726,13 @@
       to: 'on'
       for:
         seconds: 720
+    - platform: state
+      entity_id:
+        - binary_sensor.bathroom_pir_upstairs
+      from: 'on'
+      to: 'off'
+      for:
+        seconds: 600
   action:
     - service: light.turn_off
       data:
@@ -744,6 +753,7 @@
         - binary_sensor.door_guestroom
         - binary_sensor.basement_pir
         - binary_sensor.bathroom_pir
+        - binary_sensor.bathroom_pir_upstairs
         - binary_sensor.livingroom_pir
         # two way sensors
         - binary_sensor.patio_door

@@ -19,4 +19,7 @@ Internet:
     - sensor.hall_upstairs_light_wifi_signal
     - sensor.bathroom_light_wifi_signal
     - sensor.livingroom_pir_wifi_signal
+    - sensor.water_circulator_wifi_signal
+    - sensor.bathroom_socket_wifi_signal
+    - sensor.bathroom_socket_upstairs_wifi_signal
 
