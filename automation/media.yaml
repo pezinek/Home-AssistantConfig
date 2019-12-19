@@ -23,15 +23,6 @@
     - platform: state
       entity_id: binary_sensor.projector
       to: 'on'
-  condition: 
-    condition: and
-    conditions:
-      - condition: numeric_state
-        entity_id: sensor.kitchen_luxmeter
-        below: 25
-      - condition: state
-        entity_id: light.livingroom_moodlight
-        state: 'off'
   action:
     - service: script.cinema_scene
 
@@ -48,6 +39,26 @@
         state: 'on'
   action:
     - service: script.black_scene
+
+
+- alias: "Lights on if projector on and kodi off"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: "idle"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.projector
+        state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - group.kitchen_lights
+          - light.livingroom_moodlight
+        brightness: 255
 
 
 - alias: "Moodlight off projector is off"
