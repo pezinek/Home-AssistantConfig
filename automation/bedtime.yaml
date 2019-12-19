@@ -33,10 +33,20 @@
         entity_id: input_boolean.bed_time
 
 
-- alias: 'Bed Time ends at 6:55'
+- alias: 'Bed Time end'
   trigger:
     - platform: time
       at: '06:55:00'
+    - platform: state
+      entity_id: binary_sensor.entrance_door
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.bed_time
+        state: 'on'
   action:
     - service: input_boolean.turn_off
       data:
