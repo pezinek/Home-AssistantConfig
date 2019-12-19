@@ -111,7 +111,9 @@ wall:
     - delay:
         milliseconds: 150
     - service: media_player.play_media
-      entity_id: media_player.kodi
+      entity_id: 
+        - media_player.kodi
+        - media_player.office
       data:
         media_content_id: "http://alexandria:8123/local/computer_magic.mp3"
         media_content_type: audio/mp3
@@ -147,7 +149,9 @@ wall:
     - delay:
         milliseconds: 150
     - service: tts.google_say
-      entity_id: media_player.kodi
+      entity_id: 
+        - media_player.kodi
+        - media_player.office
       data_template:
         message: "{{ message }}"
     - delay: 00:01:00
