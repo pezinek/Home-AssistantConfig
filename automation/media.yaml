@@ -1,21 +1,24 @@
 
-- alias: 'HDMI to 1 if kodi is playing'
-  trigger:
-    - platform: state
-      entity_id: media_player.kodi
-      to: 'playing'
-  action:
-    - service: script.hdmi_1
+#
+#- alias: 'HDMI to 1 if kodi is playing'
+#  trigger:
+#    - platform: state
+#      entity_id: media_player.kodi
+#      to: 'playing'
+#  action:
+#    - service: script.hdmi_1
+#
+#
+#- alias: 'HDMI to 5 if chromecast is playing'
+#  trigger:
+#    - platform: state
+#      entity_id: media_player.projektor_svetice
+#      to: 'playing'
+#  action:
+#    - service: script.hdmi_5
 
-- alias: 'HDMI to 5 if chromecast is playing'
-  trigger:
-    - platform: state
-      entity_id: media_player.projektor_svetice
-      to: 'playing'
-  action:
-    - service: script.hdmi_5
 
-- alias: "Moodlight on if projector is on"
+- alias: "Cinema scene if projector is on"
   trigger:
     - platform: state
       entity_id: binary_sensor.projector
@@ -30,13 +33,22 @@
         entity_id: light.livingroom_moodlight
         state: 'off'
   action:
-    - service: light.turn_on
-      data:
-        rgb_color: [2, 0, 1]
-        brightness: 25
-        entity_id:
-          - light.livingroom_moodlight
-        
+    - service: script.cinema_scene
+
+- alias: "Lights off if projector and kodi is on"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'playing'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.projector
+        state: 'on'
+  action:
+    - service: script.black_scene
+
 
 - alias: "Moodlight off projector is off"
   trigger:

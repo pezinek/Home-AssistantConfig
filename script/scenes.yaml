@@ -4,7 +4,9 @@ cinema_scene:
   sequence:
     - service: switch.turn_off 
       data:
-        entity_id: switch.sonoff1
+        entity_id: 
+          - switch.sonoff1  # Lamp
+          - switch.sonoff2  # Humidifier
     - service: light.turn_on
       data:
         entity_id:
