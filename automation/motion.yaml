@@ -732,7 +732,21 @@
       from: 'on'
       to: 'off'
       for:
-        seconds: 600
+        seconds: 300
+    - platform: state
+      entity_id:
+        - binary_sensor.bathroom_pir_upstairs
+      from: 'on'
+      to: 'off'
+      for:
+        seconds: 360
+    - platform: state
+      entity_id:
+        - binary_sensor.bathroom_pir_upstairs
+      from: 'on'
+      to: 'off'
+      for:
+        seconds: 320
   action:
     - service: light.turn_off
       data:
