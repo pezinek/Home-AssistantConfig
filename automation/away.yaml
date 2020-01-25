@@ -10,6 +10,20 @@
       data:
         entity_id:
           - group.off_when_away
+
+- alias: 'Away: Alarm ON when away'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.away_mode
+      from: 'off'
+      to: 'on'
+      for:
+        minutes: 2
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.jablotron
+    state: 'disarmed'
+  action:
     - service: alarm_control_panel.alarm_arm_away
       data:
         entity_id:
@@ -30,12 +44,6 @@
 - alias: 'Away: nobody home'
   trigger:
     - platform: state
-      entity_id: group.people
-      from: 'home'
-      to: 'not home'
-      for:
-        minutes: 15
-    - platform: state
       entity_id: group.activity_detectors
       from: 'on'
       to: 'off'
@@ -54,10 +62,6 @@
 
 - alias: 'Away: people are home'
   trigger:
-    - platform: state
-      entity_id: group.people
-      from: 'not home'
-      to: 'home'
     - platform: state
       entity_id: group.activity_detectors
       from: 'off'
