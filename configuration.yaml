@@ -81,8 +81,8 @@ recorder:
        - light.hall_upstairs
        - light.bathroom_light
        - light.bathroom_upstairs
-       - switch.sonoff_t1
-       - switch.sonoff_t2
+       - switch.office_light
+       - switch.kidsroom_light
        - switch.sonoff1
        - switch.sonoff2
        - switch.sonoff4
@@ -118,8 +118,8 @@ recorder:
 homekit:
   filter:
     include_entities:
-      - switch.sonoff_t1
-      - switch.sonoff_t2
+      - switch.office_light
+      - switch.kidsroom_light
       - switch.sonoff1
       - switch.pool
       - light.kitchen_counter

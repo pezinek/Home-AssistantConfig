@@ -100,7 +100,3 @@ device_tracker.sonoff1:
 device_tracker.sonoff2:
   icon: mdi:power-socket
 
-device_tracker.sonoff_t1:
-  icon: mdi:lightbulb
-
-

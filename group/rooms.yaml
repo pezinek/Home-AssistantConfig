@@ -36,7 +36,7 @@ livingroom:
 office:
   name: Office
   entities:
-    - switch.sonoff_t1
+    - switch.office_light
     - light.office_lamp
     - light.office_pir_led
     - sensor.office_luxmeter
@@ -53,7 +53,7 @@ kidsroom:
   name: Kids Room
   entities:
     - light.kidsroom_bedlight
-    - switch.sonoff_t2
+    - switch.kidsroom_light
     - light.ibutton_led
     - sensor.ibutton
     - media_player.bedplayer

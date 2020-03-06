@@ -11,11 +11,11 @@ switch.sonoff4:
   friendly_name: 'Basement light'
   icon: mdi:lightbulb
 
-switch.sonoff_t1:
+switch.office_light:
   friendly_name: 'Office light'
   icon: mdi:lightbulb
 
-switch.sonoff_t2:
+switch.kidsroom_light:
   friendly_name: 'Kidsroom light'
   icon: mdi:lightbulb
 

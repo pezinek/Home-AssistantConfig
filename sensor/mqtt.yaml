@@ -121,22 +121,20 @@
   payload_not_available: 0
 
 - platform: mqtt
-  state_topic: tele/sonoff_t1/STATE
-  name: sonoff_t1_wifi_signal
-  unit_of_measurement: '%'
-  value_template: '{{ value_json.Wifi.RSSI }}'
-  availability_topic: tele/sonoff_t1/LWT
-  payload_available: Online
-  payload_not_available: Offline
+  name: office_light_wifi_signal
+  state_topic: sonoff-t3/rssi
+  unit_of_measurement: 'RSSI'
+  availability_topic: sonoff-t3/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
-  state_topic: tele/sonoff_t2/STATE
-  name: sonoff_t2_wifi_signal
-  unit_of_measurement: '%'
-  value_template: '{{ value_json.Wifi.RSSI }}'
-  availability_topic: tele/sonoff_t2/LWT
-  payload_available: Online
-  payload_not_available: Offline
+  name: kidsroom_light_wifi_signal
+  state_topic: sonoff-t1/rssi
+  unit_of_measurement: 'RSSI'
+  availability_topic: sonoff-t1/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
   state_topic: homie/a020a616efd1/$stats/signal

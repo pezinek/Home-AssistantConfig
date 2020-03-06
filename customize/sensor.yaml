@@ -29,11 +29,11 @@ sensor.sonoff4_wifi_signal:
   friendly_name: 'Sonoff 4 WiFi signal'
   icon: mdi:wifi
 
-sensor.sonoff_t1_wifi_signal:
+sensor.office_light_wifi_signal:
   friendly_name: 'Office light WiFi signal'
   icon: mdi:wifi
 
-sensor.sonoff_t2_wifi_signal:
+sensor.kidsroom_light_wifi_signal:
   friendly_name: 'Kids room light WiFi signal'
   icon: mdi:wifi
 

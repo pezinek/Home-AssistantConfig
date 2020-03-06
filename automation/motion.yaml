@@ -130,7 +130,7 @@
     - service: switch.turn_on
       data:
         entity_id:
-          - switch.sonoff_t1
+          - switch.office_light
 
 - alias: 'Office light off when no motion'
   trigger:
@@ -151,13 +151,13 @@
         minutes: 7
   condition:
     condition: state
-    entity_id: switch.sonoff_t1
+    entity_id: switch.office_light
     state: 'on'
   action:
     - service: switch.turn_off
       data:
         entity_id:
-          - switch.sonoff_t1
+          - switch.office_light
 
 
 - alias: 'Office PIR Led on when motion'
@@ -925,12 +925,12 @@
             entity_id: light.kidsroom_bedlight
             state: 'on'
           - condition: state
-            entity_id: switch.sonoff_t2
+            entity_id: switch.kidsroom_light
             state: 'on'
   action:
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.sonoff_t2
+          - switch.kidsroom_light
           - light.kidsroom_bedlight
 

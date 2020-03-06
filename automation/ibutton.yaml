@@ -166,7 +166,7 @@
     - service: switch.turn_on
       data:
         entity_id: 
-          - switch.sonoff_t2
+          - switch.kidsroom_light
 
 - alias: 'iButton 16:96:98:05:00:00:00:7E: Andrejka music NEXT'
   trigger:
@@ -209,6 +209,6 @@
     - service: switch.turn_off
       data:
         entity_id: 
-          - switch.sonoff_t2
+          - switch.kidsroom_light
 
 

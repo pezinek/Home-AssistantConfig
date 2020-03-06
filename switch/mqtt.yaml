@@ -38,22 +38,24 @@
   payload_not_available: 0
 
 - platform: mqtt
-  name: sonoff_t1
-  state_topic: "stat/sonoff_t1/POWER"
-  command_topic: "cmnd/sonoff_t1/power"
-  retain: true
-  availability_topic: "tele/sonoff_t1/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
+  name: office_light
+  state_topic: sonoff-t3/relay/0
+  command_topic: sonoff-t3/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-t3/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
-  name: sonoff_t2
-  state_topic: "stat/sonoff_t2/POWER"
-  command_topic: "cmnd/sonoff_t2/power"
-  retain: true
-  availability_topic: "tele/sonoff_t2/LWT"
-  payload_available: "Online"
-  payload_not_available: "Offline"
+  name: kidsroom_light
+  state_topic: sonoff-t1/relay/0
+  command_topic: sonoff-t1/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-t1/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
   name: pool

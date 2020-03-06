@@ -4,7 +4,7 @@
     - platform: state
       entity_id: 
         - switch.rfbridge1
-        - switch.sonoff_t1
+        - switch.office_light
   action:
     - service_template: >
         {% if trigger.to_state.state == "on" %}
@@ -14,7 +14,7 @@
         {% endif %}
       entity_id:
         - switch.rfbridge1 
-        - switch.sonoff_t1
+        - switch.office_light
 
 - alias: 'Group office lamp switches'
   trigger:
@@ -77,7 +77,7 @@
       entity_id:
         - switch.rfbridge2
         - switch.rfbridge7
-        - switch.sonoff_t2
+        - switch.kidsroom_light
   action:
     - service_template: >
         {% if trigger.to_state.state == "on" %}
@@ -88,7 +88,7 @@
       entity_id:
         - switch.rfbridge2
         - switch.rfbridge7
-        - switch.sonoff_t2
+        - switch.kidsroom_light
 
 - alias: 'Guest Room Door Opened'
   trigger:
@@ -266,7 +266,7 @@
           {% elif trigger.to_state.state[-6:] == "0623B1" %}
             input_boolean.washingmachine_scheduled
           {% elif trigger.to_state.state[-6:] == "5B33A4" %}
-            switch.sonoff_t2
+            switch.kidsroom_light
           {% else %}
             script.dummy
           {% endif %}

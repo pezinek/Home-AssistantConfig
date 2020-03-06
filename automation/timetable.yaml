@@ -133,7 +133,7 @@
     #- service: switch.turn_on
     #  data:
     #    entity_id: 
-    #      - switch.sonoff_t2
+    #      - switch.kidsroom_light
     #- service: light.turn_on
     #  data:
     #    rgb_color: [255, 80, 5]
@@ -167,7 +167,7 @@
     - service: switch.turn_off
       data:
         entity_id:
-          - switch.sonoff_t2
+          - switch.kidsroom_light
     - delay: 00:01:00
     - service: media_player.play_media
       entity_id: media_player.bedplayer

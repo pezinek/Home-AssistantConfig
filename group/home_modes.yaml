@@ -18,8 +18,8 @@ Off_when_away:
     - switch.sonoff2
     - switch.sonoff4
     - switch.pow2
-    - switch.sonoff_t1
-    - switch.sonoff_t2
+    - switch.office_light
+    - switch.kidsroom_light
     - input_boolean.pool_automation
     - switch.pool
     - switch.socket1
@@ -37,8 +37,8 @@ Off_when_bedtime:
     - group.all_media
     - switch.sonoff1
     - switch.sonoff4
-    - switch.sonoff_t1
-    - switch.sonoff_t2
+    - switch.office_light
+    - switch.kidsroom_light
     - switch.bathroom_light
 
 Activity Detectors:
@@ -75,7 +75,7 @@ rgb_lights:
 
 On_when_red_alert:
     - switch.sonoff1
-    - switch.sonoff_t1
-    - switch.sonoff_t2
+    - switch.office_light
+    - switch.kidsroom_light
     - switch.bathroom_light
 
