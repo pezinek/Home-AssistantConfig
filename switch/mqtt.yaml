@@ -49,13 +49,13 @@
 
 - platform: mqtt
   name: kidsroom_light
-  state_topic: sonoff-t1/relay/0
-  command_topic: sonoff-t1/relay/0/set
-  payload_on: 1
-  payload_off: 0
-  availability_topic: sonoff-t1/status
-  payload_available: 1
-  payload_not_available: 0
+  state_topic: "stat/tuya01/POWER"
+  command_topic: "cmnd/tuya01/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/tuya01/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 - platform: mqtt
   name: pool

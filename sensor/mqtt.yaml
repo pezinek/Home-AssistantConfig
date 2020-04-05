@@ -130,11 +130,12 @@
 
 - platform: mqtt
   name: kidsroom_light_wifi_signal
-  state_topic: sonoff-t1/rssi
+  state_topic: tele/tuya01/STATE
   unit_of_measurement: 'RSSI'
-  availability_topic: sonoff-t1/status
-  payload_available: 1
-  payload_not_available: 0
+  value_template: '{{ value_json.Wifi.Signal }}'
+  availability_topic: tele/tuya01/LWT
+  payload_available: Online
+  payload_not_available: Offline
 
 - platform: mqtt
   state_topic: homie/a020a616efd1/$stats/signal
