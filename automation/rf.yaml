@@ -265,8 +265,6 @@
             switch.sonoff2
           {% elif trigger.to_state.state[-6:] == "0623B1" %}
             input_boolean.washingmachine_scheduled
-          {% elif trigger.to_state.state[-6:] == "5B33A4" %}
-            switch.kidsroom_light
           {% else %}
             script.dummy
           {% endif %}
