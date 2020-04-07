@@ -71,25 +71,6 @@
         - switch.rfbridge6
         - light.kidsroom_bedlight
 
-- alias: 'Group kids room light switches'
-  trigger:
-    - platform: state
-      entity_id:
-        - switch.rfbridge2
-        - switch.rfbridge7
-        - switch.kidsroom_light
-  action:
-    - service_template: >
-        {% if trigger.to_state.state == "on" %}
-        switch.turn_on
-        {% elif trigger.to_state.state == "off" %}
-        switch.turn_off
-        {% endif %}
-      entity_id:
-        - switch.rfbridge2
-        - switch.rfbridge7
-        - switch.kidsroom_light
-
 - alias: 'Guest Room Door Opened'
   trigger:
     - platform: state
