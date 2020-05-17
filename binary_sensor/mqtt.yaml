@@ -87,7 +87,6 @@
   availability_topic: "sonoff-rfbridge/status"
   payload_available: "1"
   payload_not_available: "0"
-  
 
 - platform: mqtt
   state_topic: "sonoff-rfbridge/rfin"
@@ -228,6 +227,72 @@
   payload_off: "0"
   device_class: occupancy
   availability_topic: "s20-2/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: livingroom_window
+  payload_on: "4AD80A"
+  payload_off: "4AD80E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: bathroom_window_downstairs
+  payload_on: "4B920A"
+  payload_off: "4B920E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: bathroom_window_upstairs
+  payload_on: "44A40A"
+  payload_off: "44A40E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: hall_window
+  payload_on: "48E20A"
+  payload_off: "48E20E"
+  device_class: "window"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: cloakroom_door
+  payload_on: "4A8C0A"
+  payload_off: "4A8C0E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
+  state_topic: "sonoff-rfbridge/rfin"
+  name: basement_door
+  payload_on: "41FE0A"
+  payload_off: "41FE0E"
+  device_class: "door"
+  value_template: '{{ value[-6:] }}'
+  availability_topic: "sonoff-rfbridge/status"
   payload_available: "1"
   payload_not_available: "0"
 

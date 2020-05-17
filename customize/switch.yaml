@@ -23,6 +23,10 @@ switch.bathroom_light:
   friendly_name: 'Bathroom light'
   icon: mdi:lightbulb
 
+switch.cloakroom_light:
+  friendly_name: 'Cloakroom light'
+  icon: mdi:lightbulb
+
 switch.hall_fluxer:
   friendly_name: 'Hall Fluxer'
   icon: mdi:palette

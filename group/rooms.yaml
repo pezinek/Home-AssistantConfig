@@ -18,6 +18,7 @@ livingroom:
     - switch.pow2
     - binary_sensor.projector
     - binary_sensor.patio_door
+    - binary_sensor.livingroom_window
     - binary_sensor.livingroom_pir
     - sensor.ir_code
     - sensor.rf_code
@@ -68,16 +69,28 @@ hall:
     - sensor.hall_upstairs_luxmeter
     - binary_sensor.hall_upstairs_pir
     - binary_sensor.door_guestroom
-    - vacuum.n2d7
-    - switch.n2d7_schedule
-    - binary_sensor.basement_pir
-    - switch.sonoff4
-    - camera.n2d7_cleaning_map
     - alarm_control_panel.jablotron
     - binary_sensor.entrance_door
     - binary_sensor.vestibule_door
     - binary_sensor.vestibule_window
+    - binary_sensor.hall_window
+
+basement:
+  name: Basement
+  entities:
+    - switch.sonoff4
+    - binary_sensor.basement_pir
+    - binary_sensor.basement_door
     - switch.water_circulator
+
+cloakroom:
+  name: Cloakroom
+  entities:
+    - switch.cloakroom_light
+    - vacuum.n2d7
+    - switch.n2d7_schedule
+    - camera.n2d7_cleaning_map
+    - binary_sensor.cloakroom_door
 
 garden:
   name: Garden
@@ -88,8 +101,8 @@ garden:
     - sensor.pool_controller_temperature
     - input_boolean.pool_automation
 
-bathroom:
-  name: Bathroom
+bathroom_downstairs:
+  name: Bathroom Downstairs
   entities:
     - switch.bathroom_light
     - binary_sensor.bathroom_pir
@@ -97,6 +110,7 @@ bathroom:
     - switch.bathroom_socket
     - sensor.bathroom_luxmeter
     - binary_sensor.bathroom_door_downstairs
+    - binary_sensor.bathroom_window_downstairs
 
 bathroom_upstairs:
   name: Bathroom Upstairs
@@ -104,6 +118,7 @@ bathroom_upstairs:
     - light.bathroom_upstairs
     - binary_sensor.bathroom_pir_upstairs
     - binary_sensor.bathroom_door_upstairs
+    - binary_sensor.bathroom_window_upstairs
     - switch.bathroom_socket_upstairs
 
 bedroom:

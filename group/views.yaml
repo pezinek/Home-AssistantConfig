@@ -7,9 +7,11 @@ default_view:
     - group.office
     - group.kidsroom
     - group.hall
-    - group.bathroom
+    - group.basement
+    - group.bathroom_downstairs
     - group.bedroom
     - group.bathroom_upstairs
+    - group.cloakroom
     - group.attic
     - group.garden
     - group.home_modes

@@ -782,6 +782,11 @@
         - binary_sensor.vestibule_window
         - binary_sensor.bedroom_window
         - binary_sensor.attic_window
+        - binary_sensor.basement_door
+        - binary_sensor.cloakroom_door
+        - binary_sensor.hall_window
+        - binary_sensor.bathroom_window_upstairs
+        - binary_sensor.bathroom_window_downstairs
       from: 'off'
       to: 'on'
     - platform: state
@@ -798,6 +803,11 @@
         - binary_sensor.vestibule_window
         - binary_sensor.bedroom_window
         - binary_sensor.attic_window
+        - binary_sensor.basement_door
+        - binary_sensor.cloakroom_door
+        - binary_sensor.hall_window
+        - binary_sensor.bathroom_window_upstairs
+        - binary_sensor.bathroom_window_downstairs
       from: 'on'
       to: 'off'
   action:
@@ -933,4 +943,38 @@
         entity_id:
           - switch.kidsroom_light
           - light.kidsroom_bedlight
+
+
+- alias: 'Basement light off when door closed'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.basement_door
+      from: 'on'
+      to: 'off'
+  condition: 
+    - condition: state
+      entity_id: switch.sonoff4
+      state: 'on' 
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.sonoff4
+
+
+- alias: 'Basement light on when door open'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.basement_door
+      from: 'off'
+      to: 'on'
+  condition: 
+    - condition: state
+      entity_id: switch.sonoff4
+      state: 'off' 
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.sonoff4
 

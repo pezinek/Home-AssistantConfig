@@ -69,6 +69,12 @@ recorder:
        - binary_sensor.vestibule_door
        - binary_sensor.vestibule_window
        - binary_sensor.attic_window
+       - binary_sensor.basement_door
+       - binary_sensor.cloakroom_door
+       - binary_sensor.hall_window
+       - binary_sensor.bathroom_window_upstairs
+       - binary_sensor.bathroom_window_downstairs
+       - binary_sensor.livingroom_window
        - sensor.bathroom_luxmeter  
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
@@ -83,6 +89,7 @@ recorder:
        - light.bathroom_upstairs
        - switch.office_light
        - switch.kidsroom_light
+       - switch.cloakroom_light
        - switch.sonoff1
        - switch.sonoff2
        - switch.sonoff4

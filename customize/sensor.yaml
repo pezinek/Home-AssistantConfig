@@ -241,6 +241,24 @@ binary_sensor.attic_window:
 binary_sensor.bedroom_window:
   friendly_name: "Bedroom Window"
 
+binary_sensor.basement_door:
+  friendly_name: "Basement Door"
+
+binary_sensor.cloakroom_door:
+  friendly_name: "Cloakroom Door"
+
+binary_sensor.hall_window:
+  friendly_name: "Hall Window"
+
+binary_sensor.bathroom_windows_upstairs:
+  friendly_name: "Bathroom Window Upstairs"
+
+binary_sensor.bathroom_window_downstairs:
+  friendly_name: "Bathroom Window Downstairs"
+
+binary_sensor.livingroom_window:
+  friendly_name: "Livingroom Window"
+
 sensor.water_circulator_wifi_signal:
   friendly_name: 'Water Circulator WiFi signal'
   icon: mdi:wifi
@@ -252,4 +270,9 @@ sensor.bathroom_socket_wifi_signal:
 sensor.bathroom_socket_upstairs_wifi_signal:
   friendly_name: 'Bathroom socket upstairs WiFi signal'
   icon: mdi:wifi
+
+sensor.cloakroom_light_wifi_signal:
+  friendly_name: 'Cloakroom Light WiFi signal'
+  icon: mdi:wifi
+
 
