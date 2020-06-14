@@ -22,5 +22,6 @@ Internet:
     - sensor.water_circulator_wifi_signal
     - sensor.bathroom_socket_wifi_signal
     - sensor.bathroom_socket_upstairs_wifi_signal
+    - sensor.bathroom_socket_downstairs_wifi_signal
     - sensor.cloakroom_light_wifi_signal
 

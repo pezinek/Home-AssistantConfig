@@ -109,6 +109,8 @@ bathroom_downstairs:
     - input_boolean.washingmachine_scheduled
     - switch.bathroom_socket
     - sensor.bathroom_luxmeter
+    - binary_sensor.bathroom_socket_pir_downstairs
+    - switch.bathroom_socket_downstairs
     - binary_sensor.bathroom_door_downstairs
     - binary_sensor.bathroom_window_downstairs
 

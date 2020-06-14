@@ -25,6 +25,9 @@ Off_when_away:
     - switch.socket1
     - switch.pow1
     - switch.bathroom_light
+    - switch.bathroom_socket
+    - switch.bathroom_socket_upstairs
+    - switch.bathroom_socket_downstairs
 
 On_when_away_disabled:
     - switch.pow2
@@ -40,6 +43,8 @@ Off_when_bedtime:
     - switch.office_light
     - switch.kidsroom_light
     - switch.bathroom_light
+    - switch.bathroom_socket_upstairs
+    - switch.bathroom_socket_downstairs
 
 Activity Detectors:
   # Controll Away_mode and Bed_Time
@@ -57,11 +62,17 @@ Activity Detectors:
     - binary_sensor.bathroom_pir
     - binary_sensor.bathroom_pir_upstairs
     - binary_sensor.livingroom_pir
+    - binary_sensor.bathroom_socket_pir_downstairs
     
 kitchen_lights:
   entities:
     - light.kitchen_counter
     - light.kitchen_moodlight
+
+bathroom_pirs_downstairs:
+  entities:
+    - binary_sensor.bathroom_pir
+    - binary_sensor.bathroom_socket_pir_downstairs
 
 rgb_lights:
   entities:

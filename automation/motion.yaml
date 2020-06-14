@@ -768,6 +768,7 @@
         - binary_sensor.basement_pir
         - binary_sensor.bathroom_pir
         - binary_sensor.bathroom_pir_upstairs
+        - binary_sensor.bathroom_socket_pir_downstairs
         - binary_sensor.livingroom_pir
         # two way sensors
         - binary_sensor.patio_door
@@ -869,7 +870,7 @@
 - alias: 'Bathroom light on when motion'
   trigger:
     - platform: state
-      entity_id: binary_sensor.bathroom_pir
+      entity_id: group.bathroom_pirs_downstairs
       from: 'off'
       to: 'on'
     - platform: state
@@ -897,7 +898,7 @@
 - alias: 'Bathroom light off when no motion'
   trigger:
     - platform: state
-      entity_id: binary_sensor.bathroom_pir
+      entity_id: group.bathroom_pirs_downstairs
       to: 'off'
       for:
         seconds: 30

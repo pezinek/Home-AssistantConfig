@@ -69,6 +69,10 @@ binary_sensor.bathroom_pir_upstairs:
   friendly_name: 'Motion (bathroom upstairs)'
   icon: mdi:eye-outline
 
+binary_sensor.bathroom_socket_pir_downstairs:
+  friendly_name: 'Motion (bathroom downstairs)'
+  icon: mdi:eye-outline
+
 sensor.ir_code:
   friendly_name: 'IR Blaster (code)'
   icon: mdi:remote
@@ -269,6 +273,10 @@ sensor.bathroom_socket_wifi_signal:
 
 sensor.bathroom_socket_upstairs_wifi_signal:
   friendly_name: 'Bathroom socket upstairs WiFi signal'
+  icon: mdi:wifi
+
+sensor.bathroom_socket_downstairs_wifi_signal:
+  friendly_name: 'Bathroom socket downstairs WiFi signal'
   icon: mdi:wifi
 
 sensor.cloakroom_light_wifi_signal:

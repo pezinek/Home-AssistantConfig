@@ -57,6 +57,7 @@ recorder:
        - binary_sensor.patio_door
        - binary_sensor.bathroom_pir
        - binary_sensor.bathroom_pir_upstairs
+       - binary_sensor.bathroom_socket_pir_downstairs
        - binary_sensor.entrance_door
        - binary_sensor.kids_room_door
        - binary_sensor.kids_room_window
@@ -111,6 +112,8 @@ recorder:
        - switch.pool
        - switch.socket1
        - switch.bathroom_socket
+       - switch.bathroom_socket_upstairs
+       - switch.bathroom_socket_downstairs
        - switch.pow1
        - switch.water_circulator
 #      - sensor.pow1_apparent

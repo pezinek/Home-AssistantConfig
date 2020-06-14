@@ -217,3 +217,14 @@
   payload_available: 1
   payload_not_available: 0
 
+- platform: mqtt
+  name: bathroom_socket_downstairs
+  state_topic: s20-3/relay/0
+  command_topic: s20-3/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: s20-3/status
+  payload_available: 1
+  payload_not_available: 0
+
+

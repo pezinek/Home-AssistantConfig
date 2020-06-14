@@ -417,6 +417,14 @@
   payload_not_available: "0"
 
 - platform: mqtt
+  state_topic: s20-3/rssi
+  name: bathroom_socket_downstairs_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "s20-3/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
   state_topic: tuya02/rssi
   name: cloakroom_light_wifi_signal
   unit_of_measurement: 'RSSI'
