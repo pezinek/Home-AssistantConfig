@@ -28,7 +28,7 @@
       entity_id: 
         - binary_sensor.bathroom_door_downstairs
         - binary_sensor.bathroom_door_upstairs
-        - binary_sensor.bathroom_pir
+        - group.bathroom_pirs_downstairs
         - binary_sensor.bathroom_pir_upstairs
       from: "off"
       to: "on"
@@ -103,7 +103,7 @@
 - alias: 'Circulator off when bathroom gets abandoned'
   trigger:
     - platform: state
-      entity_id: binary_sensor.bathroom_pir
+      entity_id: group.bathroom_pirs_downstairs
       from: "on"
       to: "off"
       for:

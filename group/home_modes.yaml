@@ -20,6 +20,7 @@ Off_when_away:
     - switch.pow2
     - switch.office_light
     - switch.kidsroom_light
+    - switch.water_circulator
     - input_boolean.pool_automation
     - switch.pool
     - switch.socket1
@@ -42,6 +43,7 @@ Off_when_bedtime:
     - switch.sonoff4
     - switch.office_light
     - switch.kidsroom_light
+    - switch.water_circulator
     - switch.bathroom_light
     - switch.bathroom_socket_upstairs
     - switch.bathroom_socket_downstairs
