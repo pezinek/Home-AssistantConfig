@@ -818,14 +818,9 @@
 
 - alias: "Reset motion counters hourly"
   trigger:
-    - platform: time
-      minutes: 00
-      seconds: 00
-    # This needs to be changed after HA 0.86+ to something like this:
-    #
-    # - platform: time_pattern
-    #   minutes: 0
-    #   seconds: 0
+    - platform: time_pattern
+      minutes: 0
+      seconds: 0
   action:
     - service: input_number.set_value
       data_template:

@@ -147,9 +147,8 @@ homekit:
 
 # Text to speech
 tts:
-  # this needs to be changed to google_translate after HA 0.92
-  platform: google
-  language: cs
+  - platform: google_translate
+    language: cs
 
 media_player:
   - platform: kodi
