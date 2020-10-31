@@ -92,3 +92,13 @@ On_when_red_alert:
     - switch.kidsroom_light
     - switch.bathroom_light
 
+all_lights:
+    - group.rgb_lights
+
+all_media:
+    - media_player.avr
+    - media_player.kodi
+    - media_player.obyvak
+    - media_player.office
+    - media_player.projektor_svetice
+    - meida_player.bedplayer
