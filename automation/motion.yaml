@@ -315,6 +315,7 @@
       - condition: state
         entity_id: input_boolean.away_mode
         state: 'off'
+  mode: queued
   action:
     - service: light.turn_on
       data:
@@ -811,6 +812,8 @@
         - binary_sensor.bathroom_window_downstairs
       from: 'on'
       to: 'off'
+  mode: queued
+  max: 100
   action:
     - service: counter.increment
       data:

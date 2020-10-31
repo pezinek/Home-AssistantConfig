@@ -1,6 +1,6 @@
 default_view:
   name: Home
-  view: yes
+#  view: yes
   entities:
     - group.kitchen
     - group.livingroom
@@ -20,7 +20,7 @@ default_view:
 
 Network:
   name: Network
-  view: yes
+#  view: yes
   icon: mdi:access-point-network
   entities:
     - group.internet
@@ -30,7 +30,7 @@ Network:
 
 Development:
   name: Development 
-  view: yes
+#  view: yes
   icon: mdi:wrench
   entities:
     - group.all_devices

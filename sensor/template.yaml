@@ -5,21 +5,14 @@
   sensors:
     solar_pool_delta:
       friendly_name: "Temperature difference between pool and solar colector"
-      entity_id:
-        - sensor.pool_temperature
-        - sensor.solar_collector_temperature
 #     unit_of_measurement: °C
       value_template: "{{ states.sensor.solar_collector_temperature.state|float - states.sensor.pool_temperature.state|float }}"
     rf_code_6:
       friendly_name: "RF code (short)"
-      entity_id:
-        - sensor.rf_code
       value_template: "{{ states.sensor.rf_code.state[-6:] }}"
 
     cheap_electricity_left:
       friendly_name: "Cheap electricity left"
-      entity_id:
-        - sensor.time
       unit_of_measurement: min
       value_template: >-
         0

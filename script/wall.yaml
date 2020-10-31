@@ -1,4 +1,5 @@
 wall:
+  mode: queued
   sequence:
     - condition: and
       conditions:
