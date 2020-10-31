@@ -22,6 +22,7 @@
       entity_id:
         - switch.rfbridge8
         - light.office_lamp
+        - switch.office_light_2
   action:
     - service_template: >
         {% if trigger.to_state.state == "on" %}
@@ -32,6 +33,7 @@
       entity_id:
         - switch.rfbridge8
         - light.office_lamp
+        - switch.office_light_2
 
 - alias: 'Group living room lamp switches'
   trigger:

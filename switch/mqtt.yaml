@@ -39,11 +39,21 @@
 
 - platform: mqtt
   name: office_light
-  state_topic: sonoff-t3/relay/0
-  command_topic: sonoff-t3/relay/0/set
+  state_topic: office-light/relay/0
+  command_topic: office-light/relay/0/set
   payload_on: 1
   payload_off: 0
-  availability_topic: sonoff-t3/status
+  availability_topic: office-light/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: office_light_2
+  state_topic: office-light/relay/1
+  command_topic: office-light/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: office-light/status
   payload_available: 1
   payload_not_available: 0
 
