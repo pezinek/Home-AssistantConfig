@@ -122,7 +122,7 @@
 
 - platform: mqtt
   name: office_light_wifi_signal
-  state_topic: sonoff-t3/rssi
+  state_topic: office-light/rssi
   unit_of_measurement: 'RSSI'
   availability_topic: sonoff-t3/status
   payload_available: 1
