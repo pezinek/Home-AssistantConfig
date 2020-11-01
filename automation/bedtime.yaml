@@ -68,14 +68,20 @@
       data:
           entity_id: input_select.lighting_mode
           option: Night
+
       
-- alias: 'Lighting mode: Night'
+- alias: 'Bed Time: Off actions'
   trigger:
     - platform: state
       entity_id: input_boolean.bed_time
       from: 'on'
       to: 'off'
   action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+          - group.on_when_bedtime_over
+
     - service: input_select.select_option
       data:
           entity_id: input_select.lighting_mode

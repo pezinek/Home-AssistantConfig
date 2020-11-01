@@ -29,11 +29,13 @@ Off_when_away:
     - switch.bathroom_socket
     - switch.bathroom_socket_upstairs
     - switch.bathroom_socket_downstairs
+    - switch.cloakroom_light
 
 On_when_away_disabled:
     - switch.pow2
     - input_boolean.pool_automation
     - switch.pow1
+    - switch.cloakroom_light
 
 Off_when_bedtime:
   entities:
@@ -47,6 +49,11 @@ Off_when_bedtime:
     - switch.bathroom_light
     - switch.bathroom_socket_upstairs
     - switch.bathroom_socket_downstairs
+    - switch.cloakroom_light
+
+On_when_bedtime_over:
+  entities:
+    - switch.cloakroom_light
 
 Activity Detectors:
   # Controll Away_mode and Bed_Time
