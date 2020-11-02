@@ -119,6 +119,9 @@ recorder:
        - switch.bathroom_socket
        - switch.bathroom_socket_upstairs
        - switch.bathroom_socket_downstairs
+       - switch.bathroom_light
+       - switch.bathroom_wallswitch_downstairs_0
+       - switch.bathroom_wallswitch_downstairs_1
        - switch.pow1
        - switch.water_circulator
 #      - sensor.pow1_apparent

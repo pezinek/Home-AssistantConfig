@@ -29,6 +29,8 @@ Off_when_away:
     - switch.bathroom_socket
     - switch.bathroom_socket_upstairs
     - switch.bathroom_socket_downstairs
+    - switch.bathroom_wallswitch_downstairs_0
+    - switch.bathroom_wallswitch_downstairs_1
     - switch.cloakroom_light
 
 On_when_away_disabled:
@@ -49,6 +51,8 @@ Off_when_bedtime:
     - switch.bathroom_light
     - switch.bathroom_socket_upstairs
     - switch.bathroom_socket_downstairs
+    - switch.bathroom_wallswitch_downstairs_0
+    - switch.bathroom_wallswitch_downstairs_1
     - switch.cloakroom_light
 
 On_when_bedtime_over:
@@ -72,6 +76,7 @@ Activity Detectors:
     - binary_sensor.bathroom_pir_upstairs
     - binary_sensor.livingroom_pir
     - binary_sensor.bathroom_socket_pir_downstairs
+    - switch.bathroom_wallswitch_downstairs_1
     
 kitchen_lights:
   entities:

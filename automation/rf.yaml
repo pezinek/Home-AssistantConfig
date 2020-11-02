@@ -11,6 +11,8 @@
         homeassistant.turn_on
         {% elif trigger.to_state.state == "off" %}
         homeassistant.turn_off
+        {% else %}
+        script.dummy
         {% endif %}
       entity_id:
         - switch.rfbridge1 
@@ -29,6 +31,8 @@
         homeassistant.turn_on
         {% elif trigger.to_state.state == "off" %}
         homeassistant.turn_off
+        {% else %}
+        script.dummy
         {% endif %}
       entity_id:
         - switch.rfbridge8
@@ -67,11 +71,34 @@
         homeassistant.turn_on
         {% elif trigger.to_state.state == "off" %}
         homeassistant.turn_off
+        {% else %}
+        script.dummy
         {% endif %}
       entity_id:
         - switch.rfbridge3
         - switch.rfbridge6
         - light.kidsroom_bedlight
+
+
+- alias: 'Group bathroom light switches'
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.bathroom_wallswitch_downstairs_0
+        - switch.bathroom_light
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == "on" %}
+        homeassistant.turn_on
+        {% elif trigger.to_state.state == "off" %}
+        homeassistant.turn_off
+        {% else %}
+        script.dummy
+        {% endif %}
+      entity_id:
+        - switch.bathroom_wallswitch_downstairs_0
+        - switch.bathroom_light
+
 
 - alias: 'Guest Room Door Opened'
   trigger:

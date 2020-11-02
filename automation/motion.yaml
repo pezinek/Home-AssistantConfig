@@ -789,6 +789,7 @@
         - binary_sensor.hall_window
         - binary_sensor.bathroom_window_upstairs
         - binary_sensor.bathroom_window_downstairs
+        - switch.bathroom_wallswitch_downstairs_1
       from: 'off'
       to: 'on'
     - platform: state
@@ -810,6 +811,7 @@
         - binary_sensor.hall_window
         - binary_sensor.bathroom_window_upstairs
         - binary_sensor.bathroom_window_downstairs
+        - switch.bathroom_wallswitch_downstairs_1
       from: 'on'
       to: 'off'
   mode: queued

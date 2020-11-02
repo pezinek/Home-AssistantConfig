@@ -279,8 +279,11 @@ sensor.bathroom_socket_downstairs_wifi_signal:
   friendly_name: 'Bathroom socket downstairs WiFi signal'
   icon: mdi:wifi
 
+sensor.bathroom_wallswitch_downstairs_wifi_signal:
+  friendly_name: 'Bathroom wallswitch downstairs WiFi signal'
+  icon: mdi:wifi
+
 sensor.cloakroom_light_wifi_signal:
   friendly_name: 'Cloakroom Light WiFi signal'
   icon: mdi:wifi
-
 

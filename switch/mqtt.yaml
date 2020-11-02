@@ -237,4 +237,23 @@
   payload_available: 1
   payload_not_available: 0
 
+- platform: mqtt
+  name: bathroom_wallswitch_downstairs_0
+  state_topic: bathroom-wallswitch-downstairs/relay/0
+  command_topic: bathroom-wallswitch-downstairs/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: bathroom-wallswitch-downstairs/status
+  payload_available: 1
+  payload_not_available: 0
+
+- platform: mqtt
+  name: bathroom_wallswitch_downstairs_1
+  state_topic: bathroom-wallswitch-downstairs/relay/1
+  command_topic: bathroom-wallswitch-downstairs/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: bathroom-wallswitch-downstairs/status
+  payload_available: 1
+  payload_not_available: 0
 
