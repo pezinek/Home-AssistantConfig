@@ -105,6 +105,7 @@ bathroom_downstairs:
   name: Bathroom Downstairs
   entities:
     - switch.bathroom_light
+    - switch.bathroom_wallswitch_downstairs_1
     - binary_sensor.bathroom_pir
     - input_boolean.washingmachine_scheduled
     - switch.bathroom_socket

@@ -20,6 +20,10 @@ switch.kidsroom_light:
   icon: mdi:lightbulb
 
 switch.bathroom_light:
+  friendly_name: 'Bathroom sink light'
+  icon: mdi:lightbulb
+
+switch.bathroom_wallswitch_downstairs_1:
   friendly_name: 'Bathroom light'
   icon: mdi:lightbulb
 
