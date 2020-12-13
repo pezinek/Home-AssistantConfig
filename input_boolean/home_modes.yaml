@@ -33,3 +33,7 @@ washingmachine_scheduled:
   name: "Washing Machine Scheduled"
   icon: mdi:washing-machine
 
+mosquito_season:
+  name: "Mosquito season"
+  icon: mdi:bee
+
