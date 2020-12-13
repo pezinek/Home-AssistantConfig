@@ -1,0 +1,93 @@
+- id: '1604699049603'
+  alias: Surveliance station - Activate
+  description: Deactivate home mode in surveliance station once away mode gets set.
+  trigger:
+  - platform: state
+    entity_id: input_boolean.away_mode
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 09aed8491b9f11ebb024db8794792a22
+    entity_id: switch.alexandria_home_mode
+    domain: switch
+  mode: single
+- id: '1604699235580'
+  alias: Surveliance station - Deactivate
+  description: Activate home mode in surveliance station once away mode gets deactivated.
+  trigger:
+  - platform: state
+    entity_id: input_boolean.away_mode
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 09aed8491b9f11ebb024db8794792a22
+    entity_id: switch.alexandria_home_mode
+    domain: switch
+  mode: single
+- id: '1607380134855'
+  alias: Globus ON
+  description: Turn on globus when some doors in the hallway get open/closed and it
+    is dark in the kitchen.
+  trigger:
+  - platform: state
+    entity_id: timer.light_hall_downstairs
+    from: idle
+    to: active
+  condition:
+  - condition: state
+    entity_id: input_boolean.away_mode
+    state: 'off'
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.sonoff1
+  mode: queued
+  max: 10
+- id: '1607380357796'
+  alias: Globus OFF
+  description: Turn off globus after nobody seen for 30 sec
+  trigger:
+  - platform: state
+    entity_id: timer.light_hall_downstairs
+    from: active
+    to: idle
+  condition:
+  - condition: state
+    entity_id: switch.sonoff1
+    state: 'on'
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.sonoff1
+  mode: queued
+  max: 10
+- id: '1607382622858'
+  alias: Globus Timer ON
+  description: Turn on globus when some doors in the hallway get open/closed and it
+    is dark in the kitchen.
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_door,binary_sensor.bathroom_door_downstairs,binary_sensor.basement_door,binary_sensor.vestibule_door
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: binary_sensor.basement_pir,binary_sensor.office_door,binary_sensor.bathroom_door_downstairs,binary_sensor.basement_door,binary_sensor.vestibule_door
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.away_mode
+    state: 'off'
+  - condition: numeric_state
+    entity_id: sensor.hall_upstairs_luxmeter
+    below: '20'
+  action:
+  - service: timer.start
+    data: {}
+    entity_id: timer.light_hall_downstairs
+  mode: queued
+  max: 10

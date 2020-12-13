@@ -4,3 +4,7 @@ water_circulator:
     # pipes len: 14m (one way)
     # pipes diameter: 0.5"
     duration: '00:02:12'
+
+light_hall_downstairs:
+    duration: '00:00:30'
+

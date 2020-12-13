@@ -268,15 +268,8 @@
   action:
     - service: light.turn_on
       data:
+        rgb_color: [255, 212, 94]
         brightness: 255
-        entity_id:
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-    # do it twice to work arround a bug in the driver
-    # workarround - merge after 0.72.1
-    - service: light.turn_on
-      data:
-        rgb_color: [255, 122, 10]
         entity_id:
           - light.kitchen_counter
           - light.kitchen_moodlight
@@ -319,22 +312,11 @@
   action:
     - service: light.turn_on
       data:
-        brightness: 5
-        entity_id:
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-    # workarround - merge after 0.72.1
-    - service: light.turn_on
-      data:
-        rgb_color: [255, 0, 0]
-        entity_id:
-          - light.kitchen_counter
-          - light.kitchen_moodlight
-    - service: light.turn_on
-      data:
         rgb_color: [255, 0, 0]
         brightness: 10
         entity_id:
+          - light.kitchen_counter
+          - light.kitchen_moodlight
           - light.livingroom_moodlight
 
 
@@ -440,14 +422,8 @@
   action:
     - service: light.turn_on
       data:
-        brightness: 255
-        entity_id:
-          - light.livingroom_moodlight
-    # do it twice to work arround a bug in the driver
-    # workarround - merge after 0.72.1
-    - service: light.turn_on
-      data:
         rgb_color: [255, 67, 15]
+        brightness: 255
         entity_id:
           - light.livingroom_moodlight
  

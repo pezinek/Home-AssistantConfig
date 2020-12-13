@@ -1,18 +1,15 @@
-- platform: flux_led
-  devices:
-    leds5:
-      name: "Kidsroom Bedlight"
-      mode: 'rgb'
-    leds3:
-      name: "Kitchen Moodlight"
-      mode: 'rgb'
-    leds2:
-      name: "Kitchen Counter"
-      mode: 'rgb'
-    leds1:
-      name: "Flux LED controller 1"
-      mode: 'rgb'
-    leds11:
-      name: "Bathroom upstairs"
-      mode: 'rgb'
+#- platform: flux_led
+#  devices:
+#    leds5:
+#      name: "Kidsroom Bedlight"
+#      mode: 'rgb'
+#    leds3:
+#      name: "Kitchen Moodlight"
+#      mode: 'rgb'
+#    leds2:
+#      name: "Kitchen Counter"
+#      mode: 'rgb'
+#    leds11:
+#      name: "Bathroom upstairs"
+#      mode: 'rgb'
 

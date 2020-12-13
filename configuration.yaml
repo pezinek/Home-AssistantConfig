@@ -226,7 +226,9 @@ switch: !include_dir_merge_list switch
 light:  !include_dir_merge_list light
 script: !include_dir_merge_named script
 group: !include_dir_merge_named group
-automation: !include_dir_merge_list automation
+automation old: !include_dir_merge_list automation
+automation: !include automations.yaml
+
 input_boolean: !include_dir_merge_named input_boolean
 input_select: !include_dir_merge_named input_select
 input_number: !include_dir_merge_named input_number
