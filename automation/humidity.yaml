@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
-      below: 40
+      below: 45
     - platform: state
       entity_id: input_boolean.away_mode
       to: 'off'
@@ -16,7 +16,7 @@
       for:
         minutes: 15
     - platform: state
-      entity_id: binary_sensor.patio_door
+      entity_id: binary_sensor.bedroom_window
       from: 'on'
       to: 'off'
       for:
@@ -26,7 +26,7 @@
     conditions:
       - condition: numeric_state
         entity_id: sensor.sonoff2_humidity
-        below: 40
+        below: 45
       - condition: state
         entity_id: switch.sonoff2
         state: 'off'
@@ -37,7 +37,7 @@
         entity_id: input_boolean.electricity_is_cheap
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.patio_door
+        entity_id: binary_sensor.bedroom_window
         state: 'off'
   action:
     - service: switch.turn_on
@@ -64,7 +64,7 @@
       for: 
         hours: 1
     - platform: state
-      entity_id: binary_sensor.patio_door
+      entity_id: binary_sensor.bedroom_window
       from: 'off'
       to: 'on'
 
