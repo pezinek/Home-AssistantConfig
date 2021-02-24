@@ -7,9 +7,9 @@
     - platform: state
       entity_id: input_boolean.away_mode
       to: 'off'
-    - platform: state
-      entity_id: input_boolean.electricity_is_cheap
-      to: 'on'
+#    - platform: state
+#      entity_id: input_boolean.electricity_is_cheap
+#      to: 'on'
     - platform: state
       entity_id: switch.sonoff2
       to: 'off'
@@ -26,16 +26,16 @@
     conditions:
       - condition: numeric_state
         entity_id: sensor.sonoff2_humidity
-        below: 45
+        below: 50
       - condition: state
         entity_id: switch.sonoff2
         state: 'off'
       - condition: state
         entity_id: input_boolean.away_mode
         state: 'off'
-      - condition: state
-        entity_id: input_boolean.electricity_is_cheap
-        state: 'on'
+#      - condition: state
+#        entity_id: input_boolean.electricity_is_cheap
+#        state: 'on'
       - condition: state
         entity_id: binary_sensor.bedroom_window
         state: 'off'
@@ -54,10 +54,10 @@
     - platform: numeric_state
       entity_id: sensor.sonoff2_humidity
       above: 50
-    - platform: state
-      entity_id: input_boolean.electricity_is_cheap
-      from: 'on'
-      to: 'off'
+#    - platform: state
+#      entity_id: input_boolean.electricity_is_cheap
+#      from: 'on'
+#      to: 'off'
     - platform: state
       entity_id: switch.sonoff2
       to: 'on'
