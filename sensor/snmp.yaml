@@ -1,0 +1,25 @@
+- platform: snmp
+  name: router_temperature
+  host: router
+  baseoid: .1.3.6.1.4.1.14988.1.1.3.10.0
+  unit_of_measurement: '°C'
+  value_template: "{{((value | int) / 10) | int}}"
+
+- platform: snmp
+  name: nas_temperature
+  host: alexandria
+  baseoid: 1.3.6.1.4.1.6574.1.2.0
+  unit_of_measurement: '°C'
+
+- platform: snmp
+  name: nas_temperature_disk_1
+  host: alexandria
+  baseoid: 1.3.6.1.4.1.6574.2.1.1.6.0 
+  unit_of_measurement: '°C'
+
+- platform: snmp
+  name: nas_temperature_disk_2
+  host: alexandria
+  baseoid: 1.3.6.1.4.1.6574.2.1.1.6.1
+  unit_of_measurement: '°C'
+
