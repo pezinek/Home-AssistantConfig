@@ -8,3 +8,9 @@ water_circulator:
 light_hall_downstairs:
     duration: '00:00:30'
 
+bathroom_upstairs_occupied:
+    duration: '00:10:00'
+
+hall_upstairs_occupied:
+    duration: '00:00:30'
+

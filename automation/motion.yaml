@@ -497,51 +497,7 @@
 
 
 
-- alias: 'Hall upstairs light off when no motion'
-  trigger:
-    - platform: state
-      entity_id: 
-        - binary_sensor.hall_upstairs_pir
-        - binary_sensor.door_guestroom
-      to: 'off'
-      for:
-        seconds: 30
-    - platform: state
-      entity_id: 
-        - binary_sensor.hall_upstairs_pir
-        - binary_sensor.door_guestroom
-      to: 'off'
-      for:
-        seconds: 60
-    - platform: state
-      entity_id: 
-        - binary_sensor.hall_upstairs_pir
-        - binary_sensor.door_guestroom
-      to: 'off'
-      for:
-        seconds: 90
-    - platform: state
-      entity_id: light.hall_upstairs
-      to: 'on'
-      for:
-        minutes: 15
-  condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: light.hall_upstairs
-        state: 'on'
-  action:
-    - service: light.turn_off
-      data:
-        entity_id:
-          - light.hall_upstairs
-    - service: switch.turn_off
-      data:
-        entity_id:
-          - switch.hall_fluxer
-
-- alias: 'Hall upstairs light on when motion - day'
+- alias: 'Hall upstairs occupied when motion'
   trigger:
     - platform: state
       entity_id: 
@@ -551,6 +507,48 @@
         - binary_sensor.bathroom_door_upstairs
       from: 'off'
       to: 'on'
+  action:
+    - service: timer.start
+      entity_id: timer.hall_upstairs_occupied
+
+- alias: 'Cancel hall upstairs occupancy timer when light off'
+  trigger:
+    - platform: state
+      entity_id: light.hall_upstairs
+  condition:
+    condition: state
+    entity_id: timer.hall_upstairs_occupied
+    state: 'active'
+  action:
+    - service: timer.cancel
+      entity_id: timer.hall_upstairs_occupied
+
+- alias: 'Turn off hall upstairs light when not occupied'
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.hall_upstairs_occupied
+  condition:
+    condition: state
+    entity_id: light.hall_upstairs
+    state: 'on'
+  action: 
+    - service: light.turn_off
+      entity_id: 
+        - light.hall_upstairs
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.hall_fluxer
+
+- alias: 'Hall upstairs light on when occupied - day'
+  trigger:
+    - platform: state
+      entity_id: 
+        - timer.hall_upstairs_occupied
+      from: 'idle'
+      to: 'active'
   condition:
     condition: and
     conditions:
@@ -560,9 +558,6 @@
       - condition: state
         entity_id: light.hall_upstairs
         state: 'off'
-      #- condition: state
-      #  entity_id: input_boolean.bed_time 
-      #  state: 'off'
       - condition: time
         after: '07:00:00'
         before: '20:00:00'
@@ -581,16 +576,13 @@
           - light.hall_upstairs
     - service: switch.hall_fluxer_update
 
-- alias: 'Hall upstairs light on when motion - night'
+- alias: 'Hall upstairs light on when occupied - night'
   trigger:
     - platform: state
       entity_id: 
-        - binary_sensor.hall_upstairs_pir
-        - binary_sensor.door_guestroom
-        - binary_sensor.kids_room_door
-        - binary_sensor.bathroom_door_upstairs
-      from: 'off'
-      to: 'on'
+        - timer.hall_upstairs_occupied
+      from: 'idle'
+      to: 'active'
   condition:
     condition: and
     conditions:
@@ -618,19 +610,14 @@
           - light.hall_upstairs
 
 
-- alias: 'Bathroom upstairs light on when motion - day'
+
+- alias: 'Bathroom upstairs light on when occupied - day'
   trigger:
       - platform: state
         entity_id:
-          - binary_sensor.bathroom_door_upstairs
-          - binary_sensor.bathroom_pir_upstairs
-        from: 'off'
-        to: 'on'
-      - platform: state
-        entity_id:
-          - binary_sensor.bathroom_door_upstairs
-        from: 'on'
-        to: 'off'
+          - timer.bathroom_upstairs_occupied
+        from: 'idle'
+        to: 'active'
 
   condition:
     condition: and
@@ -647,6 +634,7 @@
       - condition: state
         entity_id: input_boolean.away_mode
         state: 'off'
+
   action:
     - service: light.turn_on
       data:
@@ -655,21 +643,14 @@
         entity_id:
           - light.bathroom_upstairs
 
-
-- alias: 'Bathroom upstairs light on when motion - night'
+- alias: 'Bathroom upstairs light on when occupied - night'
   trigger:
-    - platform: state
-      entity_id:
-        - light.hall_upstairs
-        - binary_sensor.bathroom_door_upstairs
-        - binary_sensor.bathroom_pir_upstairs
-      from: 'off'
-      to: 'on'
-    - platform: state
-      entity_id:
-        - binary_sensor.bathroom_door_upstairs
-      from: 'on'
-      to: 'off'
+      - platform: state
+        entity_id:
+          - timer.bathroom_upstairs_occupied
+        from: 'idle'
+        to: 'active'
+
   condition:
     condition: and
     conditions:
@@ -682,6 +663,7 @@
       - condition: state
         entity_id: input_boolean.away_mode
         state: 'off'
+
   action:
     - service: light.turn_on
       data:
@@ -690,55 +672,74 @@
         entity_id:
           - light.bathroom_upstairs
 
-- alias: 'Bathroom upstairs - light off'
+
+- alias: 'Turn off bathroom upstairs light when not occupied'
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bathroom_upstairs_occupied
+  condition:
+    condition: state
+    entity_id: light.bathroom_upstairs
+    state: 'on'
+  action: 
+    - service: light.turn_off
+      entity_id: 
+        - light.bathroom_upstairs
+   
+
+- alias: 'Cancel bathroom upstairs occupancy timer when light off'
+  trigger:
+    - platform: state
+      entity_id: light.bathroom_upstairs
+  condition:
+    condition: state
+    entity_id: timer.bathroom_upstairs_occupied
+    state: 'active'
+  action:
+    - service: timer.cancel
+      entity_id: timer.bathroom_upstairs_occupied
+
+
+- alias: 'Bathroom upstairs occupied when motion'
+  trigger:
+      - platform: state
+        entity_id:
+          - binary_sensor.bathroom_door_upstairs
+          - binary_sensor.bathroom_pir_upstairs
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id:
+          - binary_sensor.bathroom_door_upstairs
+        from: 'on'
+        to: 'off'
+
+  action:
+    - service: timer.start
+      entity_id: timer.bathroom_upstairs_occupied
+
+
+- alias: 'Bathroom upstairs occupied when motion - night'
   trigger:
     - platform: state
       entity_id:
-        - light.bathroom_upstairs
+        - light.hall_upstairs
       from: 'off'
       to: 'on'
-      for:
-        seconds: 600
-    - platform: state
-      entity_id:
-        - light.bathroom_upstairs
-      from: 'off'
-      to: 'on'
-      for:
-        seconds: 660
-    - platform: state
-      entity_id:
-        - light.bathroom_upstairs
-      from: 'off'
-      to: 'on'
-      for:
-        seconds: 720
-    - platform: state
-      entity_id:
-        - binary_sensor.bathroom_pir_upstairs
-      from: 'on'
-      to: 'off'
-      for:
-        seconds: 300
-    - platform: state
-      entity_id:
-        - binary_sensor.bathroom_pir_upstairs
-      from: 'on'
-      to: 'off'
-      for:
-        seconds: 360
-    - platform: state
-      entity_id:
-        - binary_sensor.bathroom_pir_upstairs
-      from: 'on'
-      to: 'off'
-      for:
-        seconds: 320
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.bed_time
+        state: 'on'
+
   action:
-    - service: light.turn_off
-      data:
-        entity_id:
-          - light.bathroom_upstairs
+    - service: timer.start
+      entity_id: timer.bathroom_upstairs_occupied
+  
+
 
 - alias: "Motion detector counters increment"
   trigger:
