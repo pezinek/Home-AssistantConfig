@@ -2,22 +2,16 @@
 
 cinema_scene:
   sequence:
-    - service: script.lr_amp_on
-    - service: switch.turn_off 
-      data:
-        entity_id: 
-          - switch.sonoff1  # Lamp
-          - switch.sonoff2  # Humidifier
     - service: light.turn_on
       data:
         entity_id:
-          - group.kitchen_lights
+          - light.kitchen_moodlight
           - light.livingroom_moodlight
         rgb_color: [ 5, 0, 1 ]
     - service: light.turn_on
       data:
         entity_id:
-          - group.kitchen_lights
+          - light.kitchen_moodlight
           - light.livingroom_moodlight
         brightness: 50
     - service: light.turn_on
@@ -32,7 +26,6 @@ cinema_scene:
         brightness: 5 
     - delay:
         seconds: 10
-    - service: script.lr_amp_input_ac3
 
 
 disco_scene:

@@ -9,5 +9,5 @@
       value_template: '{{ states("sensor.pow1_apparent")|float > 180 }}'
 
     projector:
-      value_template: '{{ states("sensor.pow2_apparent")|float > 100 }}'  # projector on eco: 134 W
+      value_template: '{{ states("sensor.pow2_apparent")|float > 200 }}'  # nothing: 47 W, amplifier: 89 W, projector on eco: 134 W, amp + projector: 260 W
 
