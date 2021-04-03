@@ -1,3 +1,30 @@
+- alias: 'Office occupied when motion'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_pir
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.office_door
+      from: 'off'
+      to: 'on'
+  action:
+    - service: timer.start
+      entity_id: timer.office_occupied
+
+- alias: 'Office vacant when light turned off'
+  trigger:
+    - platform: state
+      entity_id: switch.office_light
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: state 
+    entity_id: timer.office_occupied  
+    state: 'active'
+  action:
+    - service: timer.cancel
+      entity_id: timer.office_occupied
 
 
 - alias: 'Office lamp on when monitors are on or is dark'
@@ -101,22 +128,19 @@
         entity_id:
           - light.office_lamp
 
-- alias: 'Office light on when motion/door'
+
+- alias: 'Office light on when occupied'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.office_pir
-      from: 'off'
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.office_door
-      from: 'off'
-      to: 'on'
+    - platform: event
+      event_type: timer.started
+      event_data:
+        entity_id: timer.office_occupied
   condition:
     condition: and
     conditions:
       - condition: numeric_state
         entity_id: sensor.office_luxmeter
-        below: 0.9
+        below: 1.0
       - condition: state
         entity_id: input_boolean.bed_time 
         state: 'off'
@@ -136,24 +160,19 @@
       data:
         entity_id:
           - switch.office_light
+#    - service: system_log.write
+#      data:
+#        level: warning
+#        logger: automation.office_light_on_when_occupied
+#        message: switch.turn_on for switch.office_light called.
 
-- alias: 'Office light off when no motion'
+
+- alias: 'Office light off when vacant'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.office_pir
-      to: 'off'
-      for:
-        minutes: 5
-    - platform: state
-      entity_id: binary_sensor.office_pir
-      to: 'off'
-      for:
-        minutes: 6
-    - platform: state
-      entity_id: binary_sensor.office_pir
-      to: 'off'
-      for:
-        minutes: 7
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.office_occupied
   condition:
     condition: state
     entity_id: switch.office_light
@@ -511,10 +530,12 @@
     - service: timer.start
       entity_id: timer.hall_upstairs_occupied
 
-- alias: 'Cancel hall upstairs occupancy timer when light off'
+- alias: 'Hall upstairs vacant when light off'
   trigger:
     - platform: state
       entity_id: light.hall_upstairs
+      from: 'on'
+      to: 'off'
   condition:
     condition: state
     entity_id: timer.hall_upstairs_occupied
@@ -689,18 +710,21 @@
         - light.bathroom_upstairs
    
 
-- alias: 'Cancel bathroom upstairs occupancy timer when light off'
+- alias: 'Doublecheck the light in the bahtoom upstairs did really turn off'
   trigger:
     - platform: state
-      entity_id: light.bathroom_upstairs
+      entity_id: timer.bathroom_upstairs_occupied
+      to: 'idle'
+      for: 00:01:00
   condition:
     condition: state
-    entity_id: timer.bathroom_upstairs_occupied
-    state: 'active'
+    entity_id: light.bathroom_upstairs
+    state: 'on'
   action:
-    - service: timer.cancel
+    - service: timer.start
       entity_id: timer.bathroom_upstairs_occupied
-
+      data:
+        duration: 00:00:30
 
 - alias: 'Bathroom upstairs occupied when motion'
   trigger:
@@ -719,6 +743,8 @@
   action:
     - service: timer.start
       entity_id: timer.bathroom_upstairs_occupied
+      data:
+       duration: 00:10:00
 
 
 - alias: 'Bathroom upstairs occupied when motion - night'
@@ -738,7 +764,23 @@
   action:
     - service: timer.start
       entity_id: timer.bathroom_upstairs_occupied
-  
+      data:
+        duration: 00:10:00
+
+- alias: 'Bathroom upstairs vacant when light off'
+  trigger:
+    - platform: state
+      entity_id: light.bathroom_upstairs
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: state
+    entity_id: timer.bathroom_upstairs_occupied
+    state: 'active'
+  action:
+    - service: timer.cancel
+      entity_id: timer.bathroom_upstairs_occupied
+
 
 
 - alias: "Motion detector counters increment"

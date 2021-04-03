@@ -14,3 +14,6 @@ bathroom_upstairs_occupied:
 hall_upstairs_occupied:
     duration: '00:00:30'
 
+office_occupied:
+    duration: '00:10:00'
+
