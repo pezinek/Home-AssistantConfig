@@ -91,3 +91,354 @@
     entity_id: timer.light_hall_downstairs
   mode: queued
   max: 10
+- id: '1632949611992'
+  alias: 'School day: 07:00'
+  description: ''
+  trigger:
+  - platform: time
+    at: '7:00'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: timer.start
+    data: {}
+    entity_id: timer.water_circulator
+  - service: script.wall
+    data:
+      message: Hola hola ! Škola volá. Ranní ptáče dál doskáče. Vstávejte lenoši.
+  mode: single
+- id: '1632949611993'
+  alias: 'School day: 07:20'
+  description: ''
+  trigger:
+  - platform: time
+    at: '7:20'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Dětičky naše zlaté, je čas na snídani. Kdo ještě nemá vyčištěné zuby,
+        nebo je dokonce ještě v pyžamu, tak bude nejspíš o hladu jestli si honem nepospíší.
+  mode: single
+- id: '1632949611994'
+  alias: 'School day: 07:40'
+  description: ''
+  trigger:
+  - platform: time
+    at: '7:40'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Péťo, je čas všeho nechat a ihned odejít do školy. Poslední vlak ti
+        odjíždí za 10 minut. A nezapomeň si svačinu, pití, roušku, mobil a ISIC kartu.
+  mode: single
+- id: '1632949611995'
+  alias: 'School day: 07:45'
+  description: ''
+  trigger:
+  - platform: time
+    at: '7:45'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Petře ? Ty si ještě tady ? Mazej do tý školy ! Hned ! A utíkej !
+  mode: single
+- id: '1632949611996'
+  alias: 'School day: 07:50'
+  description: ''
+  trigger:
+  - platform: time
+    at: '7:50'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Milý Vítku, už jsi veliký chlapák a musíš odvést mamku do školky, a
+        dohlédnout aby nepřišla pozdě. Rychle dojez snídani, běž se oblékat a dohlédni
+        na tu mamku prosím tě.
+  mode: single
+- id: '1632949611997'
+  alias: 'School day: 07:55'
+  description: ''
+  trigger:
+  - platform: time
+    at: '7:55'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Andrejko, je čas vyrazit do školy drahoušku. Nezapomeň si pití, svačinu,
+        telefon, roušku, a učesej se. A nezapomeň telefon !
+  - service: light.turn_on
+    data:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 90
+      - 0
+    entity_id:
+    - light.kitchen_moodlight
+    - light.livingroom_moodlight
+  mode: single
+- id: '1632949611998'
+  alias: 'School day: 08:00'
+  description: ''
+  trigger:
+  - platform: time
+    at: '8:00'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Je osum nula nula přesně. Vítku, Andrejko už opravdu musíte jít. Tak
+        šup šup. A nashledanou odpoledne.
+  - service: light.turn_on
+    data:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 0
+      - 0
+    entity_id:
+    - light.kitchen_moodlight
+    - light.livingroom_moodlight
+  mode: single
+- id: '1632949611999'
+  alias: 'School day: 08:05'
+  description: ''
+  trigger:
+  - platform: time
+    at: '8:05'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id:
+    - light.kitchen_moodlight
+    - light.livingroom_moodlight
+    - light.kidsroom_bedlight
+    - light.kitchen_counter
+  mode: single
+- id: '1632949612000'
+  alias: 'School day: 19:00'
+  description: ''
+  trigger:
+  - platform: time
+    at: '19:00'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Je sedm hodin a zahajuji přípravu na večerku. Andrejka i Péťa si připraví věci do školy a zkontrolují že mají hotové všechny úkoly. Andrejka si nezapomene nabít mobil. A Vítek na to všechno dohlédne.
+  - service: light.turn_on
+    data:
+      brightness: 255
+      rgb_color:
+      - 71 
+      - 255
+      - 117
+      effect: 3
+    entity_id:
+    - light.kitchen_moodlight
+    - light.livingroom_moodlight
+  mode: single
+- id: '1632949612001'
+  alias: 'School day: 20:00'
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:00'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Je osm hodin, Vítek a Andrejka odchází do pelíšku. Dobrou noc kůzlátka.
+  - service: light.turn_on
+    data:
+      brightness: 255
+      rgb_color:
+      - 255
+      - 0
+      - 0
+    entity_id:
+    - light.kitchen_moodlight
+    - light.livingroom_moodlight
+  mode: single
+- id: '1632949612001'
+  alias: 'School day: 21:00'
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00'
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+    - condition: state
+      entity_id: input_boolean.away_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.school_mode
+      state: 'on'
+  action:
+  - service: script.wall
+    data:
+      message: Je devět hodin, Péťa odchází do postele a může si ještě chvíli číst. Dobrou noc.
+  mode: single
+
