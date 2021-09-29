@@ -930,7 +930,7 @@
       entity_id: group.bathroom_pirs_downstairs
       to: 'off'
       for:
-        seconds: 30
+        seconds: 90
     - platform: state
       entity_id: switch.bathroom_light
       to: 'on'
