@@ -133,7 +133,7 @@
   name: office_light_wifi_signal
   state_topic: office-light/rssi
   unit_of_measurement: 'RSSI'
-  availability_topic: sonoff-t3/status
+  availability_topic: office-light/status
   payload_available: 1
   payload_not_available: 0
 
