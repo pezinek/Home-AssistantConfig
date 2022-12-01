@@ -63,6 +63,10 @@ switch.bathroom_socket_downstairs:
   friendly_name: "Bathroom heating"
   icon: mdi:power-socket-eu
 
+switch.garden_shed_outlet:
+  friendly_name: "Shed socket"
+  icon: mdi:power-socket-eu
+
 switch.water_circulator:
   friendly_name: "Water Circulator"
   icon: mdi:water-pump

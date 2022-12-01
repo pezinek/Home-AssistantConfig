@@ -75,6 +75,7 @@ Activity Detectors:
     - binary_sensor.bathroom_pir_upstairs
     - binary_sensor.livingroom_pir
     - binary_sensor.bathroom_socket_pir_downstairs
+    - binary_sensor.garden_shed_pir
     - switch.bathroom_wallswitch_downstairs_1
     
 kitchen_lights:

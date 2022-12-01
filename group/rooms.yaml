@@ -100,6 +100,8 @@ garden:
     - sensor.solar_collector_temperature
     - sensor.pool_controller_temperature
     - input_boolean.pool_automation
+    - switch.garden_shed_outlet
+    - binary_sensor.garden_shed_pir
 
 bathroom_downstairs:
   name: Bathroom Downstairs

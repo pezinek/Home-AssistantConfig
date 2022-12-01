@@ -201,6 +201,14 @@
   availability_topic: "s20-1/status"
   payload_available: "1"
   payload_not_available: "0"
+  
+- platform: mqtt
+  state_topic: sonoff6/rssi
+  name: garden_shed_wifi_signal
+  unit_of_measurement: 'RSSI'
+  availability_topic: "sonoff6/status"
+  payload_available: "1"
+  payload_not_available: "0"
 
 - platform: mqtt
   name: pow1_current

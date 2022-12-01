@@ -73,6 +73,14 @@ binary_sensor.bathroom_socket_pir_downstairs:
   friendly_name: 'Motion (bathroom downstairs)'
   icon: mdi:eye-outline
 
+binary_sensor.garden_shed_pir:
+  friendly_name: 'Motion (garden shed)'
+  icon: mdi:eye-outline
+
+sensor.garden_shed_wifi_signal:
+  friendly_name: 'Garden shed WiFi signal'
+  icon: mdi:wifi
+
 sensor.ir_code:
   friendly_name: 'IR Blaster (code)'
   icon: mdi:remote

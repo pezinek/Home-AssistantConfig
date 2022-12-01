@@ -80,6 +80,7 @@ recorder:
        - binary_sensor.bathroom_window_upstairs
        - binary_sensor.bathroom_window_downstairs
        - binary_sensor.livingroom_window
+       - binary_sensor.garden_shed_pir
        - sensor.bathroom_luxmeter  
        - sensor.kitchen_luxmeter
        - sensor.office_luxmeter
@@ -98,6 +99,7 @@ recorder:
        - switch.sonoff1
        - switch.sonoff2
        - switch.sonoff4
+       - switch.sonoff6
        - sensor.living_room_temperature
        - sensor.living_room_pressure
        - sensor.sonoff1_temperature

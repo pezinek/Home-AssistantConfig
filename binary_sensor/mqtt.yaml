@@ -241,6 +241,16 @@
   payload_not_available: "0"
 
 - platform: mqtt
+  state_topic: "sonoff6/digital"
+  name: garden_shed_pir
+  payload_on: "0"
+  payload_off: "1"
+  device_class: occupancy
+  availability_topic: "sonoff6/status"
+  payload_available: "1"
+  payload_not_available: "0"
+
+- platform: mqtt
   state_topic: "sonoff-rfbridge/rfin"
   name: livingroom_window
   payload_on: "4AD80A"
