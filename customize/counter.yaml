@@ -3,3 +3,7 @@ counter.human_actions_hourly:
   friendly_name: "Human Interactions"
   unit_of_measurement: interactions/hour
 
+counter.gaming_minutes_petr:
+  friendly_name: "Gaming Minutes Petr"
+  unit_of_measurement: min 
+

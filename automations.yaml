@@ -364,12 +364,14 @@
   action:
   - service: script.wall
     data:
-      message: Je sedm hodin a zahajuji přípravu na večerku. Andrejka i Péťa si připraví věci do školy a zkontrolují že mají hotové všechny úkoly. Andrejka si nezapomene nabít mobil. A Vítek na to všechno dohlédne.
+      message: Je sedm hodin a zahajuji přípravu na večerku. Andrejka i Péťa si připraví
+        věci do školy a zkontrolují že mají hotové všechny úkoly. Andrejka si nezapomene
+        nabít mobil. A Vítek na to všechno dohlédne.
   - service: light.turn_on
     data:
       brightness: 255
       rgb_color:
-      - 71 
+      - 71
       - 255
       - 117
       effect: 3
@@ -439,6 +441,80 @@
   action:
   - service: script.wall
     data:
-      message: Je devět hodin, Péťa odchází do postele a může si ještě chvíli číst. Dobrou noc.
+      message: Je devět hodin, Péťa odchází do postele a může si ještě chvíli číst.
+        Dobrou noc.
   mode: single
-
+- id: '1683839800538'
+  alias: 'Gaming mode for Petr: Enable when ethernet port busy for 5 min'
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.petr_bytes_in_per_minute
+    above: '3000000'
+    for: 00:05:00
+  - platform: numeric_state
+    entity_id: sensor.petr_bytes_out_per_minute
+    above: '3000000'
+    for: 00:05:00
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.petr_is_gaming
+  mode: single
+- id: '1683842353153'
+  alias: 'Gaming minutes for Petr: Reset on midnight'
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    entity_id: counter.gaming_minutes_petr
+  mode: single
+- id: '1683875365831'
+  alias: 'Gaming mode for Petr: Disable when ethernet port idle for 5 min'
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.petr_bytes_in_per_minute
+    below: '3000000'
+    for: 00:04:00
+  - platform: numeric_state
+    entity_id: sensor.petr_bytes_out_per_minute
+    below: '3000000'
+    for: 00:04:00
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.petr_is_gaming
+      state: 'on'
+    - condition: numeric_state
+      entity_id: sensor.petr_bytes_in_per_minute
+      below: '3000000'
+    - condition: numeric_state
+      entity_id: sensor.petr_bytes_out_per_minute
+      below: '3000000'
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.petr_is_gaming
+  mode: single
+- id: '1683875650159'
+  alias: 'Gaming minutes for Petr: Increment every minute if Gaming Mode is on'
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /1
+  condition:
+  - condition: state
+    entity_id: input_boolean.petr_is_gaming
+    state: 'on'
+  action:
+  - service: counter.increment
+    data: {}
+    entity_id: counter.gaming_minutes_petr
+  mode: single
