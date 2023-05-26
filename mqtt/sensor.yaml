@@ -1,3 +1,5 @@
+sensor:
+
 - platform: mqtt
   state_topic: homie/5ccf7fd38d01/$stats/signal
   name: WeeMos D1 mini - WiFi signal 

@@ -1,3 +1,5 @@
+switch:
+
 - platform: mqtt
   name: sonoff1
   state_topic: "stat/sonoff1/POWER"

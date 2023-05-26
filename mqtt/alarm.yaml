@@ -1,5 +1,6 @@
-- platform: mqtt
-  name: jablotron
+alarm_control_panel:
+
+- name: jablotron
   state_topic: "alarm/mode"
   command_topic: "alarm/key/press"
   payload_disarm: !secret alarm_code

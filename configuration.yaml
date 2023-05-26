@@ -175,8 +175,8 @@ media_player:
     name: office
     host: octoprint
 
-mqtt:
-  broker: mqtt
+#mqtt:
+#  broker: mqtt
 
 device_tracker:
   - platform: ping
@@ -191,9 +191,9 @@ device_tracker:
 #      track_new_devices: False
 #  - platform: owntracks
 
-neato:
-  username: !secret neato_username
-  password: !secret neato_passwd
+#neato:
+#  username: !secret neato_username
+#  password: !secret neato_passwd
 
 # Zones
 
@@ -223,6 +223,7 @@ zone:
 
 #camera: !include_dir_merge_named camera
 binary_sensor: !include_dir_merge_list binary_sensor
+mqtt: !include_dir_merge_list mqtt
 sensor: !include_dir_merge_list sensor
 switch: !include_dir_merge_list switch
 light:  !include_dir_merge_list light
@@ -237,7 +238,6 @@ input_number: !include_dir_merge_named input_number
 scene: !include_dir_merge_list scene
 counter: !include_dir_merge_named counter
 timer: !include_dir_merge_named timer
-alarm_control_panel: !include_dir_merge_list alarm
 
 #logger:
 #  default: warning

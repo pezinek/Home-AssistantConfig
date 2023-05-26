@@ -1,3 +1,5 @@
+light:
+
 - platform: mqtt
   name: "WeMos D1 mini - LED"
   state_topic: "homie/5ccf7fd38d01/led/status"

@@ -1,3 +1,4 @@
+binary_sensor:
 
 - platform: mqtt
   state_topic: homie/a020a61590a1/pir/motion
