@@ -129,6 +129,9 @@ recorder:
 #      - sensor.pow1_apparent
 #      - input_boolean.pool_automation
        - vacuum.n2d7
+       - counter.gaming_minutes_petr
+       - sensor.petr_bytes_in_per_minute
+       - sensor.petr_bytes_out_per_minute
      domains:
        - input_boolean
 #      - sensor

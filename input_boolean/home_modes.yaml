@@ -37,3 +37,6 @@ mosquito_season:
   name: "Mosquito season"
   icon: mdi:bee
 
+petr_is_gaming:
+  name: "Petr is Gaming"
+  icon: mdi:keyboard

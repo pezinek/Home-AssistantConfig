@@ -1,0 +1,32 @@
+
+
+- platform: derivative
+  name: petr_bytes_out_per_minute
+  source: sensor.petr_bytes_out_total
+  unit_time: min
+
+- platform: derivative
+  name: petr_bytes_in_per_minute
+  source: sensor.petr_bytes_in_total
+  unit_time: min
+
+- platform: derivative
+  name: wan1_bytes_out_per_sec
+  source: sensor.wan1_bytes_out_total
+  unit_time: s
+
+- platform: derivative
+  name: wan1_bytes_in_per_sec
+  source: sensor.wan1_bytes_in_total
+  unit_time: s
+
+- platform: derivative
+  name: wan2_bytes_out_per_sec
+  source: sensor.wan2_bytes_out_total
+  unit_time: s
+
+- platform: derivative
+  name: wan2_bytes_in_per_sec
+  source: sensor.wan2_bytes_in_total
+  unit_time: s
+
